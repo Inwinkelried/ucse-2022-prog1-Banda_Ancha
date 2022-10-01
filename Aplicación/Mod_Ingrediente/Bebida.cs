@@ -1,0 +1,11 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aplicacion {
+    internal class Bebida : PorCantidad {
+        //enumerador para asignar tipo de bebida
+    }
+}
