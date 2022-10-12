@@ -10,7 +10,6 @@ namespace Mod_Comida {
         public List<Comida> Comidas = new List<Comida>();
         public List<Receta> Recetasfiltradas (int tiporeceta) {
             throw new NotImplementedException();
-            //
         } 
     }
 }

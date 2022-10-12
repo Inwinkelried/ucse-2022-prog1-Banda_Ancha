@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aplicacion {
     internal class Bebida : PorCantidad {
-        //enumerador para asignar tipo de bebida
+        public enum TipoBebida { Alcoholica, AltaEnAzucar, Normal }
+        public TipoBebida Tipo { get; set; }
     }
 }

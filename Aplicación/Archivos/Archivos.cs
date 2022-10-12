@@ -8,6 +8,9 @@ namespace Aplicacion
 {
     public class Archivos
     {
+        //metodo escribir(lista de productos)
+
+
 
     }
 }
