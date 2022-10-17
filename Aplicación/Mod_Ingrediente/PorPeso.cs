@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Aplicacion {
-    internal class PorPeso : Ingrediente {
+    public class PorPeso : Ingrediente {
         //  CREAR ENUMERADOR PARA ASIGNAR TIPO A UN ELEMENTO QUE SE CUENTA POR PESO
         //  public enum  { get; set; }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Mod_Ingrediente {
     public class LogicaIngrediente {
         
-        protected List<Ingrediente> ingredientesMinimo = new List<Ingrediente>();
+        public List<Ingrediente> ingredientesMinimo = new List<Ingrediente>();
         
         public List<Ingrediente> Ingredientes = new List<Ingrediente>();
         public List<Ingrediente> getIngredientes() {

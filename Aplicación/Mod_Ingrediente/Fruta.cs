@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Aplicacion {
-    internal class Fruta : PorCantidad {
+    public class Fruta : PorCantidad {
+
     }
 }

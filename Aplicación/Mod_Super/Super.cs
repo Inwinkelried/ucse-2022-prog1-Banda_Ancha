@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Aplicacion {
-    internal class Super : Archivos {
+    public class Super : Archivos {
     }
 }

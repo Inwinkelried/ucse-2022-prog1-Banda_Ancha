@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Aplicacion {
-    internal class Lacteo : Ingrediente {
+    public class Lacteo : Ingrediente {
     }
 }

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Aplicacion {
     public class Comida : Archivos {
-        public List<Receta> recetas { get; set; }
+        public Receta Receta { get; set; }
         public DateTime FechaCreacion { get; set; }
 
-        
         public void DescontarIngredientes() {
            throw new NotImplementedException();
         }
