@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Aplicacion {
-    public class Comida : Archivos {
+    public class Comida  {
         public Receta Receta { get; set; }
         public DateTime FechaCreacion { get; set; }
 
