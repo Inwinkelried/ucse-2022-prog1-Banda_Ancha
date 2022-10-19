@@ -41,15 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archivos_Super.cs" />
     <Compile Include="LogicaSuper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Super.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Archivos\Aplicación.csproj">
-      <Project>{a531e83d-48db-4a5e-9608-d7c1d49e79e8}</Project>
-      <Name>Aplicación</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
