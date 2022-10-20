@@ -38,9 +38,9 @@
             // btn_Despensa
             // 
             this.btn_Despensa.Image = ((System.Drawing.Image)(resources.GetObject("btn_Despensa.Image")));
-            this.btn_Despensa.Location = new System.Drawing.Point(108, 60);
+            this.btn_Despensa.Location = new System.Drawing.Point(369, 88);
             this.btn_Despensa.Name = "btn_Despensa";
-            this.btn_Despensa.Size = new System.Drawing.Size(154, 154);
+            this.btn_Despensa.Size = new System.Drawing.Size(166, 165);
             this.btn_Despensa.TabIndex = 0;
             this.btn_Despensa.UseVisualStyleBackColor = true;
             this.btn_Despensa.Click += new System.EventHandler(this.btn_Despensa_Click);
@@ -49,9 +49,9 @@
             // 
             this.btn_Recetas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Recetas.Image = ((System.Drawing.Image)(resources.GetObject("btn_Recetas.Image")));
-            this.btn_Recetas.Location = new System.Drawing.Point(329, 60);
+            this.btn_Recetas.Location = new System.Drawing.Point(152, 88);
             this.btn_Recetas.Name = "btn_Recetas";
-            this.btn_Recetas.Size = new System.Drawing.Size(154, 154);
+            this.btn_Recetas.Size = new System.Drawing.Size(166, 165);
             this.btn_Recetas.TabIndex = 1;
             this.btn_Recetas.UseVisualStyleBackColor = false;
             this.btn_Recetas.Click += new System.EventHandler(this.btn_Recetas_Click);
@@ -59,9 +59,9 @@
             // btn_Super
             // 
             this.btn_Super.Image = ((System.Drawing.Image)(resources.GetObject("btn_Super.Image")));
-            this.btn_Super.Location = new System.Drawing.Point(108, 243);
+            this.btn_Super.Location = new System.Drawing.Point(152, 280);
             this.btn_Super.Name = "btn_Super";
-            this.btn_Super.Size = new System.Drawing.Size(154, 154);
+            this.btn_Super.Size = new System.Drawing.Size(166, 165);
             this.btn_Super.TabIndex = 2;
             this.btn_Super.UseVisualStyleBackColor = true;
             this.btn_Super.Click += new System.EventHandler(this.btn_Super_Click);
@@ -70,9 +70,9 @@
             // 
             this.btn_Comidas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Comidas.Image = ((System.Drawing.Image)(resources.GetObject("btn_Comidas.Image")));
-            this.btn_Comidas.Location = new System.Drawing.Point(329, 243);
+            this.btn_Comidas.Location = new System.Drawing.Point(369, 280);
             this.btn_Comidas.Name = "btn_Comidas";
-            this.btn_Comidas.Size = new System.Drawing.Size(154, 154);
+            this.btn_Comidas.Size = new System.Drawing.Size(166, 165);
             this.btn_Comidas.TabIndex = 3;
             this.btn_Comidas.UseVisualStyleBackColor = false;
             this.btn_Comidas.Click += new System.EventHandler(this.btn_Comidas_Click);

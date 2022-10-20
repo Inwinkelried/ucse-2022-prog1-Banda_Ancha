@@ -23,5 +23,20 @@ namespace Forms_Inicio
             despensa.Show();
             this.Hide();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
