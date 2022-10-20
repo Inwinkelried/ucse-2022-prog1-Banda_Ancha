@@ -20,26 +20,30 @@ namespace Forms_Inicio
         private void btn_Despensa_Click(object sender, EventArgs e)
         {
             Form_Despensa formDespensa = new Form_Despensa();
-            formDespensa.ShowDialog();
+            formDespensa.Show();
+            this.Hide();
         }
 
         private void btn_Recetas_Click(object sender, EventArgs e)
         {
             Form_Recetas formRecetas = new Form_Recetas();
-            formRecetas.ShowDialog();
+            formRecetas.Show();
+            this.Hide();
         }
 
         private void btn_Super_Click(object sender, EventArgs e)
         {
             Form_Super formSuper = new Form_Super();
-            formSuper.ShowDialog();
+            formSuper.Show();
+            this.Hide();
 
         }
 
         private void btn_Comidas_Click(object sender, EventArgs e)
         {
             Form_Comidas formComidas = new Form_Comidas();
-            formComidas.ShowDialog();
+            formComidas.Show();
+            this.Hide();
         }
 
         private void Form_Menú_Load(object sender, EventArgs e)

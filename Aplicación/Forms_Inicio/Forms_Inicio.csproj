@@ -46,11 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_Frutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Frutas.Designer.cs">
+      <DependentUpon>Form_Frutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Bebidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Bebidas.Designer.cs">
+      <DependentUpon>Form_Bebidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Carne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Carne.Designer.cs">
+      <DependentUpon>Form_Carne.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Comidas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Comidas.Designer.cs">
       <DependentUpon>Form_Comidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Panaderia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Panaderia.Designer.cs">
+      <DependentUpon>Form_Panaderia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Pescado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Pescado.Designer.cs">
+      <DependentUpon>Form_Pescado.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Recetas.cs">
       <SubType>Form</SubType>
@@ -82,16 +112,43 @@
     <Compile Include="Form_Super.Designer.cs">
       <DependentUpon>Form_Super.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Verduras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Verduras.Designer.cs">
+      <DependentUpon>Form_Verduras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Bebidas.resx">
+      <DependentUpon>Form_Bebidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Carne.resx">
+      <DependentUpon>Form_Carne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Despensa.resx">
+      <DependentUpon>Form_Despensa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Frutas.resx">
+      <DependentUpon>Form_Frutas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Inicio.resx">
       <DependentUpon>Form_Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Menú.resx">
       <DependentUpon>Form_Menú.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Panaderia.resx">
+      <DependentUpon>Form_Panaderia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Pescado.resx">
+      <DependentUpon>Form_Pescado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Super.resx">
       <DependentUpon>Form_Super.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Verduras.resx">
+      <DependentUpon>Form_Verduras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

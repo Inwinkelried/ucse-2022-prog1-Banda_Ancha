@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Forms_Inicio
 {
-    public partial class Form_Inicio : Form
+    public partial class Form_Carne : Form
     {
-        public Form_Inicio()
+        public Form_Carne()
         {
             InitializeComponent();
         }
 
-        private void btn_Comenzar_Click(object sender, EventArgs e)
+        private void btn_volver_Carnes_Click(object sender, EventArgs e)
         {
-            Form_Menú formMenu = new Form_Menú();
-            formMenu.Show();
+            Form_Despensa despensa = new Form_Despensa();
+            despensa.Show();
             this.Hide();
         }
     }
