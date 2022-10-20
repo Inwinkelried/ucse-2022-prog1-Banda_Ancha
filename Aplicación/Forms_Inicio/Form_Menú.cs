@@ -41,5 +41,10 @@ namespace Forms_Inicio
             Form_Comidas formComidas = new Form_Comidas();
             formComidas.ShowDialog();
         }
+
+        private void Form_Menú_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

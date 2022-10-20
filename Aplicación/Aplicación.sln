@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mod_Comida", "Mod_Comida\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mod_Super", "Mod_Super\Mod_Super.csproj", "{20EE5A53-7350-4502-841E-A58BFE37BC8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulario", "Formulario\Formulario.csproj", "{4BE2AB40-B454-4E8B-B1BA-EA6B56F07FE4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms_Inicio", "Forms_Inicio\Forms_Inicio.csproj", "{F9BDC4C0-C341-4EDC-AE5A-4CFA95B5364C}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{20EE5A53-7350-4502-841E-A58BFE37BC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20EE5A53-7350-4502-841E-A58BFE37BC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20EE5A53-7350-4502-841E-A58BFE37BC8B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BE2AB40-B454-4E8B-B1BA-EA6B56F07FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BE2AB40-B454-4E8B-B1BA-EA6B56F07FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BE2AB40-B454-4E8B-B1BA-EA6B56F07FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BE2AB40-B454-4E8B-B1BA-EA6B56F07FE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9BDC4C0-C341-4EDC-AE5A-4CFA95B5364C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9BDC4C0-C341-4EDC-AE5A-4CFA95B5364C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9BDC4C0-C341-4EDC-AE5A-4CFA95B5364C}.Release|Any CPU.ActiveCfg = Release|Any CPU

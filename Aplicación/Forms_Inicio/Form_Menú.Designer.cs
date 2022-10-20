@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Menú));
             this.btn_Despensa = new System.Windows.Forms.Button();
             this.btn_Recetas = new System.Windows.Forms.Button();
             this.btn_Super = new System.Windows.Forms.Button();
@@ -36,55 +37,58 @@
             // 
             // btn_Despensa
             // 
-            this.btn_Despensa.Location = new System.Drawing.Point(121, 65);
+            this.btn_Despensa.Image = ((System.Drawing.Image)(resources.GetObject("btn_Despensa.Image")));
+            this.btn_Despensa.Location = new System.Drawing.Point(108, 60);
             this.btn_Despensa.Name = "btn_Despensa";
-            this.btn_Despensa.Size = new System.Drawing.Size(154, 136);
+            this.btn_Despensa.Size = new System.Drawing.Size(154, 154);
             this.btn_Despensa.TabIndex = 0;
-            this.btn_Despensa.Text = "button1";
             this.btn_Despensa.UseVisualStyleBackColor = true;
             this.btn_Despensa.Click += new System.EventHandler(this.btn_Despensa_Click);
             // 
             // btn_Recetas
             // 
-            this.btn_Recetas.Location = new System.Drawing.Point(383, 65);
+            this.btn_Recetas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Recetas.Image = ((System.Drawing.Image)(resources.GetObject("btn_Recetas.Image")));
+            this.btn_Recetas.Location = new System.Drawing.Point(329, 60);
             this.btn_Recetas.Name = "btn_Recetas";
-            this.btn_Recetas.Size = new System.Drawing.Size(154, 136);
+            this.btn_Recetas.Size = new System.Drawing.Size(154, 154);
             this.btn_Recetas.TabIndex = 1;
-            this.btn_Recetas.Text = "button2";
-            this.btn_Recetas.UseVisualStyleBackColor = true;
+            this.btn_Recetas.UseVisualStyleBackColor = false;
             this.btn_Recetas.Click += new System.EventHandler(this.btn_Recetas_Click);
             // 
             // btn_Super
             // 
-            this.btn_Super.Location = new System.Drawing.Point(121, 261);
+            this.btn_Super.Image = ((System.Drawing.Image)(resources.GetObject("btn_Super.Image")));
+            this.btn_Super.Location = new System.Drawing.Point(108, 243);
             this.btn_Super.Name = "btn_Super";
-            this.btn_Super.Size = new System.Drawing.Size(154, 136);
+            this.btn_Super.Size = new System.Drawing.Size(154, 154);
             this.btn_Super.TabIndex = 2;
-            this.btn_Super.Text = "button3";
             this.btn_Super.UseVisualStyleBackColor = true;
             this.btn_Super.Click += new System.EventHandler(this.btn_Super_Click);
             // 
             // btn_Comidas
             // 
-            this.btn_Comidas.Location = new System.Drawing.Point(383, 261);
+            this.btn_Comidas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Comidas.Image = ((System.Drawing.Image)(resources.GetObject("btn_Comidas.Image")));
+            this.btn_Comidas.Location = new System.Drawing.Point(329, 243);
             this.btn_Comidas.Name = "btn_Comidas";
-            this.btn_Comidas.Size = new System.Drawing.Size(154, 136);
+            this.btn_Comidas.Size = new System.Drawing.Size(154, 154);
             this.btn_Comidas.TabIndex = 3;
-            this.btn_Comidas.Text = "button4";
-            this.btn_Comidas.UseVisualStyleBackColor = true;
+            this.btn_Comidas.UseVisualStyleBackColor = false;
             this.btn_Comidas.Click += new System.EventHandler(this.btn_Comidas_Click);
             // 
             // Form_Menú
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 473);
+            this.ClientSize = new System.Drawing.Size(646, 473);
             this.Controls.Add(this.btn_Comidas);
             this.Controls.Add(this.btn_Super);
             this.Controls.Add(this.btn_Recetas);
             this.Controls.Add(this.btn_Despensa);
             this.Name = "Form_Menú";
-            this.Text = "Form_Menú";
+            this.Text = "SuperCook2";
+            this.Load += new System.EventHandler(this.Form_Menú_Load);
             this.ResumeLayout(false);
 
         }

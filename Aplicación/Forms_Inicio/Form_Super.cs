@@ -16,5 +16,10 @@ namespace Forms_Inicio
         {
             InitializeComponent();
         }
+
+        private void Form_Super_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
