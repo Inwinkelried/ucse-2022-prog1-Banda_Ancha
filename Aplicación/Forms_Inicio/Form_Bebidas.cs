@@ -38,5 +38,24 @@ namespace Forms_Inicio
         {
 
         }
+
+        
+
+        private void grilla_bebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Boton_acpetar_bebidas_Click(object sender, EventArgs e)
+        {
+            int cantidad = int.Parse(Lector_Cantidad.Text);
+            if (Lector_Nombre.Text != "") //&& condicion de que la casilla de tipo este marcada)
+            {
+                //Revisar si la bebida no esta cargada, si no lo esta salta un messagebox que preguntara si esta seguro que desea cargar la bebida
+                // Si la bebida esta solo se suma la cantidad.
+                //Se deben cargar los datos a la grilla y a el txt que contendra la informacion.
+            }
+
+        }
     }
 }
