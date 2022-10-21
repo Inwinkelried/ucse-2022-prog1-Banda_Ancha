@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 473);
+            this.ClientSize = new System.Drawing.Size(647, 548);
             this.Controls.Add(this.btn_Comidas);
             this.Controls.Add(this.btn_Super);
             this.Controls.Add(this.btn_Recetas);

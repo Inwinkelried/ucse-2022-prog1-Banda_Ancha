@@ -42,7 +42,7 @@
             // 
             // btn_Comenzar
             // 
-            this.btn_Comenzar.Location = new System.Drawing.Point(543, 299);
+            this.btn_Comenzar.Location = new System.Drawing.Point(543, 381);
             this.btn_Comenzar.Name = "btn_Comenzar";
             this.btn_Comenzar.Size = new System.Drawing.Size(237, 76);
             this.btn_Comenzar.TabIndex = 0;
@@ -72,7 +72,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.ImageLocation = "118;63";
-            this.pictureBox3.Location = new System.Drawing.Point(556, 96);
+            this.pictureBox3.Location = new System.Drawing.Point(555, 108);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(215, 63);
             this.pictureBox3.TabIndex = 3;
@@ -81,7 +81,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(625, 176);
+            this.pictureBox4.Location = new System.Drawing.Point(629, 197);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(79, 93);
             this.pictureBox4.TabIndex = 4;

@@ -42,6 +42,7 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Boton_acpetar_bebidas = new System.Windows.Forms.Button();
+            this.TipoBebidaColumna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipobebida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_bebidas)).BeginInit();
             this.SuspendLayout();
@@ -147,13 +148,13 @@
             // 
             // grilla_bebidas
             // 
-            this.grilla_bebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_bebidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cantidad,
-            this.Nombre});
-            this.grilla_bebidas.Location = new System.Drawing.Point(193, 29);
+            this.Nombre,
+            this.TipoBebidaColumna});
+            this.grilla_bebidas.Location = new System.Drawing.Point(145, 29);
             this.grilla_bebidas.Name = "grilla_bebidas";
-            this.grilla_bebidas.Size = new System.Drawing.Size(288, 439);
+            this.grilla_bebidas.Size = new System.Drawing.Size(336, 439);
             this.grilla_bebidas.TabIndex = 9;
             this.grilla_bebidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_bebidas_CellContentClick);
             // 
@@ -176,6 +177,11 @@
             this.Boton_acpetar_bebidas.Text = "ACEPTAR";
             this.Boton_acpetar_bebidas.UseVisualStyleBackColor = true;
             this.Boton_acpetar_bebidas.Click += new System.EventHandler(this.Boton_acpetar_bebidas_Click);
+            // 
+            // TipoBebidaColumna
+            // 
+            this.TipoBebidaColumna.HeaderText = "Tipo Bebida";
+            this.TipoBebidaColumna.Name = "TipoBebidaColumna";
             // 
             // Form_Bebidas
             // 
@@ -217,5 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.Button Boton_acpetar_bebidas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoBebidaColumna;
     }
 }
