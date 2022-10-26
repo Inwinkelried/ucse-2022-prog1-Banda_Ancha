@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Aplicacion {
-    public class Ingrediente  {
+    public class Ingrediente{
         public int Codigo { get; set; }
         public string Nombre { get; set; }
         public int CantMinima { get; set; }

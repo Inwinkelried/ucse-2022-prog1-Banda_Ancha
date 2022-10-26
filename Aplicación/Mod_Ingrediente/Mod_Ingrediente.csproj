@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Archivos_Ingrediente.cs" />
     <Compile Include="Bebida.cs" />
+    <Compile Include="Carnes.cs" />
     <Compile Include="LogicaIngrediente.cs" />
     <Compile Include="Fruta.cs" />
     <Compile Include="HortalizaYVerdura.cs" />
