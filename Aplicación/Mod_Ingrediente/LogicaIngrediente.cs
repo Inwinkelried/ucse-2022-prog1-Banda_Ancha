@@ -15,7 +15,7 @@ namespace Aplicacion
         public List<Ingrediente> Ingredientes = new List<Ingrediente>();
 
 
-        public string path_verduras = "Verduras.txt";
+        public string path_Ingredientes = "Ingredientes.txt";
         public string path_Frutas = "Frutas.txt";
         public string path_Carnes = "Carnes.txt";
         public string path_Pollo = "Pollo.txt";
@@ -84,10 +84,23 @@ namespace Aplicacion
             return ingredientes.Where(x => x is Lacteo).Select(x => x as Lacteo).ToList();
         }
 
-
-
-
-
+        //Lector de archivos
+        public List<Ingrediente> LeerIngredientes ()
+        {
+            string path_ = GetPathDominio() + path_Ingredientes;
+            using (StreamReader lectorarchivos = new StreamReader(path_))
+            {
+                string json = lectorarchivos.ReadToEnd();
+                List<Ingrediente> ListaIngredientes = JsonConvert.DeserializeObject<List<Ingrediente>>(json);
+                return ListaIngredientes;
+            }
+        }
+        //Metodo para agregar un ingrediente a una lista (Hay que revisar, no se si es factible)
+        public void agregarUnIngrediente(Ingrediente ingrediente, List<Ingrediente> ingredientes)
+        {
+            ingredientes.Add(ingrediente);
+        }
+        //Metodo para guardar en los archivos una lista ya serializada
         public void GuardarLista(string listaSerializada, string nombredelarchivo)
         {
             string pathArchivo = GetPathDominio() + nombredelarchivo;
@@ -95,6 +108,10 @@ namespace Aplicacion
             {
                 wrtr.Write(listaSerializada);
             }
+        }
+        public List<Ingrediente> getAllIngredientes()
+        {
+            return LeerIngredientes().ToList<Ingrediente>();
         }
         private string GetPathDominio()
         {
