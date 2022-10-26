@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mod_Comida {
-    public class Archivos_Comida {
-
+namespace Aplicacion
+{
+    public class Pescados : PorPeso
+    {
     }
 }

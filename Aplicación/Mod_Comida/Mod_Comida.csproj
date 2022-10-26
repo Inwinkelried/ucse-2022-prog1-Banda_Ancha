@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Archivos_Comida.cs" />
     <Compile Include="Comida.cs" />
     <Compile Include="LogicaComida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

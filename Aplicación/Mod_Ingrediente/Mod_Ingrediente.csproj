@@ -44,13 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bebida.cs" />
-    <Compile Include="Carnes.cs" />
+    <Compile Include="TiposIngredientes\Bebida.cs" />
+    <Compile Include="TiposIngredientes\Carnes.cs" />
     <Compile Include="LogicaIngrediente.cs" />
-    <Compile Include="Fruta.cs" />
-    <Compile Include="HortalizaYVerdura.cs" />
+    <Compile Include="TiposIngredientes\Fruta.cs" />
+    <Compile Include="TiposIngredientes\HortalizaYVerdura.cs" />
     <Compile Include="Ingrediente.cs" />
-    <Compile Include="Lacteo.cs" />
+    <Compile Include="TiposIngredientes\Lacteo.cs" />
+    <Compile Include="TiposIngredientes\Panaderia.cs" />
+    <Compile Include="TiposIngredientes\Pescados.cs" />
     <Compile Include="PorCantidad.cs" />
     <Compile Include="PorPeso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
