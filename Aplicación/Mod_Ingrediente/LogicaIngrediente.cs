@@ -49,7 +49,11 @@ namespace Aplicacion
         // Luego de seleccionar una receta elimina los ingredientes de el stock
         public void actualizarIngredientesRecetas(Receta receta)
         {
-
+            StockIngredientes = LeerIngredientes();
+            foreach (Ingrediente ingrediente in receta.ingredientes)
+            {
+                
+            }
         }
 
 

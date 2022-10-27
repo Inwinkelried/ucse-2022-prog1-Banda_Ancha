@@ -9,6 +9,10 @@ namespace Aplicacion {
         public Receta Receta { get; set; }
         public DateTime FechaCreacion { get; set; }
 
-        
+        public Comida( Receta receta, DateTime fechacreacion)
+        {
+            Receta = receta;
+            FechaCreacion = fechacreacion;
+        }
     }
 }

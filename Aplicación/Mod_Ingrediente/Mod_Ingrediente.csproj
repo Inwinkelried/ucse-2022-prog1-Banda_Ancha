@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArchivosIngredientes.cs" />
+    <Compile Include="Comida.cs" />
+    <Compile Include="LogicaComida.cs" />
     <Compile Include="LogicaReceta.cs" />
     <Compile Include="Receta.cs" />
     <Compile Include="TiposIngredientes\Bebida.cs" />
