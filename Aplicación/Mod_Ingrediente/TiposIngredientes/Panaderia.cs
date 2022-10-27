@@ -8,5 +8,14 @@ namespace Aplicacion
 {
     public class Panaderia : PorPeso
     {
+        public Panaderia(int codigo, string nombre, int cantidadminima, decimal precio, decimal cantidad)
+        {
+            Codigo = codigo;
+            Nombre = nombre;
+            CantMinima = cantidadminima;
+            Precio = precio;
+            Cantidad = cantidad;
+
+        }
     }
 }

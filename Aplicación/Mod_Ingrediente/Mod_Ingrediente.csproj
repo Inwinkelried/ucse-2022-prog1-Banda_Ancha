@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchivosIngredientes.cs" />
     <Compile Include="TiposIngredientes\Bebida.cs" />
     <Compile Include="TiposIngredientes\Carnes.cs" />
     <Compile Include="LogicaIngrediente.cs" />

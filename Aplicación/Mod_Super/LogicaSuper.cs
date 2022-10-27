@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace Mod_Super {
 
     public class LogicaSuper {
-        public decimal CostoTotalCompra() {
-            throw new NotImplementedException();
-        }
+        
+
     }
 }
