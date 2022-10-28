@@ -20,6 +20,7 @@ namespace Aplicacion
         {
             return LeerIngredientes().ToList<Ingrediente>();
         }
+        //Eliminar un ingrediente de la lista
         public void eliminarIngrediente(Ingrediente ingrediente)
         {
             StockIngredientes = LeerIngredientes();
@@ -27,12 +28,14 @@ namespace Aplicacion
             StockIngredientes.RemoveAt(IndexDelete);            
             GuardarListaIngredientes(SerializarLista(StockIngredientes));
         }
+        //Agregar un ingrediente nuevo a la lista
         public void agregarIngredientes(Ingrediente ingrediente)
         {
             StockIngredientes = LeerIngredientes();
             StockIngredientes.Add(ingrediente);
             GuardarListaIngredientes(SerializarLista(StockIngredientes));
         }
+        //Metodo para actualizar algun ingrediente
         public void ModificarIngrediente(Ingrediente ingrediente)
         {
             StockIngredientes = LeerIngredientes();
@@ -40,6 +43,7 @@ namespace Aplicacion
             StockIngredientes[IndexDelete] = ingrediente;
             GuardarListaIngredientes(SerializarLista(StockIngredientes));
         }
+        //Preguntar al profe si esta lista va acá o en modsuper
         public List<Ingrediente> getListaSuper()
         {         
             StockIngredientes = LeerIngredientes();
@@ -50,10 +54,41 @@ namespace Aplicacion
         public void actualizarIngredientesRecetas(Receta receta)
         {
             StockIngredientes = LeerIngredientes();
-            foreach (Ingrediente ingrediente in receta.ingredientes)
+            foreach (Ingrediente ingrediente in receta.Ingredientes)
             {
-                
+                Ingrediente ingrediente1 = StockIngredientes.Find(x => x.Codigo == ingrediente.Codigo); 
+                ingrediente1.Cantidad -= ingrediente.Cantidad;
+                int index = StockIngredientes.FindIndex(x => x.Codigo == ingrediente1.Codigo);
+                StockIngredientes[index] = ingrediente;
             }
+            GuardarListaIngredientes(SerializarLista(StockIngredientes));
+        }
+        //Paso codigo de ingrediete como parametro y retorna la lista con los codigos
+        public List<Ingrediente> FiltrarIngredientesCodigo(List<int> CodigosIngredientes)
+        {
+            StockIngredientes = LeerIngredientes();
+            return StockIngredientes.FindAll(x => CodigosIngredientes.Contains(x.Codigo));
+        }
+
+        //Antes de hablititar una comida, reviso que esten los ingredientes necesarios en la despensa
+        public bool CheckIngredientesReceta (Receta receta)
+        {
+            bool encontrado = false;
+            StockIngredientes = LeerIngredientes();
+            foreach (Ingrediente ingredienteReceta in receta.Ingredientes)
+            {
+                Ingrediente ingrediente = StockIngredientes.Find(x => x.Codigo == ingredienteReceta.Codigo);
+                if (ingrediente.Cantidad >= ingredienteReceta.Cantidad)
+                {
+                    encontrado = true;
+                }
+                else
+                {
+                    encontrado = false;
+                    break;
+                }
+            }
+            return encontrado;
         }
 
 

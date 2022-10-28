@@ -14,15 +14,16 @@ namespace Aplicacion {
         string path_Recetas = "Recetas.txt";
         public List<Receta> Recetas = new List<Receta>();
 
-
+        //Getter de la lista de recetas completa
         public List<Receta> GetRecetas() {
             return LeerRecetas().ToList<Receta>();
         }
         
         //Serializar recetas
-        protected void SerializarListaRecetas(List<Receta> receta)
+        protected string SerializarListaRecetas(List<Receta> receta)
         {
             string ingredientesJson = JsonConvert.SerializeObject(receta);
+            return ingredientesJson;
         }
         //Lectura de recetas
         public List<Receta> LeerRecetas()
@@ -35,6 +36,7 @@ namespace Aplicacion {
                 return ListaRecetas;
             }
         }
+        //Metodo para guardar la lista
         public void GuardarListaRecetas(string listaSerializada)
         {
             string pathRecetas = GetPathDominio() + path_Recetas;
@@ -42,6 +44,42 @@ namespace Aplicacion {
             {
                 wrtr.Write(listaSerializada);
             }
+        }
+        //Guardar una receta
+        public void CargarUnaReceta(Receta receta)
+        {
+            Recetas = LeerRecetas();
+            Recetas.Add(receta);
+            GuardarListaRecetas(SerializarListaRecetas(Recetas));
+        }
+        //Eliminar una receta
+        public void EliminarUnaReceta(Receta receta)
+        {
+            Recetas = LeerRecetas();
+            int index = Recetas.FindIndex(x => x.IDRECETA == receta.IDRECETA);
+            Recetas.RemoveAt(index);
+        }
+
+        //Filtrar por saludable
+        public List<Receta> FiltroSPoraludable()
+        {
+            Recetas = LeerRecetas();
+            return Recetas.Where(x => x.Saludable is true).ToList();
+        }
+        //Filtrar por tipo de receta
+        public List<Receta> FiltroPorTipo(Tipo_Receta tipo)
+        {
+            Recetas = LeerRecetas();
+            return Recetas.Where(x => x.TipoDeReceta == tipo).ToList();
+
+
+        }
+        //Encontrar una receta por nombre
+        public Receta FiltroNombreReceta (string Nombrereceta)
+        {
+            Receta receta;
+            Recetas = LeerRecetas();
+            return receta = Recetas.Find(x => x.Nombre == Nombrereceta);
         }
         private string GetPathDominio()
         {
