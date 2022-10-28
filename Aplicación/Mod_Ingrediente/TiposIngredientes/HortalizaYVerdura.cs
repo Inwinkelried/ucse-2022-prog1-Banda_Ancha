@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace Aplicacion {
     public class HortalizaYVerdura : PorCantidad {
 
-        public HortalizaYVerdura(int codigo, string nombre, int cantidadminima, decimal precio, decimal cantidad)
+        public HortalizaYVerdura(int codigo, string nombre, int cantidadminima, decimal preciounidad, decimal cantidad)
         {
             Codigo = codigo;
             Nombre = nombre;
             CantMinima = cantidadminima;
-            Precio = precio;
+            Precio = preciounidad;
             Cantidad = cantidad;
 
         }

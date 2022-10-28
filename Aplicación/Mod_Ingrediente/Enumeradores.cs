@@ -13,4 +13,10 @@ namespace Aplicacion
         Merienda,
         Cena
     }
+    public enum Tipo_Bebida
+    {
+        Alcoholica,
+        NoAlcoholica,
+        AltaEnAzcure
+    }
 }

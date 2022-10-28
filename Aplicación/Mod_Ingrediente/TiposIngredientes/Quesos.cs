@@ -6,22 +6,17 @@ using System.Threading.Tasks;
 
 namespace Aplicacion
 {
-    public class Carnes : PorPeso
+    internal class Queso : PorPeso
     {
-        public Carnes(int codigo, string nombre, int cantidadminima, decimal precioKilo, decimal cantidad)
+        public Queso(int codigo, string nombre, int cantidadminima, decimal precioKilo, decimal cantidad)
         {
             Codigo = codigo;
             Nombre = nombre;
             CantMinima = cantidadminima;
             Precio = precioKilo;
             Cantidad = cantidad;
-            
+
         }
 
-
-
-
     }
-    
-    
 }

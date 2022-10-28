@@ -8,12 +8,12 @@ namespace Aplicacion
 {
     public class Pescados : PorPeso
     {
-        public Pescados(int codigo, string nombre, int cantidadminima, decimal precio, decimal cantidad)
+        public Pescados(int codigo, string nombre, int cantidadminima, decimal precioKilo, decimal cantidad)
         {
             Codigo = codigo;
             Nombre = nombre;
             CantMinima = cantidadminima;
-            Precio = precio;
+            Precio = precioKilo;
             Cantidad = cantidad;
 
         }

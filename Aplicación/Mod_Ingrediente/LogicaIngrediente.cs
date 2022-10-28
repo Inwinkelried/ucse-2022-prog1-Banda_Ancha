@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Xml.Schema;
 
 namespace Aplicacion
 {
@@ -56,19 +58,19 @@ namespace Aplicacion
             StockIngredientes = LeerIngredientes();
             foreach (Ingrediente ingrediente in receta.Ingredientes)
             {
-                Ingrediente ingrediente1 = StockIngredientes.Find(x => x.Codigo == ingrediente.Codigo); 
-                ingrediente1.Cantidad -= ingrediente.Cantidad;
-                int index = StockIngredientes.FindIndex(x => x.Codigo == ingrediente1.Codigo);
-                StockIngredientes[index] = ingrediente;
+                int index = StockIngredientes.FindIndex(x => x == ingrediente);
+                int indexReceta = receta.CodigosIngredientes.FindIndex(x => x == ingrediente.Codigo);
+                StockIngredientes[index].Cantidad -= receta.CantidadesIngredientes[indexReceta];
             }
             GuardarListaIngredientes(SerializarLista(StockIngredientes));
         }
-        //Paso codigo de ingrediete como parametro y retorna la lista con los codigos
+        //Paso codigo de ingrediete como parametro, devuelve la lista de ingredientes
         public List<Ingrediente> FiltrarIngredientesCodigo(List<int> CodigosIngredientes)
         {
             StockIngredientes = LeerIngredientes();
             return StockIngredientes.FindAll(x => CodigosIngredientes.Contains(x.Codigo));
         }
+        
 
         //Antes de hablititar una comida, reviso que esten los ingredientes necesarios en la despensa
         public bool CheckIngredientesReceta (Receta receta)
@@ -91,60 +93,48 @@ namespace Aplicacion
             return encontrado;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public List<Ingrediente> getIngredientesAlMinimo() {
-        //    foreach (Ingrediente ingrediente in Ingredientes) {
-        //        if (ingrediente.Cantidad <= ingrediente.CantMinima) {
-        //            ingredientesMinimo.Add(ingrediente);
-        //        }
-        //    }
-
-        //    return ingredientesMinimo;
-        //}
-        //debe retornar los ingredientes los cuales necesitan reposición, es decir cantidad <= cantidadMinim     
-
-        public void DescontarIngrediente(int cantidad) { //una vez cargada una comida, se restan las cantidades de ingredientes de cada uno
-            throw new NotImplementedException();
+        public decimal CostoDelIngrediente(Ingrediente ingrediente) 
+        {
+            decimal precio = ingrediente.Precio * (ingrediente.CantMinima - ingrediente.Cantidad);
+            return precio;
         }
 
-        public void AgregarIngrediente(int cantidad) {
-            throw new NotImplementedException();
+        //Getters
+        public List<Carnes> getCarne()
+        {
+            StockIngredientes = LeerIngredientes();
+            return StockIngredientes.Where(x => x is Carnes).Select(x => x as Carnes).ToList();
         }
-
-        public decimal CostoDelIngrediente() {
-            throw new NotImplementedException();
+        public List<Pescados> getPescado()
+        {
+            StockIngredientes = LeerIngredientes();
+            return StockIngredientes.Where(x => x is Pescados).Select(x => x as Pescados).ToList();
         }
-        
+        public List<Panaderia> getPanaderia()
+        {
+            StockIngredientes = LeerIngredientes();
+            return StockIngredientes.Where(x => x is Panaderia).Select(x => x as Panaderia).ToList();
+        }
+        public List<Bebida> getBebidas()
+        {
+            StockIngredientes = LeerIngredientes();
+            return StockIngredientes.Where(x => x is Bebida).Select(x => x as Bebida).ToList();
+        }
+        public List<Fruta> getFrutas()
+        {
+            StockIngredientes = LeerIngredientes();
+            return StockIngredientes.Where(x => x is Fruta).Select(x => x as Fruta).ToList();
+        }
+        public List<HortalizaYVerdura> getVerduras()
+        {
+            StockIngredientes = LeerIngredientes();
+            return StockIngredientes.Where(x => x is HortalizaYVerdura).Select(x => x as HortalizaYVerdura).ToList();
+        }
+        public List<Lacteo> getLacteos()
+        {
+            StockIngredientes = LeerIngredientes();
+            return StockIngredientes.Where(x => x is Lacteo).Select(x => x as Lacteo).ToList();
+        }
 
 
     }

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Aplicacion {
     public class Bebida : PorCantidad {
-        public enum TipoBebida { Alcoholica, AltaEnAzucar, Normal }
-        public TipoBebida Tipo { get; set; }
+        
+        public Tipo_Bebida Tipo { get; set; }
 
-        public Bebida(int codigo, string nombre, int cantidadminima, decimal precio, decimal cantidad, TipoBebida tipobebida)
+        public Bebida(int codigo, string nombre, int cantidadminima, decimal preciounidad, decimal cantidad, Tipo_Bebida tipobebida)
         {
             Codigo = codigo;
             Nombre = nombre;
             CantMinima = cantidadminima;
-            Precio = precio;
+            Precio = preciounidad;
             Cantidad = cantidad;
             Tipo = tipobebida;
         } 

@@ -13,6 +13,7 @@ namespace Aplicacion {
         public string Nombre { get; set; }
         public bool Saludable { get; set; }
         public List<int> CodigosIngredientes { get; set; }
+        public List<int> CantidadesIngredientes { get; set; }
         public Tipo_Receta TipoDeReceta { get; set; }
 
         [JsonIgnore]

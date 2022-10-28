@@ -60,20 +60,12 @@ namespace Aplicacion {
             Recetas.RemoveAt(index);
         }
 
-        //Filtrar por saludable
-        public List<Receta> FiltroSPoraludable()
-        {
-            Recetas = LeerRecetas();
-            return Recetas.Where(x => x.Saludable is true).ToList();
-        }
-        //Filtrar por tipo de receta
-        public List<Receta> FiltroPorTipo(Tipo_Receta tipo)
-        {
-            Recetas = LeerRecetas();
-            return Recetas.Where(x => x.TipoDeReceta == tipo).ToList();
+        
+        //Filtrar por sin harinas
+        
+        
+        //Filtrar por
 
-
-        }
         //Encontrar una receta por nombre
         public Receta FiltroNombreReceta (string Nombrereceta)
         {

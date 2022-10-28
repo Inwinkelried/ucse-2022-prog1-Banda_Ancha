@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace Aplicacion {
     public class Lacteo : Ingrediente 
     {
-        public Lacteo(int codigo, string nombre, int cantidadminima, decimal precio, decimal cantidad)
+        public Lacteo(int codigo, string nombre, int cantidadminima, decimal precioLitro, decimal cantidad)
         {
             Codigo = codigo;
             Nombre = nombre;
             CantMinima = cantidadminima;
-            Precio = precio;
+            Precio = precioLitro;
             Cantidad = cantidad;
 
         }

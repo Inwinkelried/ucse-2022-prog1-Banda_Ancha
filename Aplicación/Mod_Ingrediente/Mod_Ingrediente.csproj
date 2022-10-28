@@ -49,6 +49,7 @@
     <Compile Include="Enumeradores.cs" />
     <Compile Include="LogicaComida.cs" />
     <Compile Include="LogicaReceta.cs" />
+    <Compile Include="LogicaSuper.cs" />
     <Compile Include="Receta.cs" />
     <Compile Include="TiposIngredientes\Bebida.cs" />
     <Compile Include="TiposIngredientes\Carnes.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="PorCantidad.cs" />
     <Compile Include="PorPeso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TiposIngredientes\Quesos.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
