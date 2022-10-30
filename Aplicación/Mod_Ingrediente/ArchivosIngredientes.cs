@@ -25,8 +25,8 @@ namespace Aplicacion
         //Lector de archivos
         public List<Ingrediente> LeerIngredientes()
         {
-            string path_ = GetPathDominio() + path_Ingredientes;
-            using (StreamReader lectorarchivos = new StreamReader(path_))
+            string pathIngredientes = GetPathDominio() + path_Ingredientes;
+            using (StreamReader lectorarchivos = new StreamReader(pathIngredientes)) 
             {
                 string json = lectorarchivos.ReadToEnd();
                 List<Ingrediente> ListaIngredientes = JsonConvert.DeserializeObject<List<Ingrediente>>(json);

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aplicacion;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Forms_Inicio
 {
