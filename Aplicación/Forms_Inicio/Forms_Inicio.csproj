@@ -172,5 +172,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mod_Ingrediente\Mod_Ingrediente.csproj">
+      <Project>{e01382e1-d387-4bcd-9bae-15daf080561c}</Project>
+      <Name>Mod_Ingrediente</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,6 +15,10 @@ namespace Aplicacion {
         public List<Comida> Comidas = new List<Comida>();
         public List<Comida> Comidasfiltradas = new List<Comida>();
 
+        public LogicaComida()
+        {
+            this.Comidas = LeerComidas();
+        }
         protected string SerializarListaComidas(List<Comida> comida)
         {
             string ingredientesJson = JsonConvert.SerializeObject(comida);

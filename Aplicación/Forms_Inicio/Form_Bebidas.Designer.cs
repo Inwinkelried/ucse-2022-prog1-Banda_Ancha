@@ -34,16 +34,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Lector_Cantidad = new System.Windows.Forms.TextBox();
             this.Lector_Nombre = new System.Windows.Forms.TextBox();
-            this.Tipobebida = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.typebeb_grpbx = new System.Windows.Forms.GroupBox();
+            this.altaenazucares = new System.Windows.Forms.RadioButton();
+            this.noalcoholica = new System.Windows.Forms.RadioButton();
+            this.alcoholica = new System.Windows.Forms.RadioButton();
             this.grilla_bebidas = new System.Windows.Forms.DataGridView();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Boton_acpetar_bebidas = new System.Windows.Forms.Button();
             this.TipoBebidaColumna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipobebida.SuspendLayout();
+            this.Boton_acpetar_bebidas = new System.Windows.Forms.Button();
+            this.typebeb_grpbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_bebidas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.Lector_Cantidad.Name = "Lector_Cantidad";
             this.Lector_Cantidad.Size = new System.Drawing.Size(100, 20);
             this.Lector_Cantidad.TabIndex = 4;
+            this.Lector_Cantidad.TextChanged += new System.EventHandler(this.Lector_Cantidad_TextChanged);
             // 
             // Lector_Nombre
             // 
@@ -100,51 +101,51 @@
             this.Lector_Nombre.Size = new System.Drawing.Size(100, 20);
             this.Lector_Nombre.TabIndex = 5;
             // 
-            // Tipobebida
+            // typebeb_grpbx
             // 
-            this.Tipobebida.Controls.Add(this.radioButton3);
-            this.Tipobebida.Controls.Add(this.radioButton2);
-            this.Tipobebida.Controls.Add(this.radioButton1);
-            this.Tipobebida.Location = new System.Drawing.Point(27, 323);
-            this.Tipobebida.Name = "Tipobebida";
-            this.Tipobebida.Size = new System.Drawing.Size(112, 100);
-            this.Tipobebida.TabIndex = 8;
-            this.Tipobebida.TabStop = false;
-            this.Tipobebida.Text = "Tipo de bebida";
+            this.typebeb_grpbx.Controls.Add(this.altaenazucares);
+            this.typebeb_grpbx.Controls.Add(this.noalcoholica);
+            this.typebeb_grpbx.Controls.Add(this.alcoholica);
+            this.typebeb_grpbx.Location = new System.Drawing.Point(27, 323);
+            this.typebeb_grpbx.Name = "typebeb_grpbx";
+            this.typebeb_grpbx.Size = new System.Drawing.Size(112, 100);
+            this.typebeb_grpbx.TabIndex = 8;
+            this.typebeb_grpbx.TabStop = false;
+            this.typebeb_grpbx.Text = "Tipo de bebida";
             // 
-            // radioButton3
+            // altaenazucares
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 77);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(104, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Alta en azucares";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.altaenazucares.AutoSize = true;
+            this.altaenazucares.Location = new System.Drawing.Point(7, 77);
+            this.altaenazucares.Name = "altaenazucares";
+            this.altaenazucares.Size = new System.Drawing.Size(104, 17);
+            this.altaenazucares.TabIndex = 2;
+            this.altaenazucares.TabStop = true;
+            this.altaenazucares.Text = "Alta en azucares";
+            this.altaenazucares.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // noalcoholica
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 54);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(90, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No alcoholica";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.noalcoholica.AutoSize = true;
+            this.noalcoholica.Location = new System.Drawing.Point(7, 54);
+            this.noalcoholica.Name = "noalcoholica";
+            this.noalcoholica.Size = new System.Drawing.Size(90, 17);
+            this.noalcoholica.TabIndex = 1;
+            this.noalcoholica.TabStop = true;
+            this.noalcoholica.Text = "No alcoholica";
+            this.noalcoholica.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // alcoholica
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 30);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(74, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Alcoholica";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.alcoholica.AutoSize = true;
+            this.alcoholica.Location = new System.Drawing.Point(7, 30);
+            this.alcoholica.Name = "alcoholica";
+            this.alcoholica.Size = new System.Drawing.Size(74, 17);
+            this.alcoholica.TabIndex = 0;
+            this.alcoholica.TabStop = true;
+            this.alcoholica.Text = "Alcoholica";
+            this.alcoholica.UseVisualStyleBackColor = true;
+            this.alcoholica.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // grilla_bebidas
             // 
@@ -168,6 +169,11 @@
             this.Nombre.HeaderText = "Nombre Articulo";
             this.Nombre.Name = "Nombre";
             // 
+            // TipoBebidaColumna
+            // 
+            this.TipoBebidaColumna.HeaderText = "Tipo Bebida";
+            this.TipoBebidaColumna.Name = "TipoBebidaColumna";
+            // 
             // Boton_acpetar_bebidas
             // 
             this.Boton_acpetar_bebidas.Location = new System.Drawing.Point(25, 445);
@@ -178,11 +184,6 @@
             this.Boton_acpetar_bebidas.UseVisualStyleBackColor = true;
             this.Boton_acpetar_bebidas.Click += new System.EventHandler(this.Boton_acpetar_bebidas_Click);
             // 
-            // TipoBebidaColumna
-            // 
-            this.TipoBebidaColumna.HeaderText = "Tipo Bebida";
-            this.TipoBebidaColumna.Name = "TipoBebidaColumna";
-            // 
             // Form_Bebidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,7 +191,7 @@
             this.ClientSize = new System.Drawing.Size(493, 535);
             this.Controls.Add(this.Boton_acpetar_bebidas);
             this.Controls.Add(this.grilla_bebidas);
-            this.Controls.Add(this.Tipobebida);
+            this.Controls.Add(this.typebeb_grpbx);
             this.Controls.Add(this.Lector_Nombre);
             this.Controls.Add(this.Lector_Cantidad);
             this.Controls.Add(this.label3);
@@ -199,8 +200,8 @@
             this.Controls.Add(this.btn_volver_Bebidas);
             this.Name = "Form_Bebidas";
             this.Text = "Form_Bebidas";
-            this.Tipobebida.ResumeLayout(false);
-            this.Tipobebida.PerformLayout();
+            this.typebeb_grpbx.ResumeLayout(false);
+            this.typebeb_grpbx.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_bebidas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,10 +216,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Lector_Cantidad;
         private System.Windows.Forms.TextBox Lector_Nombre;
-        private System.Windows.Forms.GroupBox Tipobebida;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox typebeb_grpbx;
+        private System.Windows.Forms.RadioButton altaenazucares;
+        private System.Windows.Forms.RadioButton noalcoholica;
+        private System.Windows.Forms.RadioButton alcoholica;
         private System.Windows.Forms.DataGridView grilla_bebidas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

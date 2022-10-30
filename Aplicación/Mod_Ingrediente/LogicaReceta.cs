@@ -15,6 +15,11 @@ namespace Aplicacion {
         public List<Receta> Recetas = new List<Receta>();
 
         //Getter de la lista de recetas completa
+
+        public LogicaReceta()
+        {
+            this.Recetas = LeerRecetas();
+        }
         public List<Receta> GetRecetas() {
             return LeerRecetas().ToList<Receta>();
         }

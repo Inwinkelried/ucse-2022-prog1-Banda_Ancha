@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aplicacion;
 
 namespace Forms_Inicio
 {
@@ -48,13 +49,46 @@ namespace Forms_Inicio
 
         private void Boton_acpetar_bebidas_Click(object sender, EventArgs e)
         {
-            int cantidad = int.Parse(Lector_Cantidad.Text);
-            if (Lector_Nombre.Text != "") //&& condicion de que la casilla de tipo este marcada)
+            LogicaIngrediente logica = new LogicaIngrediente();
+            decimal cantidad = decimal.Parse(Lector_Cantidad.Text);
+            
+            if ((Lector_Cantidad.Text != null && Lector_Cantidad.Text != string.Empty) && (Lector_Nombre.Text != null && Lector_Nombre.Text != string.Empty) && (alcoholica.Checked || noalcoholica.Checked || altaenazucares.Checked))
             {
-                //Revisar si la bebida no esta cargada, si no lo esta salta un messagebox que preguntara si esta seguro que desea cargar la bebida
-                // Si la bebida esta solo se suma la cantidad.
-                //Se deben cargar los datos a la grilla y a el txt que contendra la informacion.
+                if (logica.RevisarExistencia(Lector_Nombre.Text))
+                {
+                    int index = logica.buscarIngrediente(Lector_Nombre.Text);
+                    logica.StockIngredientes[index].Cantidad += cantidad;
+                }
+                else
+                {
+                    Tipo_Bebida tipo_Bebida = new Tipo_Bebida();
+                    if (alcoholica.Checked)
+                    {
+                        tipo_Bebida = Tipo_Bebida.Alcoholica;
+                    }
+                    else if (altaenazucares.Checked)
+                    {
+                        tipo_Bebida = Tipo_Bebida.AltaEnAzcure;
+                    }
+                    else
+                    {
+                        tipo_Bebida = Tipo_Bebida.NoAlcoholica;
+                    }
+                    int Codigo = logica.StockIngredientes.Count();
+                    Bebida bebida = new Bebida(Codigo, Lector_Nombre.Text, 1, 100, cantidad, tipo_Bebida);
+                    logica.agregarIngredientes(bebida);                    
+                }
+
             }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error");
+            }
+
+        }
+
+        private void Lector_Cantidad_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

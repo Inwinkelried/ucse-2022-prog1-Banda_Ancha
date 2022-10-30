@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.btn_Volver_Verduras = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Verduras = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Verduras)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Volver_Verduras
@@ -49,13 +51,16 @@
             this.btn_Volver_Verduras.UseVisualStyleBackColor = true;
             this.btn_Volver_Verduras.Click += new System.EventHandler(this.btn_Volver_Verduras_Click);
             // 
-            // dataGridView1
+            // dataGridView_Verduras
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(318, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(269, 567);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView_Verduras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Verduras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cantidad,
+            this.Nombre});
+            this.dataGridView_Verduras.Location = new System.Drawing.Point(278, 12);
+            this.dataGridView_Verduras.Name = "dataGridView_Verduras";
+            this.dataGridView_Verduras.Size = new System.Drawing.Size(242, 567);
+            this.dataGridView_Verduras.TabIndex = 1;
             // 
             // button1
             // 
@@ -107,6 +112,16 @@
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 7;
             // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad en stock";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
             // Form_Verduras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,11 +133,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_Verduras);
             this.Controls.Add(this.btn_Volver_Verduras);
             this.Name = "Form_Verduras";
             this.Text = "Form_Verduras";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Verduras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,12 +146,14 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Volver_Verduras;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Verduras;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

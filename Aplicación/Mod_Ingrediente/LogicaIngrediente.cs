@@ -18,6 +18,10 @@ namespace Aplicacion
 
         //Metodo para agregar un ingrediente a una lista (Hay que revisar, no se si es factible)
         
+        public LogicaIngrediente()
+        {
+            this.StockIngredientes = LeerIngredientes();
+        }
         public List<Ingrediente> getAllIngredientes()
         {
             return LeerIngredientes().ToList<Ingrediente>();
@@ -45,6 +49,13 @@ namespace Aplicacion
             StockIngredientes[IndexDelete] = ingrediente;
             GuardarListaIngredientes(SerializarLista(StockIngredientes));
         }
+        public int buscarIngrediente (string Nombre)
+        {
+            int Index = 0;
+            StockIngredientes = LeerIngredientes();
+            return Index = StockIngredientes.FindIndex(x => x.Nombre == Nombre);
+            
+        }
         //Preguntar al profe si esta lista va acá o en modsuper
         public List<Ingrediente> getListaSuper()
         {         
@@ -69,6 +80,23 @@ namespace Aplicacion
         {
             StockIngredientes = LeerIngredientes();
             return StockIngredientes.FindAll(x => CodigosIngredientes.Contains(x.Codigo));
+        }
+
+        public bool RevisarExistencia(string Nombre)
+        {
+            StockIngredientes = LeerIngredientes();
+            bool band = false;
+            foreach (Ingrediente ingrediente in StockIngredientes)
+            {   
+                
+                if (ingrediente.Nombre == Nombre)
+                {
+                    band = true;
+                    break;
+                }
+            }
+            return band;
+
         }
         
 

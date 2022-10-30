@@ -32,12 +32,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtbx_nomprod_pescado = new System.Windows.Forms.TextBox();
+            this.txtbx_Cantidad_Pescado = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView_Pescado = new System.Windows.Forms.DataGridView();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pescado)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_volver_Pescado
@@ -71,34 +73,35 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 285);
+            this.label3.Location = new System.Drawing.Point(20, 246);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Cantidad";
             // 
-            // textBox1
+            // txtbx_nomprod_pescado
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 227);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtbx_nomprod_pescado.Location = new System.Drawing.Point(23, 208);
+            this.txtbx_nomprod_pescado.Name = "txtbx_nomprod_pescado";
+            this.txtbx_nomprod_pescado.Size = new System.Drawing.Size(100, 20);
+            this.txtbx_nomprod_pescado.TabIndex = 4;
             // 
-            // textBox2
+            // txtbx_Cantidad_Pescado
             // 
-            this.textBox2.Location = new System.Drawing.Point(23, 326);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtbx_Cantidad_Pescado.Location = new System.Drawing.Point(23, 281);
+            this.txtbx_Cantidad_Pescado.Name = "txtbx_Cantidad_Pescado";
+            this.txtbx_Cantidad_Pescado.Size = new System.Drawing.Size(100, 20);
+            this.txtbx_Cantidad_Pescado.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(130, 332);
+            this.label4.Location = new System.Drawing.Point(129, 284);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(22, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "KG";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
             // 
@@ -109,31 +112,44 @@
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridView_Pescado
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(263, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(260, 519);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridView_Pescado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Pescado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cantidad,
+            this.Nombre});
+            this.dataGridView_Pescado.Location = new System.Drawing.Point(250, 22);
+            this.dataGridView_Pescado.Name = "dataGridView_Pescado";
+            this.dataGridView_Pescado.Size = new System.Drawing.Size(243, 519);
+            this.dataGridView_Pescado.TabIndex = 8;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad en stock";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
             // 
             // Form_Pescado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 553);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_Pescado);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbx_Cantidad_Pescado);
+            this.Controls.Add(this.txtbx_nomprod_pescado);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_volver_Pescado);
             this.Name = "Form_Pescado";
             this.Text = "Form_Pescado";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pescado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,10 +161,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtbx_nomprod_pescado;
+        private System.Windows.Forms.TextBox txtbx_Cantidad_Pescado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Pescado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

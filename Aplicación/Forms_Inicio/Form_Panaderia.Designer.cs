@@ -36,6 +36,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_Cargar_Panaderia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +108,21 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "KG";
             // 
+            // btn_Cargar_Panaderia
+            // 
+            this.btn_Cargar_Panaderia.Location = new System.Drawing.Point(16, 529);
+            this.btn_Cargar_Panaderia.Name = "btn_Cargar_Panaderia";
+            this.btn_Cargar_Panaderia.Size = new System.Drawing.Size(130, 45);
+            this.btn_Cargar_Panaderia.TabIndex = 8;
+            this.btn_Cargar_Panaderia.Text = "Cargar ";
+            this.btn_Cargar_Panaderia.UseVisualStyleBackColor = true;
+            // 
             // Form_Panaderia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 617);
+            this.Controls.Add(this.btn_Cargar_Panaderia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -138,5 +149,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_Cargar_Panaderia;
     }
 }
