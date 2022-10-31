@@ -16,5 +16,11 @@ namespace Forms_Inicio
         {
             InitializeComponent();
         }
+
+        private void btn_Volver_comidas_Click(object sender, EventArgs e) {
+            Form_Menú menu = new Form_Menú();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

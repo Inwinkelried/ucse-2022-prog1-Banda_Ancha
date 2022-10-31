@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btn_Volver_recetas = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btn_Volver_recetas
+            // 
+            this.btn_Volver_recetas.Location = new System.Drawing.Point(12, 12);
+            this.btn_Volver_recetas.Name = "btn_Volver_recetas";
+            this.btn_Volver_recetas.Size = new System.Drawing.Size(131, 44);
+            this.btn_Volver_recetas.TabIndex = 0;
+            this.btn_Volver_recetas.Text = "Volver";
+            this.btn_Volver_recetas.UseVisualStyleBackColor = true;
+            this.btn_Volver_recetas.Click += new System.EventHandler(this.btn_Volver_recetas_Click);
+            // 
+            // Form_Recetas
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.btn_Volver_recetas);
+            this.Name = "Form_Recetas";
+            this.Text = "Form_Recetas";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btn_Volver_recetas;
     }
 }

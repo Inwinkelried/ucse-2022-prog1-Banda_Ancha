@@ -23,5 +23,9 @@ namespace Forms_Inicio
             formMenu.Show();
             this.Hide();
         }
+
+        private void Form_Inicio_Load(object sender, EventArgs e) {
+
+        }
     }
 }
