@@ -22,24 +22,99 @@ namespace Aplicacion
         {
             this.StockIngredientes = LeerIngredientes();
         }
-        public List<Ingrediente> getAllIngredientes()
+        public List<Ingrediente> LeerIngredientes()
         {
-            return LeerIngredientes().ToList<Ingrediente>();
+            return getAllIngredientes(LeerCarnes(), LeerVerduras(), LeerFrutas(), LeerBebidas(), LeerPanaderia(), LeerPescado(), LeerLacteos(), LeerQuesos());
         }
+
+        
+      /*  private void guardarCarnes() 
+        {
+            List<Carnes> carnes = getCarne(StockIngredientes);
+            GuardarLista(SerializarLista(carnes), path_Carnes) ;
+        }
+        private void guardarQuesos()
+        {
+            List<Queso> queso = getQuesos(StockIngredientes);
+            GuardarLista(SerializarLista(queso), path_Quesos);
+        }
+        private void guardarVerduras()
+        {
+            List<HortalizaYVerdura> verduras = getVerduras (StockIngredientes);
+            GuardarLista(SerializarLista(verduras), path_Verduras);
+        }
+        private void guardarPescados()
+        {
+            List<Pescados> pescado = getPescado (StockIngredientes);
+            GuardarLista(SerializarLista(pescado), path_Pescados);
+        }
+        private void guardarPanaderia()
+        {
+            List<Panaderia> panaderia = getPanaderia (StockIngredientes);
+            GuardarLista(SerializarLista(panaderia), path_Panaderia);
+        }
+        private void guardarFrutas()
+        {
+            List<Fruta> frutas = getFrutas (StockIngredientes);
+            GuardarLista(SerializarLista(frutas), path_Frutas);
+        }
+        private void guardarBebidas()
+        {
+            List<Bebida > bebidas = getBebidas (StockIngredientes);
+            GuardarLista(SerializarLista(bebidas), path_Bebidas);
+        }
+        private void guardarLacteos()
+        {
+            List<Lacteo> lacteo = getLacteos (StockIngredientes);
+            GuardarLista(SerializarLista(lacteo), path_Lacteos);
+        }*/
+      //Guarda todos los ingredientes en sus respectivas listas
+        private void GuardarListaIngredientes()
+        {
+            List<Lacteo> lacteo = getLacteos(StockIngredientes);
+            GuardarLista(SerializarLista(lacteo), path_Lacteos);
+            List<Bebida> bebidas = getBebidas(StockIngredientes);
+            GuardarLista(SerializarLista(bebidas), path_Bebidas);
+            List<Fruta> frutas = getFrutas(StockIngredientes);
+            GuardarLista(SerializarLista(frutas), path_Frutas);
+            List<Panaderia> panaderia = getPanaderia(StockIngredientes);
+            GuardarLista(SerializarLista(panaderia), path_Panaderia);
+            List<Pescados> pescado = getPescado(StockIngredientes);
+            GuardarLista(SerializarLista(pescado), path_Pescados);
+            List<HortalizaYVerdura> verduras = getVerduras(StockIngredientes);
+            GuardarLista(SerializarLista(verduras), path_Verduras);
+            List<Queso> queso = getQuesos(StockIngredientes);
+            GuardarLista(SerializarLista(queso), path_Quesos);
+            List<Carnes> carnes = getCarne(StockIngredientes);
+            GuardarLista(SerializarLista(carnes), path_Carnes);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         //Eliminar un ingrediente de la lista
         public void eliminarIngrediente(Ingrediente ingrediente)
         {
             StockIngredientes = LeerIngredientes();
             int IndexDelete = StockIngredientes.FindIndex(x => x.Codigo == ingrediente.Codigo);
-            StockIngredientes.RemoveAt(IndexDelete);            
-            GuardarListaIngredientes(SerializarLista(StockIngredientes));
+            StockIngredientes.RemoveAt(IndexDelete);
+            GuardarListaIngredientes();
         }
         //Agregar un ingrediente nuevo a la lista
         public void agregarIngredientes(Ingrediente ingrediente)
         {
             StockIngredientes = LeerIngredientes();
             StockIngredientes.Add(ingrediente);
-            GuardarListaIngredientes(SerializarLista(StockIngredientes));
+            GuardarListaIngredientes();
         }
         //Metodo para actualizar algun ingrediente
         public void ModificarIngrediente(Ingrediente ingrediente)
@@ -47,7 +122,7 @@ namespace Aplicacion
             StockIngredientes = LeerIngredientes();
             int IndexDelete = StockIngredientes.FindIndex(x => x.Codigo == ingrediente.Codigo);
             StockIngredientes[IndexDelete] = ingrediente;
-            GuardarListaIngredientes(SerializarLista(StockIngredientes));
+            GuardarListaIngredientes();
         }
         public int buscarIngrediente (string Nombre)
         {
@@ -73,7 +148,7 @@ namespace Aplicacion
                 int indexReceta = receta.CodigosIngredientes.FindIndex(x => x == ingrediente.Codigo);
                 StockIngredientes[index].Cantidad -= receta.CantidadesIngredientes[indexReceta];
             }
-            GuardarListaIngredientes(SerializarLista(StockIngredientes));
+            GuardarListaIngredientes();
         }
         //Paso codigo de ingrediete como parametro, devuelve la lista de ingredientes
         public List<Ingrediente> FiltrarIngredientesCodigo(List<int> CodigosIngredientes)
@@ -87,8 +162,7 @@ namespace Aplicacion
             StockIngredientes = LeerIngredientes();
             bool band = false;
             foreach (Ingrediente ingrediente in StockIngredientes)
-            {   
-                
+            {                  
                 if (ingrediente.Nombre == Nombre)
                 {
                     band = true;
@@ -96,7 +170,6 @@ namespace Aplicacion
                 }
             }
             return band;
-
         }
         
 
@@ -126,42 +199,49 @@ namespace Aplicacion
             decimal precio = ingrediente.Precio * (ingrediente.CantMinima - ingrediente.Cantidad);
             return precio;
         }
-
         //Getters
-        public List<Carnes> getCarne()
-        {
-            StockIngredientes = LeerIngredientes();
-            return StockIngredientes.Where(x => x is Carnes).Select(x => x as Carnes).ToList();
+        public List<Carnes> getCarne(List<Ingrediente> ingredientes)
+        {         
+            return ingredientes.Where(x => x is Carnes).Select(x => x as Carnes).ToList();
         }
-        public List<Pescados> getPescado()
-        {
-            StockIngredientes = LeerIngredientes();
-            return StockIngredientes.Where(x => x is Pescados).Select(x => x as Pescados).ToList();
+        public List<Pescados> getPescado(List<Ingrediente> ingredientes)
+        {            
+            return ingredientes.Where(x => x is Pescados).Select(x => x as Pescados).ToList();
         }
-        public List<Panaderia> getPanaderia()
-        {
-            StockIngredientes = LeerIngredientes();
-            return StockIngredientes.Where(x => x is Panaderia).Select(x => x as Panaderia).ToList();
+        public List<Panaderia> getPanaderia(List<Ingrediente> ingredientes)
+        {           
+            return ingredientes.Where(x => x is Panaderia).Select(x => x as Panaderia).ToList();
         }
-        public List<Bebida> getBebidas()
-        {
-            StockIngredientes = LeerIngredientes();
-            return StockIngredientes.Where(x => x is Bebida).Select(x => x as Bebida).ToList();
+        public List<Bebida> getBebidas(List<Ingrediente> ingredientes)
+        {           
+            return ingredientes.Where(x => x is Bebida).Select(x => x as Bebida).ToList();
         }
-        public List<Fruta> getFrutas()
-        {
-            StockIngredientes = LeerIngredientes();
-            return StockIngredientes.Where(x => x is Fruta).Select(x => x as Fruta).ToList();
+        public List<Fruta> getFrutas(List<Ingrediente> ingredientes)
+        {            
+            return ingredientes.Where(x => x is Fruta).Select(x => x as Fruta).ToList();
         }
-        public List<HortalizaYVerdura> getVerduras()
-        {
-            StockIngredientes = LeerIngredientes();
-            return StockIngredientes.Where(x => x is HortalizaYVerdura).Select(x => x as HortalizaYVerdura).ToList();
+        public List<HortalizaYVerdura> getVerduras(List<Ingrediente> ingredientes)
+        {            
+            return ingredientes.Where(x => x is HortalizaYVerdura).Select(x => x as HortalizaYVerdura).ToList();
         }
-        public List<Lacteo> getLacteos()
+        public List<Lacteo> getLacteos(List<Ingrediente> ingredientes)
+        {            
+            return ingredientes.Where(x => x is Lacteo).Select(x => x as Lacteo).ToList();
+        }
+        public List<Queso> getQuesos (List<Ingrediente> ingredientes)
         {
-            StockIngredientes = LeerIngredientes();
-            return StockIngredientes.Where(x => x is Lacteo).Select(x => x as Lacteo).ToList();
+            return ingredientes.Where(x => x is Queso).Select(x => x as Queso).ToList();
+        }
+        private List<Ingrediente> getAllIngredientes( List<Ingrediente> Verduras, List<Ingrediente> Frutas, List<Ingrediente> Bebida, List<Ingrediente> Panaderia, List<Ingrediente> Pescados, List<Ingrediente> Lacteos, List<Ingrediente> Queso, List<Ingrediente> Carnes)
+        {
+            Carnes.AddRange(Verduras);
+            Carnes.AddRange(Frutas);
+            Carnes.AddRange(Bebida);
+            Carnes.AddRange(Panaderia);
+            Carnes.AddRange(Pescados);
+            Carnes.AddRange(Lacteos);
+            Carnes.AddRange(Queso);
+            return Carnes;
         }
 
 

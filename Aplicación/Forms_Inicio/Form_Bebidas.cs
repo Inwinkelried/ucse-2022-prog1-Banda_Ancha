@@ -20,6 +20,17 @@ namespace Forms_Inicio
             InitializeComponent();
         }
 
+        private void Principal_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+
+        //
+        private void ActualizarGrilla()
+        {   
+           
+        }
         private void btn_volver_Bebidas_Click(object sender, EventArgs e)
         {
             Form_Despensa despensa = new Form_Despensa();
@@ -46,16 +57,18 @@ namespace Forms_Inicio
 
         private void grilla_bebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            LogicaIngrediente logica = new LogicaIngrediente();
+            
         }
 
         private void Boton_acpetar_bebidas_Click(object sender, EventArgs e)
         {
             LogicaIngrediente logica = new LogicaIngrediente();
-            decimal cantidad = decimal.Parse(Lector_Cantidad.Text);
+            
             
             if ((Lector_Cantidad.Text != null && Lector_Cantidad.Text != string.Empty) && (Lector_Nombre.Text != null && Lector_Nombre.Text != string.Empty) && (alcoholica.Checked || noalcoholica.Checked || altaenazucares.Checked))
             {
+                decimal cantidad = decimal.Parse(Lector_Cantidad.Text);
                 if (logica.RevisarExistencia(Lector_Nombre.Text))
                 {
                     int index = logica.buscarIngrediente(Lector_Nombre.Text);

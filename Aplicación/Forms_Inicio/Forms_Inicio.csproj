@@ -129,9 +129,6 @@
     <EmbeddedResource Include="Form_Carne.resx">
       <DependentUpon>Form_Carne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Comidas.resx">
-      <DependentUpon>Form_Comidas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_Despensa.resx">
       <DependentUpon>Form_Despensa.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Pescado.resx">
       <DependentUpon>Form_Pescado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Recetas.resx">
-      <DependentUpon>Form_Recetas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Super.resx">
       <DependentUpon>Form_Super.cs</DependentUpon>

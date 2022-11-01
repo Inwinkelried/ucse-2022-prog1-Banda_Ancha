@@ -21,11 +21,5 @@ namespace Forms_Inicio
         {
 
         }
-
-        private void btn_Volver_Super_Click(object sender, EventArgs e) {
-            Form_Menú menu = new Form_Menú();
-            menu.Show();
-            this.Hide();
-        }
     }
 }

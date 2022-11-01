@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Volver_Super = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.addToCarrito = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_Volver_Super
+            // button1
             // 
-            this.btn_Volver_Super.Location = new System.Drawing.Point(12, 29);
-            this.btn_Volver_Super.Name = "btn_Volver_Super";
-            this.btn_Volver_Super.Size = new System.Drawing.Size(115, 43);
-            this.btn_Volver_Super.TabIndex = 0;
-            this.btn_Volver_Super.Text = "Volver";
-            this.btn_Volver_Super.UseVisualStyleBackColor = true;
-            this.btn_Volver_Super.Click += new System.EventHandler(this.btn_Volver_Super_Click);
+            this.button1.Location = new System.Drawing.Point(12, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 43);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -79,7 +78,7 @@
             this.Controls.Add(this.addToCarrito);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btn_Volver_Super);
+            this.Controls.Add(this.button1);
             this.Name = "Form_Super";
             this.Text = "Form_Super";
             this.Load += new System.EventHandler(this.Form_Super_Load);
@@ -90,7 +89,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_Volver_Super;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button addToCarrito;

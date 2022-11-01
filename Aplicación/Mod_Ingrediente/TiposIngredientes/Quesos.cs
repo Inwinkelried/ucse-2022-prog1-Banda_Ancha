@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aplicacion
 {
-    internal class Queso : PorPeso
+    public class Queso : PorPeso
     {
         public Queso(int codigo, string nombre, int cantidadminima, decimal precioKilo, decimal cantidad)
         {
