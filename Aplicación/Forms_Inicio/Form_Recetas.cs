@@ -16,5 +16,17 @@ namespace Forms_Inicio
         {
             InitializeComponent();
         }
+
+        private void btn_Volver_Recetas_Click(object sender, EventArgs e) {
+            Form_Menú menu = new Form_Menú();
+            menu.Show();
+            this.Hide();
+        }
+
+        private void btn_Volver_Recetas_Click_1(object sender, EventArgs e) {
+            Form_Menú menu = new Form_Menú();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

@@ -87,7 +87,7 @@
             this.Controls.Add(this.btn_Recetas);
             this.Controls.Add(this.btn_Despensa);
             this.Name = "Form_Menú";
-            this.Text = "SuperCook2";
+            this.Text = "Menú Principal";
             this.Load += new System.EventHandler(this.Form_Menú_Load);
             this.ResumeLayout(false);
 

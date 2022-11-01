@@ -70,7 +70,6 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.ImageLocation = "118;63";
             this.pictureBox3.Location = new System.Drawing.Point(555, 108);
             this.pictureBox3.Name = "pictureBox3";
@@ -98,7 +97,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Comenzar);
             this.Name = "Form_Inicio";
-            this.Text = "Form1";
+            this.Text = "SuperCook2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
