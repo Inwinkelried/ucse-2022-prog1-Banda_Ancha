@@ -28,5 +28,11 @@ namespace Forms_Inicio
             menu.Show();
             this.Hide();
         }
+
+        private void btn_NuevaReceta_Click(object sender, EventArgs e) {
+            NuevaReceta nuevaReceta = new NuevaReceta();
+            nuevaReceta.Show();
+            this.Hide();
+        }
     }
 }

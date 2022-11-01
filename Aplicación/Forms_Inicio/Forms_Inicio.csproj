@@ -121,6 +121,12 @@
     <Compile Include="Form_Verduras.Designer.cs">
       <DependentUpon>Form_Verduras.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevaReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaReceta.Designer.cs">
+      <DependentUpon>NuevaReceta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Bebidas.resx">
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Verduras.resx">
       <DependentUpon>Form_Verduras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevaReceta.resx">
+      <DependentUpon>NuevaReceta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
