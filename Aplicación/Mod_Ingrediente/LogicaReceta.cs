@@ -24,34 +24,38 @@ namespace Aplicacion {
             return LeerRecetas().ToList<Receta>();
         }
         
-        //Serializar recetas
+        //Escritura de recetas (SERIALIZACION)
         protected string SerializarListaRecetas(List<Receta> receta)
         {
             string ingredientesJson = JsonConvert.SerializeObject(receta);
             return ingredientesJson;
         }
-        //Lectura de recetas
-        public List<Receta> LeerRecetas()
-        {
+        
+        //Lectura de recetas (DESERIALIZACION)
+        public List<Receta> LeerRecetas() {
             string path_ = GetPathDominio() + path_Recetas;
-            using (StreamReader lectorarchivos = new StreamReader(path_))
-            {
-                string json = lectorarchivos.ReadToEnd();
-                List<Receta> ListaRecetas = JsonConvert.DeserializeObject<List<Receta>>(json);
-                return ListaRecetas;
+
+            if (File.Exists(path_Recetas)) {
+                using (StreamReader lectorarchivos = new StreamReader(path_)) {
+                    string json = lectorarchivos.ReadToEnd();
+                    List<Receta> ListaRecetas = JsonConvert.DeserializeObject<List<Receta>>(json);
+                    return ListaRecetas;
+                }
             }
+            return new List<Receta>();
         }
+       
         //Metodo para guardar la lista
-        public void GuardarListaRecetas(string listaSerializada)
+        public void GuardarListaRecetas(string listaRecetas)
         {
             string pathRecetas = GetPathDominio() + path_Recetas;
             using (StreamWriter wrtr = new StreamWriter(pathRecetas, false))
             {
-                wrtr.Write(listaSerializada);
+                wrtr.Write(listaRecetas);
             }
         }
-        //Guardar una receta
-        public void CargarUnaReceta(Receta receta)
+        //Anadir una receta
+        public void AnadirUnaReceta(Receta receta)
         {
             Recetas = LeerRecetas();
             Recetas.Add(receta);
