@@ -118,11 +118,11 @@
             this.Codigo,
             this.Editar,
             this.Eliminar});
-            this.grilla_Carnes.Location = new System.Drawing.Point(198, 12);
+            this.grilla_Carnes.Location = new System.Drawing.Point(199, 12);
             this.grilla_Carnes.Name = "grilla_Carnes";
             this.grilla_Carnes.Size = new System.Drawing.Size(542, 465);
             this.grilla_Carnes.TabIndex = 7;
-            this.grilla_Carnes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_Carnes_CellContentClick);
+            
             // 
             // Nombre
             // 

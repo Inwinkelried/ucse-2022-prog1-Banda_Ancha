@@ -11,28 +11,39 @@ using Aplicacion;
 
 namespace Forms_Inicio
 {
-    public partial class Form_Pescado : Form
+    public partial class Form_Quesos : Form
     {
-        public Form_Pescado()
+        public Form_Quesos()
         {
             InitializeComponent();
         }
 
-        private void btn_volver_Pescado_Click(object sender, EventArgs e)
+        private void Form_Quesos_Load(object sender, EventArgs e)
         {
-            Form_Despensa despensa = new Form_Despensa();
-            despensa.Show();
-            this.Hide();
+            grilla_Quesos.AutoGenerateColumns = false;
+            ActualizarGrilla();
         }
-
         private void ActualizarGrilla()
         {
             LogicaIngrediente logicaIngrediente = new LogicaIngrediente();
-            grilla_Pescado.DataSource = null;
-            grilla_Pescado.DataSource = logicaIngrediente.LeerPescado();
+            grilla_Quesos.DataSource = null;
+            grilla_Quesos.DataSource = logicaIngrediente.LeerQuesos();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void grilla_Quesos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Quesos, "Eliminar");
+            if (indiceEliminar == e.ColumnIndex)
+            {
+                LogicaIngrediente logica = new LogicaIngrediente();
+                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_Quesos, "Codigo");
+                string codigoProducto = grilla_Quesos.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
+                logica.eliminarIngrediente(codigoProducto);
+                ActualizarGrilla();
+            }
+        }
+
+        private void btn_Aceptar_Click(object sender, EventArgs e)
         {
             LogicaIngrediente logica = new LogicaIngrediente();
             if ((txt_CantMin.Text != null && txt_CantMin.Text != string.Empty) && (txt_Cantidad.Text != null && txt_Cantidad.Text != string.Empty) && (txt_PrecioxKG.Text != null && (txt_PrecioxKG.Text != string.Empty) && (txt_Nombre.Text != null && txt_Nombre.Text != string.Empty)))
@@ -47,10 +58,10 @@ namespace Forms_Inicio
                 else
                 {
                     int Codigo = logica.StockIngredientes.Count() + 1;
-                    Pescados pescados = new Pescados(Codigo, txt_Nombre.Text, cantidadminima, PrecioXKg, cantidad);
-                    logica.agregarIngredientes(pescados);
+                    Queso queso = new Queso(Codigo, txt_Nombre.Text, cantidadminima, PrecioXKg, cantidad);
+                    logica.agregarIngredientes(queso);
                 }
-                grilla_Pescado.AutoGenerateColumns = false;
+                grilla_Quesos.AutoGenerateColumns = false;
                 ActualizarGrilla();
             }
             else
@@ -59,23 +70,11 @@ namespace Forms_Inicio
             }
         }
 
-        private void grilla_Pescado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btn_Volver_Click(object sender, EventArgs e)
         {
-            int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Pescado, "Eliminar");
-            if (indiceEliminar == e.ColumnIndex)
-            {
-                LogicaIngrediente logica = new LogicaIngrediente();
-                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_Pescado, "Codigo");
-                string codigoProducto = grilla_Pescado.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
-                logica.eliminarIngrediente(codigoProducto);
-                ActualizarGrilla();
-            }
-        }
-
-        private void Form_Pescado_Load(object sender, EventArgs e)
-        {
-            grilla_Pescado.AutoGenerateColumns = false;
-            ActualizarGrilla();
+            Form_Despensa despensa = new Form_Despensa();
+            despensa.Show();
+            this.Hide();
         }
     }
 }

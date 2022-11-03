@@ -73,6 +73,12 @@
     <Compile Include="Form_Comidas.Designer.cs">
       <DependentUpon>Form_Comidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Lacteos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Lacteos.Designer.cs">
+      <DependentUpon>Form_Lacteos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Panaderia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     </Compile>
     <Compile Include="Form_Pescado.Designer.cs">
       <DependentUpon>Form_Pescado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Quesos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Quesos.Designer.cs">
+      <DependentUpon>Form_Quesos.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Recetas.cs">
       <SubType>Form</SubType>
@@ -148,6 +160,9 @@
     <EmbeddedResource Include="Form_Inicio.resx">
       <DependentUpon>Form_Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Lacteos.resx">
+      <DependentUpon>Form_Lacteos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Menú.resx">
       <DependentUpon>Form_Menú.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Pescado.resx">
       <DependentUpon>Form_Pescado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Quesos.resx">
+      <DependentUpon>Form_Quesos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Recetas.resx">
       <DependentUpon>Form_Recetas.cs</DependentUpon>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aplicacion;
 
 namespace Forms_Inicio
 {
@@ -16,7 +17,12 @@ namespace Forms_Inicio
         {
             InitializeComponent();
         }
-
+        private void ActualizarGrilla()
+        {
+            LogicaReceta logicaIngrediente = new LogicaReceta();
+            grillla_IngredientesRecetas.DataSource = null;
+            grillla_IngredientesRecetas.DataSource = logicaIngrediente.LeerRecetas();
+        }
         private void btn_Volver_Recetas_Click(object sender, EventArgs e) {
             Form_Menú menu = new Form_Menú();
             menu.Show();
@@ -33,6 +39,11 @@ namespace Forms_Inicio
             NuevaReceta nuevaReceta = new NuevaReceta();
             nuevaReceta.Show();
             this.Hide();
+        }
+
+        private void grillla_IngredientesRecetas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -46,8 +46,8 @@ namespace Forms_Inicio
                 else
                 {
                     int Codigo = logica.StockIngredientes.Count() + 1;
-                    Carnes bebida = new Carnes(Codigo, txt_Nombre.Text, cantidadminima, PrecioXKg, cantidad);
-                    logica.agregarIngredientes(bebida);
+                    Carnes carne = new Carnes(Codigo, txt_Nombre.Text, cantidadminima, PrecioXKg, cantidad);
+                    logica.agregarIngredientes(carne);
 
 
                 }
@@ -66,7 +66,7 @@ namespace Forms_Inicio
             ActualizarGrilla();
         }
 
-        private void grilla_Carnes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grilla_Carnes_CellClick(object sender, DataGridViewCellEventArgs e)
         {           
              int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Eliminar");
              if (indiceEliminar == e.ColumnIndex)

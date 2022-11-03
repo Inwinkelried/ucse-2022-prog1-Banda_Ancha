@@ -25,17 +25,19 @@ namespace Aplicacion {
 
 
         //Lectores de archivos      
-        public List<Ingrediente> LeerCarnes() {
-            string pathIngredientes = GetPathDominio() + path_Carnes;
+        public List<Ingrediente> LeerCarnes() 
+        {
+            string pathCarne = GetPathDominio() + path_Carnes;
             List<Carnes> ListaCarne = new List<Carnes>();
-            if (VerificarArchivo(pathIngredientes)) {
-                using (StreamReader lectorarchivos = new StreamReader(pathIngredientes)) {
-                    string json = lectorarchivos.ReadToEnd();
-                    ListaCarne = JsonConvert.DeserializeObject<List<Carnes>>(json);
-                    List<Ingrediente> carnes = ListaCarne.Select(x => x as Ingrediente).ToList();
-                    return carnes;
-                }
-            } else return null;
+            VerificarArchivo(pathCarne);
+            using (StreamReader lectorarchivos = new StreamReader(pathCarne)) 
+            {
+                string json = lectorarchivos.ReadToEnd();
+                ListaCarne = JsonConvert.DeserializeObject<List<Carnes>>(json);
+                List<Ingrediente> carnes = ListaCarne.Select(x => x as Ingrediente).ToList();
+                return carnes;
+            }
+            
 
         }
         public List<Ingrediente> LeerBebidas() {
@@ -43,7 +45,8 @@ namespace Aplicacion {
             List<Bebida> ListaBebidas = new List<Bebida>();
             VerificarArchivo(pathBebidas);
 
-            using (StreamReader lectorarchivos = new StreamReader(pathBebidas)) {
+            using (StreamReader lectorarchivos = new StreamReader(pathBebidas))
+            {
                 string json = lectorarchivos.ReadToEnd();
                 ListaBebidas = JsonConvert.DeserializeObject<List<Bebida>>(json);
                 List<Ingrediente> bebidas = ListaBebidas.Select(x => x as Ingrediente).ToList();

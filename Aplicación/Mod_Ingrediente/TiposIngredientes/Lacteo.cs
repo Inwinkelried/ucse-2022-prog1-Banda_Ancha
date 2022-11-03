@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Aplicacion {
     public class Lacteo : Ingrediente 
     {
-        public Lacteo(int codigo, string nombre, int cantidadminima, decimal precioLitro, decimal cantidad)
+        public Lacteo(int codigo, string nombre, decimal cantidadminima, decimal precioLitro, decimal cantidad)
         {
             Codigo = codigo;
             Nombre = nombre;
