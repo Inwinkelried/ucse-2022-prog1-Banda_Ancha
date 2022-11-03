@@ -37,19 +37,19 @@ namespace Forms_Inicio
         private void btn_aceptar_Click(object sender, EventArgs e)
         {          
               LogicaIngrediente logica = new LogicaIngrediente();
-              if ((txtbx_cantminima.Text != null && txtbx_cantminima.Text != string.Empty) && (txtbx_PrecioxKG.Text != null && txtbx_PrecioxKG.Text != string.Empty) && (txtbx_Cantidad.Text != null && (txtbx_Cantidad.Text != string.Empty) && (textbx_Nombre.Text != null && textbx_Nombre.Text != string.Empty)))
+              if ((txtbx_cantminima_fruta.Text != null && txtbx_cantminima_fruta.Text != string.Empty) && (txtbx_Precio_unitario_fruta.Text != null && txtbx_Precio_unitario_fruta.Text != string.Empty) && (txtbx_Cantidad_fruta.Text != null && (txtbx_Cantidad_fruta.Text != string.Empty) && (textbx_Nombre_fruta.Text != null && textbx_Nombre_fruta.Text != string.Empty)))
               {
-                  decimal cantidad = decimal.Parse(txtbx_Cantidad.Text);
-                  int cantidadminima = int.Parse(txtbx_cantminima.Text);
-                  decimal PrecioXKg = decimal.Parse(txtbx_PrecioxKG.Text);
-                  if (logica.RevisarExistencia(textbx_Nombre.Text))
+                  decimal cantidad = decimal.Parse(txtbx_Cantidad_fruta.Text);
+                  int cantidadminima = int.Parse(txtbx_cantminima_fruta.Text);
+                  decimal PrecioXKg = decimal.Parse(txtbx_Precio_unitario_fruta.Text);
+                  if (logica.RevisarExistencia(textbx_Nombre_fruta.Text))
                   {
                       MessageBox.Show("Este ingrediente ya existe", "Error");
                   }
                   else
                   {
                       int Codigo = logica.StockIngredientes.Count() + 1;
-                      Fruta bebida = new Fruta(Codigo, textbx_Nombre.Text, cantidadminima, PrecioXKg, cantidad);
+                      Fruta bebida = new Fruta(Codigo, textbx_Nombre_fruta.Text, cantidadminima, PrecioXKg, cantidad);
                       logica.agregarIngredientes(bebida);
                   }
                   grillafrutas.AutoGenerateColumns = false;

@@ -34,10 +34,10 @@ namespace Forms_Inicio
         {
 
             LogicaIngrediente logica = new LogicaIngrediente();
-            if ((txt_CantidadMin.Text != null && txt_CantidadMin.Text != string.Empty) && (txt_PrecioxKg.Text != null && txt_PrecioxKg.Text != string.Empty) && (txt_Cantidad.Text != null && (txt_Cantidad.Text != string.Empty) && (txt_Nombre.Text != null && txt_Nombre.Text != string.Empty)))
+            if ((txt_Cantidad_minima_Carne.Text != null && txt_Cantidad_minima_Carne.Text != string.Empty) && (txt_PrecioxKg.Text != null && txt_PrecioxKg.Text != string.Empty) && (txt_Cantidad.Text != null && (txt_Cantidad.Text != string.Empty) && (txt_Nombre.Text != null && txt_Nombre.Text != string.Empty)))
             {
                 decimal cantidad = decimal.Parse(txt_Cantidad.Text);
-                decimal cantidadminima = decimal.Parse(txt_CantidadMin.Text);
+                decimal cantidadminima = decimal.Parse(txt_Cantidad_minima_Carne.Text);
                 decimal PrecioXKg = decimal.Parse(txt_PrecioxKg.Text);
                 if (logica.RevisarExistencia(txt_Nombre.Text))
                 {
