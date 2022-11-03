@@ -95,5 +95,10 @@ namespace Forms_Inicio
             }
 
         }
+
+        private void typebeb_grpbx_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

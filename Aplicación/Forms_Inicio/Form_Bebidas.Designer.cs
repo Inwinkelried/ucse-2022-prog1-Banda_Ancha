@@ -39,13 +39,13 @@
             this.noalcoholica = new System.Windows.Forms.RadioButton();
             this.alcoholica = new System.Windows.Forms.RadioButton();
             this.grilla_bebidas = new System.Windows.Forms.DataGridView();
-            this.Boton_acpetar_bebidas = new System.Windows.Forms.Button();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoBebidaColumna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Boton_acpetar_bebidas = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.text_cantminima = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -81,7 +81,6 @@
             this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre de la bebida";
-            
             // 
             // label3
             // 
@@ -91,7 +90,6 @@
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Ingresar una bebida";
-            
             // 
             // Lector_Cantidad
             // 
@@ -99,7 +97,6 @@
             this.Lector_Cantidad.Name = "Lector_Cantidad";
             this.Lector_Cantidad.Size = new System.Drawing.Size(100, 20);
             this.Lector_Cantidad.TabIndex = 4;
-            
             // 
             // Lector_Nombre
             // 
@@ -119,6 +116,7 @@
             this.typebeb_grpbx.TabIndex = 8;
             this.typebeb_grpbx.TabStop = false;
             this.typebeb_grpbx.Text = "Tipo de bebida";
+            this.typebeb_grpbx.Enter += new System.EventHandler(this.typebeb_grpbx_Enter);
             // 
             // altaenazucares
             // 
@@ -152,7 +150,6 @@
             this.alcoholica.TabStop = true;
             this.alcoholica.Text = "Alcoholica";
             this.alcoholica.UseVisualStyleBackColor = true;
-            
             // 
             // grilla_bebidas
             // 
@@ -168,16 +165,6 @@
             this.grilla_bebidas.Size = new System.Drawing.Size(543, 439);
             this.grilla_bebidas.TabIndex = 9;
             this.grilla_bebidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_bebidas_CellClick);
-            // 
-            // Boton_acpetar_bebidas
-            // 
-            this.Boton_acpetar_bebidas.Location = new System.Drawing.Point(12, 500);
-            this.Boton_acpetar_bebidas.Name = "Boton_acpetar_bebidas";
-            this.Boton_acpetar_bebidas.Size = new System.Drawing.Size(75, 23);
-            this.Boton_acpetar_bebidas.TabIndex = 10;
-            this.Boton_acpetar_bebidas.Text = "ACEPTAR";
-            this.Boton_acpetar_bebidas.UseVisualStyleBackColor = true;
-            this.Boton_acpetar_bebidas.Click += new System.EventHandler(this.Boton_acpetar_bebidas_Click);
             // 
             // Cantidad
             // 
@@ -212,6 +199,16 @@
             this.Codigo.DataPropertyName = "Codigo";
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
+            // 
+            // Boton_acpetar_bebidas
+            // 
+            this.Boton_acpetar_bebidas.Location = new System.Drawing.Point(12, 500);
+            this.Boton_acpetar_bebidas.Name = "Boton_acpetar_bebidas";
+            this.Boton_acpetar_bebidas.Size = new System.Drawing.Size(75, 23);
+            this.Boton_acpetar_bebidas.TabIndex = 10;
+            this.Boton_acpetar_bebidas.Text = "ACEPTAR";
+            this.Boton_acpetar_bebidas.UseVisualStyleBackColor = true;
+            this.Boton_acpetar_bebidas.Click += new System.EventHandler(this.Boton_acpetar_bebidas_Click);
             // 
             // label4
             // 

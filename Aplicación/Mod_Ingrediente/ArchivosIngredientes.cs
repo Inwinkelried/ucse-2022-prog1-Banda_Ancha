@@ -177,7 +177,7 @@ namespace Aplicacion {
             }
         }
         private string GetPathDominio() {
-            return AppDomain.CurrentDomain.BaseDirectory + "\\JSON\\";
+            return AppDomain.CurrentDomain.BaseDirectory ;
         }
         //Verificar si el archivo existe o si hay que crearlo
         private bool VerificarArchivo(string path) {

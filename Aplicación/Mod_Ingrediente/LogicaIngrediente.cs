@@ -28,47 +28,7 @@ namespace Aplicacion
         }
 
         
-      /*  private void guardarCarnes() 
-        {
-            List<Carnes> carnes = getCarne(StockIngredientes);
-            GuardarLista(SerializarLista(carnes), path_Carnes) ;
-        }
-        private void guardarQuesos()
-        {
-            List<Queso> queso = getQuesos(StockIngredientes);
-            GuardarLista(SerializarLista(queso), path_Quesos);
-        }
-        private void guardarVerduras()
-        {
-            List<HortalizaYVerdura> verduras = getVerduras (StockIngredientes);
-            GuardarLista(SerializarLista(verduras), path_Verduras);
-        }
-        private void guardarPescados()
-        {
-            List<Pescados> pescado = getPescado (StockIngredientes);
-            GuardarLista(SerializarLista(pescado), path_Pescados);
-        }
-        private void guardarPanaderia()
-        {
-            List<Panaderia> panaderia = getPanaderia (StockIngredientes);
-            GuardarLista(SerializarLista(panaderia), path_Panaderia);
-        }
-        private void guardarFrutas()
-        {
-            List<Fruta> frutas = getFrutas (StockIngredientes);
-            GuardarLista(SerializarLista(frutas), path_Frutas);
-        }
-        private void guardarBebidas()
-        {
-            List<Bebida > bebidas = getBebidas (StockIngredientes);
-            GuardarLista(SerializarLista(bebidas), path_Bebidas);
-        }
-        private void guardarLacteos()
-        {
-            List<Lacteo> lacteo = getLacteos (StockIngredientes);
-            GuardarLista(SerializarLista(lacteo), path_Lacteos);
-        }*/
-      //Guarda todos los ingredientes en sus respectivas listas
+      
         private void GuardarListaIngredientes()
         {
             List<Lacteo> lacteo = getLacteos(StockIngredientes);

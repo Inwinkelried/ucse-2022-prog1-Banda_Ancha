@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aplicacion;
 
 namespace Forms_Inicio
 {
@@ -26,6 +27,24 @@ namespace Forms_Inicio
             Form_Menú menu = new Form_Menú();
             menu.Show();
             this.Hide();
+        }
+
+        private void btn_GeneraCarrito_Click(object sender, EventArgs e)
+        {
+            grilla_Super.AutoGenerateColumns = false;
+            ActualizarGrilla();
+
+        }
+        private void ActualizarGrilla()
+        {
+            LogicaIngrediente logica = new LogicaIngrediente();
+            grilla_Super.DataSource = null;
+            grilla_Super.DataSource = logica.getListaSuper();
+        }
+
+        private void grilla_Super_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
