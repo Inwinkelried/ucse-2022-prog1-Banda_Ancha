@@ -48,8 +48,8 @@ namespace Aplicacion
         {
             string pathBebidas = GetPathDominio() + path_Bebidas;
             List<Bebida> ListaBebidas = new List<Bebida>();
-            if (VerificarArchivo(pathBebidas))
-            {
+            VerificarArchivo(pathBebidas);
+            
                 using (StreamReader lectorarchivos = new StreamReader(pathBebidas))
                 {
                     string json = lectorarchivos.ReadToEnd();
@@ -57,8 +57,8 @@ namespace Aplicacion
                     List<Ingrediente> bebidas = ListaBebidas.Select(x => x as Ingrediente).ToList();
                     return bebidas;
                 }
-            }
-            else return null ;
+            
+            
             
         }
 
@@ -162,7 +162,6 @@ namespace Aplicacion
             else return null;
 
         }
-
         protected string SerializarLista(List<Carnes> carnes)
         {
             string ingredientesJson = JsonConvert.SerializeObject(carnes);
@@ -206,30 +205,6 @@ namespace Aplicacion
             return ingredientesJson;
 
         }
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //Metodo para guardar en los archivos una lista ya serializada
         public void GuardarLista(string listaSerializada, string path_)
         {   
@@ -238,15 +213,11 @@ namespace Aplicacion
             {
                 wrtr.Write(listaSerializada);
             }
-        }
-
-        
+        }       
         private string GetPathDominio()
         {
             return AppDomain.CurrentDomain.BaseDirectory + "\\JSON\\";
-        }
-
-        
+        }        
         //Verificar si el archivo existe o si hay que crearlo
         private bool VerificarArchivo(string path)
         {

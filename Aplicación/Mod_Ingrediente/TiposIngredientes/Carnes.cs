@@ -8,7 +8,7 @@ namespace Aplicacion
 {
     public class Carnes : PorPeso
     {
-        public Carnes(int codigo, string nombre, int cantidadminima, decimal precioKilo, decimal cantidad)
+        public Carnes(int codigo, string nombre, decimal cantidadminima, decimal precioKilo, decimal cantidad)
         {
             Codigo = codigo;
             Nombre = nombre;

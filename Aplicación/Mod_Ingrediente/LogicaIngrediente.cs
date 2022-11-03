@@ -102,12 +102,20 @@ namespace Aplicacion
 
 
         //Eliminar un ingrediente de la lista
-        public void eliminarIngrediente(Ingrediente ingrediente)
+        public void eliminarIngrediente(string Codigo)
         {
+
             StockIngredientes = LeerIngredientes();
-            int IndexDelete = StockIngredientes.FindIndex(x => x.Codigo == ingrediente.Codigo);
-            StockIngredientes.RemoveAt(IndexDelete);
-            GuardarListaIngredientes();
+            foreach (Ingrediente prod in StockIngredientes)
+            {
+                if (prod.Codigo.ToString() == Codigo)
+                {
+                    StockIngredientes.Remove(prod);
+                    GuardarListaIngredientes();
+                    break;
+                }
+            }
+            
         }
         //Agregar un ingrediente nuevo a la lista
         public void agregarIngredientes(Ingrediente ingrediente)

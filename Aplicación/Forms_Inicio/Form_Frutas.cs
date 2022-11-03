@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aplicacion;
 
 namespace Forms_Inicio
 {
@@ -23,10 +24,61 @@ namespace Forms_Inicio
             despensa.Show();
             this.Hide();
         }
-
+        private void ActualizarGrilla()
+        {
+            LogicaIngrediente logicaIngrediente = new LogicaIngrediente();
+            grillafrutas.DataSource = null;
+            grillafrutas.DataSource = logicaIngrediente.LeerFrutas();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {          
+              LogicaIngrediente logica = new LogicaIngrediente();
+              if ((txtbx_cantminima.Text != null && txtbx_cantminima.Text != string.Empty) && (txtbx_PrecioxKG.Text != null && txtbx_PrecioxKG.Text != string.Empty) && (txtbx_Cantidad.Text != null && (txtbx_Cantidad.Text != string.Empty) && (textbx_Nombre.Text != null && textbx_Nombre.Text != string.Empty)))
+              {
+                  decimal cantidad = decimal.Parse(txtbx_Cantidad.Text);
+                  int cantidadminima = int.Parse(txtbx_cantminima.Text);
+                  decimal PrecioXKg = decimal.Parse(txtbx_PrecioxKG.Text);
+                  if (logica.RevisarExistencia(textbx_Nombre.Text))
+                  {
+                      MessageBox.Show("Este ingrediente ya existe", "Error");
+                  }
+                  else
+                  {
+                      int Codigo = logica.StockIngredientes.Count() + 1;
+                      Fruta bebida = new Fruta(Codigo, textbx_Nombre.Text, cantidadminima, PrecioXKg, cantidad);
+                      logica.agregarIngredientes(bebida);
+                  }
+                  grillafrutas.AutoGenerateColumns = false;
+                  ActualizarGrilla();
+              }
+              else
+              {
+                  MessageBox.Show("Debe completar todos los campos", "Error");
+              }
+            
+        }
+
+        private void Form_Frutas_Load(object sender, EventArgs e)
+        {
+            grillafrutas.AutoGenerateColumns=false;
+            ActualizarGrilla();
+        }
+
+        private void grillafrutas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {           
+                int indiceEliminar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Eliminar");
+                if (indiceEliminar == e.ColumnIndex)
+                {
+                    LogicaIngrediente logica = new LogicaIngrediente();
+                    var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grillafrutas, "Codigo");
+                    string codigoProducto = grillafrutas.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
+                    logica.eliminarIngrediente(codigoProducto);
+                    ActualizarGrilla();
+                }           
         }
     }
 }

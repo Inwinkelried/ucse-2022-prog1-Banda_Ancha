@@ -9,7 +9,7 @@ namespace Aplicacion {
     public abstract class Ingrediente{
         public int Codigo { get; set; }
         public string Nombre { get; set; }
-        public int CantMinima { get; set; }
+        public decimal CantMinima { get; set; }
         public decimal Precio { get; set; }
         public decimal Cantidad { get; set; }
 
