@@ -208,6 +208,7 @@ namespace Aplicacion
             List<Ingrediente> productos = LeerIngredientes();
             return productos.Find(match: x => x.Codigo.ToString() == (codigoProducto));
         }
+        
 
     }
 }

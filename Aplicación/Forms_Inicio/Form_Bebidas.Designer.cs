@@ -104,6 +104,7 @@
             this.Lector_Nombre.Name = "Lector_Nombre";
             this.Lector_Nombre.Size = new System.Drawing.Size(100, 20);
             this.Lector_Nombre.TabIndex = 5;
+            this.Lector_Nombre.TextChanged += new System.EventHandler(this.Lector_Nombre_TextChanged);
             // 
             // typebeb_grpbx
             // 

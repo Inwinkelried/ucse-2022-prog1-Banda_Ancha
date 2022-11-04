@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aplicacion;
+using Newtonsoft.Json;
 
 namespace Forms_Inicio
 {
@@ -26,9 +27,9 @@ namespace Forms_Inicio
         }
         private void ActualizarGrilla()
         {
-            LogicaComida logicacomida = new LogicaComida(); 
-            grilla_Comidas.DataSource = null;
-            grilla_Comidas.DataSource = logicacomida.LeerComidas();
+           LogicaReceta logica = new LogicaReceta();
+           grilla_RecetasComidas.DataSource = null;
+           grilla_RecetasComidas.DataSource = logica.LeerRecetas();
         }
         private void grilla_Comidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -37,8 +38,49 @@ namespace Forms_Inicio
 
         private void Form_Comidas_Load(object sender, EventArgs e)
         {
-            grilla_Comidas.AutoGenerateColumns = false;
+            grilla_RecetasComidas.AutoGenerateColumns = false;
             ActualizarGrilla();
+        }
+
+        private void CrearComidabtn_Click(object sender, EventArgs e)
+        {
+            if (txt_Nombre.Text != null && txt_Nombre.Text!= String.Empty)
+            {
+                LogicaReceta logicaRec = new LogicaReceta();
+                LogicaIngrediente logica = new LogicaIngrediente();
+                foreach (Receta receta in logicaRec.LeerRecetas())
+                {
+                    if (receta.Nombre.ToLower() == txt_Nombre.Text.ToLower() && logica.CheckIngredientesReceta(receta))
+                    {
+                        LogicaComida  logicacom= new LogicaComida();
+                        int codigo = logicacom.LeerComidas().Count();
+                        DateTime fechahoy = DateTime.Today;
+                        Comida comida = new Comida(codigo.ToString(), receta.IDRECETA.ToString(), receta, receta.Nombre, fechahoy);
+                        MessageBox.Show("Carga Exitosa", "Error");
+                    }
+                    else
+                    {
+                        if (!logica.CheckIngredientesReceta(receta))
+                        {
+                            MessageBox.Show("Ingredientes insuficientes", "Error");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Receta no encontrada", "Error");
+                        }
+                    }
+                    
+
+                    
+                }
+            }
+            
+
+        }
+
+        private void grilla_RecetasComidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -112,7 +112,14 @@ namespace Forms_Inicio
                             logica.ActualizarRecetas(receta);
                         }
                     }
-                }           
+                MessageBox.Show("Carga correcta");
+                Txt_nombre.Text = String.Empty;
+                
+                } 
+                else
+                    {
+                MessageBox.Show("Error, debe llenar todos los campos");
+                    }
         }
         private void Form_Recetas_Load(object sender, EventArgs e)
         {

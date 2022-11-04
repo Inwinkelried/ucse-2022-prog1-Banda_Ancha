@@ -20,9 +20,7 @@ namespace Aplicacion {
         {
             this.Recetas = LeerRecetas();
         }
-        public List<Receta> GetRecetas() {
-            return LeerRecetas().ToList<Receta>();
-        }
+        
         
         //Escritura de recetas (SERIALIZACION)
         protected string SerializarListaRecetas(List<Receta> receta)
@@ -30,21 +28,25 @@ namespace Aplicacion {
             string ingredientesJson = JsonConvert.SerializeObject(receta);
             return ingredientesJson;
         }
-        
-        //Lectura de recetas (DESERIALIZACION)
-        public List<Receta> LeerRecetas() {
-            string path_ = GetPathDominio() + path_Recetas;
 
-            if (File.Exists(path_Recetas)) {
-                using (StreamReader lectorarchivos = new StreamReader(path_)) {
+        //Lectura de recetas (DESERIALIZACION)
+        public List<Receta> LeerRecetas()
+        {          
+            string pathRecetas = GetPathDominio() + path_Recetas;
+            List<Receta> ListaRecetas = new List<Receta>();
+            if (VerificarArchivo(path_Recetas))
+            {
+                using (StreamReader lectorarchivos = new StreamReader(pathRecetas))
+                {
                     string json = lectorarchivos.ReadToEnd();
-                    List<Receta> ListaRecetas = JsonConvert.DeserializeObject<List<Receta>>(json);
+                    ListaRecetas = JsonConvert.DeserializeObject<List<Receta>>(json);
+
                     return ListaRecetas;
                 }
             }
-            return new List<Receta>();
+            else return null;
         }
-       
+
         //Metodo para guardar la lista
         public void GuardarListaRecetas(string listaRecetas)
         {
@@ -84,7 +86,7 @@ namespace Aplicacion {
         }
         private string GetPathDominio()
         {
-            return AppDomain.CurrentDomain.BaseDirectory + "\\JSON\\";
+            return AppDomain.CurrentDomain.BaseDirectory;
         }
         public void ActualizarRecetas(Receta receta)
         {
@@ -97,12 +99,12 @@ namespace Aplicacion {
             }
             else
             {
-                //edito el usuario que tenga el codigo
+                
                 foreach (var r in recetas)
                 {
-                    if (r.IDRECETA == receta.IDRECETA) //este quiero editar!
+                    if (r.IDRECETA == receta.IDRECETA) 
                     {
-                        //Edicion reemplazando los datos
+                        
                         r.Nombre = receta.Nombre;
                         r.Saludable = receta.Saludable;
                         r.Ingredientes = receta.Ingredientes;
@@ -112,6 +114,18 @@ namespace Aplicacion {
                 }
             }
             GuardarListaRecetas(SerializarListaRecetas(recetas));
+        }
+        private bool VerificarArchivo(string path)
+        {
+            if (File.Exists(path))
+            {
+                return true;
+            }
+            else
+            {
+                File.WriteAllText(path, "[]");
+                return false;
+            }
         }
     }
 }

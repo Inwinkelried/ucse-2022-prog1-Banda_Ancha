@@ -100,5 +100,10 @@ namespace Forms_Inicio
         {
 
         }
+
+        private void Lector_Nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

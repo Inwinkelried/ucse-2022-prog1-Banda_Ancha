@@ -30,6 +30,10 @@
         {
             this.btn_Volver_Recetas = new System.Windows.Forms.Button();
             this.grillla_IngredientesRecetas = new System.Windows.Forms.DataGridView();
+            this.AgregarProdcuto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_NuevaReceta = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cena = new System.Windows.Forms.RadioButton();
@@ -40,10 +44,6 @@
             this.Txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_momentoDelDia = new System.Windows.Forms.Label();
             this.lbl_Nombre = new System.Windows.Forms.Label();
-            this.AgregarProdcuto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grillla_IngredientesRecetas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,34 @@
             this.grillla_IngredientesRecetas.RowTemplate.Height = 24;
             this.grillla_IngredientesRecetas.Size = new System.Drawing.Size(451, 346);
             this.grillla_IngredientesRecetas.TabIndex = 8;
+            // 
+            // AgregarProdcuto
+            // 
+            this.AgregarProdcuto.HeaderText = "Agregar Producto";
+            this.AgregarProdcuto.Name = "AgregarProdcuto";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // btn_NuevaReceta
             // 
@@ -181,34 +209,6 @@
             this.lbl_Nombre.Size = new System.Drawing.Size(44, 13);
             this.lbl_Nombre.TabIndex = 12;
             this.lbl_Nombre.Text = "Nombre";
-            // 
-            // AgregarProdcuto
-            // 
-            this.AgregarProdcuto.HeaderText = "Agregar Producto";
-            this.AgregarProdcuto.Name = "AgregarProdcuto";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Form_Recetas
             // 

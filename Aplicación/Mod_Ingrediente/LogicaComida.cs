@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 
+
 namespace Aplicacion {
     public class LogicaComida
     {
@@ -26,7 +27,7 @@ namespace Aplicacion {
         }
         private string GetPathDominio()
         {
-            return AppDomain.CurrentDomain.BaseDirectory + "\\JSON\\";
+            return AppDomain.CurrentDomain.BaseDirectory;
         }
         //De Json a comida
         public List<Comida> LeerComidas()
@@ -107,5 +108,6 @@ namespace Aplicacion {
             Comidas = LeerComidas();
             return Comidas.FindAll(x => x.FechaCreacion > fechamenor && x.FechaCreacion < fechamayor);
         }
+        
     }
 }
