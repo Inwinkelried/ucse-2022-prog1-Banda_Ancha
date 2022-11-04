@@ -29,7 +29,7 @@ namespace Forms_Inicio
         {
            LogicaReceta logica = new LogicaReceta();
            grilla_RecetasComidas.DataSource = null;
-            grilla_RecetasComidas.DataSource = logica;
+            grilla_RecetasComidas.DataSource = logica.LeerRecetas();
         }
         private void grilla_Comidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -68,14 +68,9 @@ namespace Forms_Inicio
                         {
                             MessageBox.Show("Receta no encontrada", "Error");
                         }
-                    }
-                    
-
-                    
+                    }       
                 }
             }
-            
-
         }
 
         private void grilla_RecetasComidas_CellContentClick(object sender, DataGridViewCellEventArgs e)

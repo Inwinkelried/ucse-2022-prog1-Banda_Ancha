@@ -50,9 +50,10 @@
             // 
             // btn_Volver_Verduras
             // 
-            this.btn_Volver_Verduras.Location = new System.Drawing.Point(12, 12);
+            this.btn_Volver_Verduras.Location = new System.Drawing.Point(16, 15);
+            this.btn_Volver_Verduras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Volver_Verduras.Name = "btn_Volver_Verduras";
-            this.btn_Volver_Verduras.Size = new System.Drawing.Size(149, 42);
+            this.btn_Volver_Verduras.Size = new System.Drawing.Size(199, 52);
             this.btn_Volver_Verduras.TabIndex = 0;
             this.btn_Volver_Verduras.Text = "Volver";
             this.btn_Volver_Verduras.UseVisualStyleBackColor = true;
@@ -60,41 +61,46 @@
             // 
             // txtbx_cantminima_verdura
             // 
-            this.txtbx_cantminima_verdura.Location = new System.Drawing.Point(12, 329);
+            this.txtbx_cantminima_verdura.Location = new System.Drawing.Point(16, 405);
+            this.txtbx_cantminima_verdura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_cantminima_verdura.Name = "txtbx_cantminima_verdura";
-            this.txtbx_cantminima_verdura.Size = new System.Drawing.Size(127, 20);
+            this.txtbx_cantminima_verdura.Size = new System.Drawing.Size(168, 22);
             this.txtbx_cantminima_verdura.TabIndex = 21;
             // 
             // txtbx_Precio_unitario_verdura
             // 
-            this.txtbx_Precio_unitario_verdura.Location = new System.Drawing.Point(12, 422);
+            this.txtbx_Precio_unitario_verdura.Location = new System.Drawing.Point(16, 519);
+            this.txtbx_Precio_unitario_verdura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_Precio_unitario_verdura.Name = "txtbx_Precio_unitario_verdura";
-            this.txtbx_Precio_unitario_verdura.Size = new System.Drawing.Size(127, 20);
+            this.txtbx_Precio_unitario_verdura.Size = new System.Drawing.Size(168, 22);
             this.txtbx_Precio_unitario_verdura.TabIndex = 20;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 381);
+            this.label5.Location = new System.Drawing.Point(12, 469);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.Size = new System.Drawing.Size(95, 16);
             this.label5.TabIndex = 19;
             this.label5.Text = "Precio Unitario";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 287);
+            this.label9.Location = new System.Drawing.Point(12, 353);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 13);
+            this.label9.Size = new System.Drawing.Size(107, 16);
             this.label9.TabIndex = 18;
             this.label9.Text = "Cantidad Minima";
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(12, 504);
+            this.btn_aceptar.Location = new System.Drawing.Point(16, 620);
+            this.btn_aceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(106, 43);
+            this.btn_aceptar.Size = new System.Drawing.Size(141, 53);
             this.btn_aceptar.TabIndex = 17;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
@@ -103,24 +109,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 211);
+            this.label4.Location = new System.Drawing.Point(12, 260);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(134, 16);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Cantidad:";
+            this.label4.Text = " Cantidad: (unidades)";
             // 
             // txtbx_Cantidad_verdura
             // 
-            this.txtbx_Cantidad_verdura.Location = new System.Drawing.Point(12, 243);
+            this.txtbx_Cantidad_verdura.Location = new System.Drawing.Point(16, 299);
+            this.txtbx_Cantidad_verdura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbx_Cantidad_verdura.Name = "txtbx_Cantidad_verdura";
-            this.txtbx_Cantidad_verdura.Size = new System.Drawing.Size(127, 20);
+            this.txtbx_Cantidad_verdura.Size = new System.Drawing.Size(168, 22);
             this.txtbx_Cantidad_verdura.TabIndex = 13;
             // 
             // textbx_Nombre_verdura
             // 
-            this.textbx_Nombre_verdura.Location = new System.Drawing.Point(12, 164);
+            this.textbx_Nombre_verdura.Location = new System.Drawing.Point(16, 202);
+            this.textbx_Nombre_verdura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textbx_Nombre_verdura.Name = "textbx_Nombre_verdura";
-            this.textbx_Nombre_verdura.Size = new System.Drawing.Size(127, 20);
+            this.textbx_Nombre_verdura.Size = new System.Drawing.Size(168, 22);
             this.textbx_Nombre_verdura.TabIndex = 12;
             // 
             // grilla_Verduras
@@ -132,9 +141,11 @@
             this.Codigo,
             this.Editar,
             this.Eliminar});
-            this.grilla_Verduras.Location = new System.Drawing.Point(236, 47);
+            this.grilla_Verduras.Location = new System.Drawing.Point(315, 58);
+            this.grilla_Verduras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grilla_Verduras.Name = "grilla_Verduras";
-            this.grilla_Verduras.Size = new System.Drawing.Size(542, 500);
+            this.grilla_Verduras.RowHeadersWidth = 51;
+            this.grilla_Verduras.Size = new System.Drawing.Size(723, 615);
             this.grilla_Verduras.TabIndex = 1;
             this.grilla_Verduras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -142,58 +153,70 @@
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Cantidad";
             this.dataGridViewTextBoxColumn1.HeaderText = "Cantidad en stock";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // Codigo
             // 
             this.Codigo.DataPropertyName = "Codigo";
             this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 6;
             this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 125;
             // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
+            this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
             this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Editar.Width = 125;
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Eliminar.Width = 125;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 80);
+            this.label3.Location = new System.Drawing.Point(17, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 13);
+            this.label3.Size = new System.Drawing.Size(140, 16);
             this.label3.TabIndex = 14;
             this.label3.Text = "Ingresar una producto:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 127);
+            this.label8.Location = new System.Drawing.Point(17, 156);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 13);
+            this.label8.Size = new System.Drawing.Size(141, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "Nombre de la verdura:";
             // 
             // Form_Verduras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 591);
+            this.ClientSize = new System.Drawing.Size(1076, 727);
             this.Controls.Add(this.txtbx_cantminima_verdura);
             this.Controls.Add(this.txtbx_Precio_unitario_verdura);
             this.Controls.Add(this.label5);
@@ -206,6 +229,7 @@
             this.Controls.Add(this.textbx_Nombre_verdura);
             this.Controls.Add(this.grilla_Verduras);
             this.Controls.Add(this.btn_Volver_Verduras);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_Verduras";
             this.Text = "Form_Verduras";
             this.Load += new System.EventHandler(this.Form_Verduras_Load);

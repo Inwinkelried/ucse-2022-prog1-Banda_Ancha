@@ -29,7 +29,7 @@ namespace Aplicacion {
             return ingredientesJson;
         }
 
-        //Lectura de recetas (DESERIALIZACION)
+        //Lectura de recetas (DESERIALIZACION) bien
         public List<Receta> LeerRecetas()
         {          
             string pathRecetas = GetPathDominio() + path_Recetas;
