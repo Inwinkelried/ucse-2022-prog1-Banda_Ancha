@@ -31,15 +31,16 @@
             this.Txt_nombre = new System.Windows.Forms.TextBox();
             this.chkBox_EsSaludable = new System.Windows.Forms.CheckBox();
             this.grilla_SelectIngredientes = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_IngredientesNecesarios = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.almuerzo = new System.Windows.Forms.RadioButton();
-            this.desayuno = new System.Windows.Forms.RadioButton();
-            this.merienda = new System.Windows.Forms.RadioButton();
             this.cena = new System.Windows.Forms.RadioButton();
+            this.merienda = new System.Windows.Forms.RadioButton();
+            this.desayuno = new System.Windows.Forms.RadioButton();
+            this.almuerzo = new System.Windows.Forms.RadioButton();
+            this.Nombre = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_SelectIngredientes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,6 @@
             this.btn_Cancelar.TabIndex = 1;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
-            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // btn_Volver_NuevaReceta
             // 
@@ -80,7 +80,7 @@
             // lbl_Nombre
             // 
             this.lbl_Nombre.AutoSize = true;
-            this.lbl_Nombre.Location = new System.Drawing.Point(17, 100);
+            this.lbl_Nombre.Location = new System.Drawing.Point(6, 100);
             this.lbl_Nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Nombre.Name = "lbl_Nombre";
             this.lbl_Nombre.Size = new System.Drawing.Size(44, 13);
@@ -90,7 +90,7 @@
             // lbl_momentoDelDia
             // 
             this.lbl_momentoDelDia.AutoSize = true;
-            this.lbl_momentoDelDia.Location = new System.Drawing.Point(11, 134);
+            this.lbl_momentoDelDia.Location = new System.Drawing.Point(6, 140);
             this.lbl_momentoDelDia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_momentoDelDia.Name = "lbl_momentoDelDia";
             this.lbl_momentoDelDia.Size = new System.Drawing.Size(87, 13);
@@ -123,36 +123,18 @@
             this.grilla_SelectIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_SelectIngredientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
-            this.Check,
-            this.Cantidad});
-            this.grilla_SelectIngredientes.Location = new System.Drawing.Point(236, 70);
+            this.Cantidad,
+            this.Codigo,
+            this.NombreProducto});
+            this.grilla_SelectIngredientes.Location = new System.Drawing.Point(213, 70);
             this.grilla_SelectIngredientes.Margin = new System.Windows.Forms.Padding(2);
             this.grilla_SelectIngredientes.Name = "grilla_SelectIngredientes";
             this.grilla_SelectIngredientes.ReadOnly = true;
             this.grilla_SelectIngredientes.RowHeadersWidth = 51;
             this.grilla_SelectIngredientes.RowTemplate.Height = 24;
-            this.grilla_SelectIngredientes.Size = new System.Drawing.Size(353, 205);
+            this.grilla_SelectIngredientes.Size = new System.Drawing.Size(507, 205);
             this.grilla_SelectIngredientes.TabIndex = 9;
             this.grilla_SelectIngredientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_SelectIngredientes_CellContentClick);
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre Ingrediente";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Check
-            // 
-            this.Check.HeaderText = "";
-            this.Check.Name = "Check";
-            this.Check.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
             // 
             // lbl_IngredientesNecesarios
             // 
@@ -172,44 +154,10 @@
             this.groupBox1.Controls.Add(this.almuerzo);
             this.groupBox1.Location = new System.Drawing.Point(102, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(129, 113);
+            this.groupBox1.Size = new System.Drawing.Size(94, 113);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // almuerzo
-            // 
-            this.almuerzo.AutoSize = true;
-            this.almuerzo.Location = new System.Drawing.Point(7, 20);
-            this.almuerzo.Name = "almuerzo";
-            this.almuerzo.Size = new System.Drawing.Size(68, 17);
-            this.almuerzo.TabIndex = 0;
-            this.almuerzo.TabStop = true;
-            this.almuerzo.Text = "Almuerzo";
-            this.almuerzo.UseVisualStyleBackColor = true;
-            // 
-            // desayuno
-            // 
-            this.desayuno.AutoSize = true;
-            this.desayuno.Location = new System.Drawing.Point(7, 42);
-            this.desayuno.Name = "desayuno";
-            this.desayuno.Size = new System.Drawing.Size(73, 17);
-            this.desayuno.TabIndex = 1;
-            this.desayuno.TabStop = true;
-            this.desayuno.Text = "Desayuno";
-            this.desayuno.UseVisualStyleBackColor = true;
-            // 
-            // merienda
-            // 
-            this.merienda.AutoSize = true;
-            this.merienda.Location = new System.Drawing.Point(6, 65);
-            this.merienda.Name = "merienda";
-            this.merienda.Size = new System.Drawing.Size(69, 17);
-            this.merienda.TabIndex = 2;
-            this.merienda.TabStop = true;
-            this.merienda.Text = "Merienda";
-            this.merienda.UseVisualStyleBackColor = true;
             // 
             // cena
             // 
@@ -222,11 +170,71 @@
             this.cena.Text = "Cena";
             this.cena.UseVisualStyleBackColor = true;
             // 
+            // merienda
+            // 
+            this.merienda.AutoSize = true;
+            this.merienda.Location = new System.Drawing.Point(6, 65);
+            this.merienda.Name = "merienda";
+            this.merienda.Size = new System.Drawing.Size(69, 17);
+            this.merienda.TabIndex = 2;
+            this.merienda.TabStop = true;
+            this.merienda.Text = "Merienda";
+            this.merienda.UseVisualStyleBackColor = true;
+            // 
+            // desayuno
+            // 
+            this.desayuno.AutoSize = true;
+            this.desayuno.Location = new System.Drawing.Point(7, 42);
+            this.desayuno.Name = "desayuno";
+            this.desayuno.Size = new System.Drawing.Size(73, 17);
+            this.desayuno.TabIndex = 1;
+            this.desayuno.TabStop = true;
+            this.desayuno.Text = "Desayuno";
+            this.desayuno.UseVisualStyleBackColor = true;
+            // 
+            // almuerzo
+            // 
+            this.almuerzo.AutoSize = true;
+            this.almuerzo.Location = new System.Drawing.Point(7, 20);
+            this.almuerzo.Name = "almuerzo";
+            this.almuerzo.Size = new System.Drawing.Size(68, 17);
+            this.almuerzo.TabIndex = 0;
+            this.almuerzo.TabStop = true;
+            this.almuerzo.Text = "Almuerzo";
+            this.almuerzo.UseVisualStyleBackColor = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Agregar Producto";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Nombre";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            // 
             // NuevaReceta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(731, 366);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_IngredientesNecesarios);
             this.Controls.Add(this.grilla_SelectIngredientes);
@@ -240,7 +248,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NuevaReceta";
             this.Text = "NuevaReceta";
-            this.Load += new System.EventHandler(this.NuevaReceta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grilla_SelectIngredientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -260,13 +267,14 @@
         private System.Windows.Forms.CheckBox chkBox_EsSaludable;
         private System.Windows.Forms.DataGridView grilla_SelectIngredientes;
         private System.Windows.Forms.Label lbl_IngredientesNecesarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Check;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton cena;
         private System.Windows.Forms.RadioButton merienda;
         private System.Windows.Forms.RadioButton desayuno;
         private System.Windows.Forms.RadioButton almuerzo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
     }
 }

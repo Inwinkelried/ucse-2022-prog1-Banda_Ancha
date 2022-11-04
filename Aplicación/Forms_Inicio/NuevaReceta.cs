@@ -11,11 +11,17 @@ using Aplicacion;
 
 namespace Forms_Inicio {
     public partial class NuevaReceta : Form {
+        string CodigoReceta = "";
         public NuevaReceta() {
             InitializeComponent();
-           
-        }
 
+        }
+        public NuevaReceta(string codreceta)
+        {
+            InitializeComponent();
+            CodigoReceta = codreceta;
+
+        }
         public void VolverARecetas() {
             Form_Recetas recetas = new Form_Recetas();
             recetas.Show();
@@ -25,22 +31,24 @@ namespace Forms_Inicio {
         {
             LogicaIngrediente logicaIngrediente = new LogicaIngrediente();
             grilla_SelectIngredientes.DataSource = null;
-            grilla_SelectIngredientes.DataSource = logicaIngrediente.LeerIngredientes();
+            grilla_SelectIngredientes.DataSource = logicaIngrediente.LeerFrutas();
         }
 
         private void btn_Volver_NuevaReceta_Click(object sender, EventArgs e) {
             VolverARecetas();
         }
 
-        private void btn_confirmarReceta_Click(object sender, EventArgs e) {
+        private void btn_confirmarReceta_Click(object sender, EventArgs e)
+        {
             bool band = true;
+            ArchivosRecetas receta = new ArchivosRecetas();
             LogicaReceta logica = new LogicaReceta();
-            if (Txt_nombre.Text !=null && Txt_nombre.Text !=string.Empty && (desayuno.Checked || almuerzo.Checked || merienda.Checked || cena.Checked))
+            if (Txt_nombre.Text != null && Txt_nombre.Text != string.Empty && (desayuno.Checked || almuerzo.Checked || merienda.Checked || cena.Checked))
             {
-                
-                foreach (Receta receta in logica.Recetas)
+
+                foreach (Receta receta1 in logica.Recetas)
                 {
-                    if (receta.Nombre.ToLower() == Txt_nombre.Text.ToLower())
+                    if (receta1.Nombre.ToLower() == Txt_nombre.Text.ToLower())
                     {
                         band = false;
                         break;
@@ -49,17 +57,20 @@ namespace Forms_Inicio {
                 if (band == true)
                 {
                     int CodeReceta = logica.Recetas.Count;
-                    Tipo_Receta tipo_receta= new Tipo_Receta();                   
+                    Tipo_Receta tipo_receta = new Tipo_Receta();
                     if (desayuno.Checked)
                     {
                         tipo_receta = Tipo_Receta.Desayuno;
-                    }else if (almuerzo.Checked)
+                    }
+                    else if (almuerzo.Checked)
                     {
                         tipo_receta = Tipo_Receta.Almuerzo;
-                    }else if (merienda.Checked)
+                    }
+                    else if (merienda.Checked)
                     {
                         tipo_receta = Tipo_Receta.Merienda;
-                    }else if (cena.Checked)
+                    }
+                    else if (cena.Checked)
                     {
                         tipo_receta = Tipo_Receta.Cena;
                     }
@@ -68,21 +79,43 @@ namespace Forms_Inicio {
                     {
                         saludable = true;
                     }
-                    Receta receta = new Receta(CodeReceta, tipo_receta, Txt_nombre.Text, saludable)
+                    receta.TipoDeReceta = tipo_receta;
+                    receta.Saludable = saludable;
+                    receta.Ingredientes = new List<Ingrediente>();
+                    receta.CodigosIngredientes = new List<string>();
 
+                    foreach (DataGridViewRow row in grilla_SelectIngredientes.Rows)
+                    {
+                        if (row.Cells[0].Value != null && row.Cells[1].Value != null)
+                        {
+                            if (int.Parse(row.Cells[1].Value.ToString()) > 0)
+                            {
 
+                                LogicaIngrediente logicaing = new LogicaIngrediente();
+                                Ingrediente ingrediente = logicaing.ObtenerProducto(row.Cells[3].Value.ToString());
+                                receta.Nombre = Txt_nombre.Text;
+                                receta.IDRECETA = logica.LeerRecetas().Count();
+                                receta.Ingredientes.Add(ingrediente);
+                                receta.CantidadesIngredientes.Add(Convert.ToInt32(row.Cells[2].Value));
+                                receta.CodigosIngredientes.Add(ingrediente.Codigo.ToString());
+                            }
+
+                        }
+                    }
+
+                    if (receta.CodigosIngredientes.Count > 0 && receta.Ingredientes.Count > 0 && receta.CodigosIngredientes.Count() == receta.Ingredientes.Count() && band == true)
+                    {
+                        logica.ActualizarRecetas(receta);
+                    }
                 }
-                else throw new Exception("Ya hay una receta registrada con este nombre");
-                grilla_SelectIngredientes.AutoGenerateColumns = false;
-                ActualizarGrilla();
+
             }
-            else
-            {
-                MessageBox.Show("Debe completar todos los campos", "Error");
-            }
+
+
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e) {
+        private void btn_Cancelar_Click(object sender, EventArgs e) 
+        {
             MessageBox.Show("Su receta no se guardó");
             VolverARecetas();
 
@@ -99,14 +132,6 @@ namespace Forms_Inicio {
             ActualizarGrilla();
         }
 
-        private void comboBox_momentoDelDia_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }   
 }

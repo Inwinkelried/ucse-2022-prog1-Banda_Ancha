@@ -77,5 +77,12 @@ namespace Forms_Inicio
             grilla_Pescado.AutoGenerateColumns = false;
             ActualizarGrilla();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form_Despensa despensa = new Form_Despensa();
+            despensa.Show();
+            this.Hide();
+        }
     }
 }

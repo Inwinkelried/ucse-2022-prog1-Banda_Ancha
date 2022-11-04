@@ -41,7 +41,7 @@ namespace Forms_Inicio
               {
                   decimal cantidad = decimal.Parse(txtbx_Cantidad_fruta.Text);
                   int cantidadminima = int.Parse(txtbx_cantminima_fruta.Text);
-                  decimal PrecioXKg = decimal.Parse(txtbx_Precio_unitario_fruta.Text);
+                  decimal PrecioUnitario = decimal.Parse(txtbx_Precio_unitario_fruta.Text);
                   if (logica.RevisarExistencia(textbx_Nombre_fruta.Text))
                   {
                       MessageBox.Show("Este ingrediente ya existe", "Error");
@@ -49,8 +49,8 @@ namespace Forms_Inicio
                   else
                   {
                       int Codigo = logica.StockIngredientes.Count() + 1;
-                      Fruta bebida = new Fruta(Codigo, textbx_Nombre_fruta.Text, cantidadminima, PrecioXKg, cantidad);
-                      logica.agregarIngredientes(bebida);
+                      Fruta fruta = new Fruta(Codigo, textbx_Nombre_fruta.Text, cantidadminima, PrecioUnitario, cantidad);
+                      logica.agregarIngredientes(fruta);
                   }
                   grillafrutas.AutoGenerateColumns = false;
                   ActualizarGrilla();
@@ -79,6 +79,11 @@ namespace Forms_Inicio
                     logica.eliminarIngrediente(codigoProducto);
                     ActualizarGrilla();
                 }           
+        }
+
+        private void grillafrutas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

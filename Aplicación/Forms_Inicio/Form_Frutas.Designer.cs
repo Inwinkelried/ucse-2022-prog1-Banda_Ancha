@@ -95,6 +95,7 @@
             this.grillafrutas.Size = new System.Drawing.Size(542, 523);
             this.grillafrutas.TabIndex = 6;
             this.grillafrutas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillafrutas_CellClick);
+            this.grillafrutas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillafrutas_CellContentClick);
             // 
             // Nombre
             // 

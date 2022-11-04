@@ -86,5 +86,32 @@ namespace Aplicacion {
         {
             return AppDomain.CurrentDomain.BaseDirectory + "\\JSON\\";
         }
+        public void ActualizarRecetas(Receta receta)
+        {
+            List<Receta> recetas = new List<Receta>();
+            recetas = LeerRecetas();
+            List<string> codeRecetas = recetas.Select(x => x.IDRECETA.ToString()).ToList();
+            if (!codeRecetas.Contains(receta.IDRECETA.ToString())) 
+            {
+                recetas.Add(receta);
+            }
+            else
+            {
+                //edito el usuario que tenga el codigo
+                foreach (var r in recetas)
+                {
+                    if (r.IDRECETA == receta.IDRECETA) //este quiero editar!
+                    {
+                        //Edicion reemplazando los datos
+                        r.Nombre = receta.Nombre;
+                        r.Saludable = receta.Saludable;
+                        r.Ingredientes = receta.Ingredientes;
+                        r.CantidadesIngredientes = receta.CantidadesIngredientes;
+                        r.TipoDeReceta = receta.TipoDeReceta;
+                    }
+                }
+            }
+            GuardarListaRecetas(SerializarListaRecetas(recetas));
+        }
     }
 }

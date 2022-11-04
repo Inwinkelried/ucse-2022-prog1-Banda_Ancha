@@ -12,24 +12,13 @@ namespace Aplicacion {
         public int IDRECETA { get; set; }
         public string Nombre { get; set; }
         public bool Saludable { get; set; }
-        public List<int> CodigosIngredientes { get; set; }
-        public List<int> CantidadesIngredientes { get; set; }
+        
+        public List<int> CantidadesIngredientes = new List<int>();
         public Tipo_Receta TipoDeReceta { get; set; }
 
         [JsonIgnore]
-        public List<Ingrediente> Ingredientes { get; set; }
+        public List<Ingrediente> Ingredientes = new List<Ingrediente>();
 
-        public Receta(int id, Tipo_Receta tipo, string Nombrereceta, bool saludable, List<int> idIngredientes)
-        {   
-            LogicaIngrediente ingrediente = new LogicaIngrediente();
-
-            IDRECETA = id;
-            Nombre = Nombrereceta;
-            TipoDeReceta = tipo;           
-            Saludable = saludable;
-            Ingredientes = ingrediente.FiltrarIngredientesCodigo(idIngredientes);
-            CodigosIngredientes = idIngredientes;
-
-        }
+        
     }
 }

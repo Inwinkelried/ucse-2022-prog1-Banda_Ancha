@@ -11,13 +11,14 @@ using System.Xml.Schema;
 
 namespace Aplicacion
 {
-    public class LogicaIngrediente : ArchivosIngredientes {
-        
+    public class LogicaIngrediente : ArchivosIngredientes
+    {
+
         public List<Ingrediente> ingredientesMinimo = new List<Ingrediente>();
         public List<Ingrediente> StockIngredientes = new List<Ingrediente>();
 
         //Metodo para agregar un ingrediente a una lista (Hay que revisar, no se si es factible)
-        
+
         public LogicaIngrediente()
         {
             this.StockIngredientes = LeerIngredientes();
@@ -27,8 +28,8 @@ namespace Aplicacion
             return getAllIngredientes(LeerCarnes(), LeerVerduras(), LeerFrutas(), LeerBebidas(), LeerPanaderia(), LeerPescado(), LeerLacteos(), LeerQuesos());
         }
 
-        
-      
+
+
         private void GuardarListaIngredientes()
         {
             List<Lacteo> lacteo = getLacteos(StockIngredientes);
@@ -75,7 +76,7 @@ namespace Aplicacion
                     break;
                 }
             }
-            
+
         }
         //Agregar un ingrediente nuevo a la lista
         public void agregarIngredientes(Ingrediente ingrediente)
@@ -92,32 +93,23 @@ namespace Aplicacion
             StockIngredientes[IndexDelete] = ingrediente;
             GuardarListaIngredientes();
         }
-        public int buscarIngrediente (string Nombre)
+        public int buscarIngrediente(string Nombre)
         {
             int Index = 0;
             StockIngredientes = LeerIngredientes();
             return Index = StockIngredientes.FindIndex(x => x.Nombre == Nombre);
-            
+
         }
         //Preguntar al profe si esta lista va acá o en modsuper
         public List<Ingrediente> getListaSuper()
-        {         
+        {
             StockIngredientes = LeerIngredientes();
             ingredientesMinimo = StockIngredientes.FindAll(x => x.Cantidad >= x.CantMinima);
             return ingredientesMinimo;
         }
         // Luego de seleccionar una receta elimina los ingredientes de el stock
-        public void actualizarIngredientesRecetas(Receta receta)
-        {
-            StockIngredientes = LeerIngredientes();
-            foreach (Ingrediente ingrediente in receta.Ingredientes)
-            {
-                int index = StockIngredientes.FindIndex(x => x == ingrediente);
-                int indexReceta = receta.CodigosIngredientes.FindIndex(x => x == ingrediente.Codigo);
-                StockIngredientes[index].Cantidad -= receta.CantidadesIngredientes[indexReceta];
-            }
-            GuardarListaIngredientes();
-        }
+        //Hacer si queda tiempo
+
         //Paso codigo de ingrediete como parametro, devuelve la lista de ingredientes
         public List<Ingrediente> FiltrarIngredientesCodigo(List<int> CodigosIngredientes)
         {
@@ -130,7 +122,7 @@ namespace Aplicacion
             StockIngredientes = LeerIngredientes();
             bool band = false;
             foreach (Ingrediente ingrediente in StockIngredientes)
-            {                  
+            {
                 if (ingrediente.Nombre == Nombre)
                 {
                     band = true;
@@ -139,10 +131,10 @@ namespace Aplicacion
             }
             return band;
         }
-        
+
 
         //Antes de hablititar una comida, reviso que esten los ingredientes necesarios en la despensa
-        public bool CheckIngredientesReceta (Receta receta)
+        public bool CheckIngredientesReceta(Receta receta)
         {
             bool encontrado = false;
             StockIngredientes = LeerIngredientes();
@@ -162,45 +154,45 @@ namespace Aplicacion
             return encontrado;
         }
 
-        public decimal CostoDelIngrediente(Ingrediente ingrediente) 
+        public decimal CostoDelIngrediente(Ingrediente ingrediente)
         {
             decimal precio = ingrediente.Precio * (ingrediente.CantMinima - ingrediente.Cantidad);
             return precio;
         }
         //Getters
         public List<Carnes> getCarne(List<Ingrediente> ingredientes)
-        {         
+        {
             return ingredientes.Where(x => x is Carnes).Select(x => x as Carnes).ToList();
         }
         public List<Pescados> getPescado(List<Ingrediente> ingredientes)
-        {            
+        {
             return ingredientes.Where(x => x is Pescados).Select(x => x as Pescados).ToList();
         }
         public List<Panaderia> getPanaderia(List<Ingrediente> ingredientes)
-        {           
+        {
             return ingredientes.Where(x => x is Panaderia).Select(x => x as Panaderia).ToList();
         }
         public List<Bebida> getBebidas(List<Ingrediente> ingredientes)
-        {           
+        {
             return ingredientes.Where(x => x is Bebida).Select(x => x as Bebida).ToList();
         }
         public List<Fruta> getFrutas(List<Ingrediente> ingredientes)
-        {            
+        {
             return ingredientes.Where(x => x is Fruta).Select(x => x as Fruta).ToList();
         }
         public List<HortalizaYVerdura> getVerduras(List<Ingrediente> ingredientes)
-        {            
+        {
             return ingredientes.Where(x => x is HortalizaYVerdura).Select(x => x as HortalizaYVerdura).ToList();
         }
         public List<Lacteo> getLacteos(List<Ingrediente> ingredientes)
-        {            
+        {
             return ingredientes.Where(x => x is Lacteo).Select(x => x as Lacteo).ToList();
         }
-        public List<Queso> getQuesos (List<Ingrediente> ingredientes)
+        public List<Queso> getQuesos(List<Ingrediente> ingredientes)
         {
             return ingredientes.Where(x => x is Queso).Select(x => x as Queso).ToList();
         }
-        private List<Ingrediente> getAllIngredientes( List<Ingrediente> Verduras, List<Ingrediente> Frutas, List<Ingrediente> Bebida, List<Ingrediente> Panaderia, List<Ingrediente> Pescados, List<Ingrediente> Lacteos, List<Ingrediente> Queso, List<Ingrediente> Carnes)
+        private List<Ingrediente> getAllIngredientes(List<Ingrediente> Verduras, List<Ingrediente> Frutas, List<Ingrediente> Bebida, List<Ingrediente> Panaderia, List<Ingrediente> Pescados, List<Ingrediente> Lacteos, List<Ingrediente> Queso, List<Ingrediente> Carnes)
         {
             Carnes.AddRange(Verduras);
             Carnes.AddRange(Frutas);
@@ -211,9 +203,11 @@ namespace Aplicacion
             Carnes.AddRange(Queso);
             return Carnes;
         }
-
+        public Ingrediente ObtenerProducto(string codigoProducto)
+        {
+            List<Ingrediente> productos = LeerIngredientes();
+            return productos.Find(match: x => x.Codigo.ToString() == (codigoProducto));
+        }
 
     }
-
-
 }
