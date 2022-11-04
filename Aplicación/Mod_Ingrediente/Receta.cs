@@ -19,6 +19,7 @@ namespace Aplicacion {
         [JsonIgnore]
         public List<Ingrediente> Ingredientes = new List<Ingrediente>();
 
-        
+        public List<string> CodigosIngredientes { get; set; }
+
     }
 }

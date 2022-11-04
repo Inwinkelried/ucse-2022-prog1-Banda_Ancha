@@ -45,7 +45,7 @@ namespace Forms_Inicio
 
         private void btn_NuevaReceta_Click(object sender, EventArgs e) {
             bool band = true;
-            ArchivosRecetas receta = new ArchivosRecetas();
+            Receta receta = new Receta();
             LogicaReceta logica = new LogicaReceta();
             if (Txt_nombre.Text != null && Txt_nombre.Text != string.Empty && (desayuno.Checked || almuerzo.Checked || merienda.Checked || cena.Checked)) {
 
@@ -111,6 +111,11 @@ namespace Forms_Inicio
             ActualizarGrilla();
         }
 
-        
+        private void btnver_Recetas_Click(object sender, EventArgs e)
+        {
+            VisualizarRecetas aa = new VisualizarRecetas();
+            aa.Show();
+            this.Hide();
+        }
     }
 }

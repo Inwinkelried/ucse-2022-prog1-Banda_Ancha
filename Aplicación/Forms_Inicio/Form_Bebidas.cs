@@ -83,15 +83,32 @@ namespace Forms_Inicio
         private void grilla_bebidas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_bebidas, "Eliminar");
+            int indiceEditar = UtilidadesGrilla.getIndexColumna(grilla_bebidas, "Editar");
+            LogicaIngrediente logicaIng = new LogicaIngrediente();
+
+            if (indiceEditar == e.ColumnIndex)
+            {
+
+                foreach (DataGridViewRow columna in grilla_bebidas.Rows)
+                {
+
+                    string Codigo = Convert.ToString(columna.Cells[2].Value);
+                    string Nombre = Convert.ToString(columna.Cells[0].Value);
+                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                    ActualizarGrilla();
+                    break;
+
+
+                }
+            }
             if (indiceEliminar == e.ColumnIndex)
             {
-                
-                    LogicaIngrediente logica = new LogicaIngrediente();
-                    var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_bebidas, "Codigo");
-                    string codigoProducto = grilla_bebidas.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
-                    logica.eliminarIngrediente(codigoProducto);
-                    ActualizarGrilla();
-                
+                LogicaIngrediente logica = new LogicaIngrediente();
+                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_bebidas, "Codigo");
+                string codigoProducto = grilla_bebidas.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
+                logica.eliminarIngrediente(codigoProducto);
+                ActualizarGrilla();
             }
 
         }

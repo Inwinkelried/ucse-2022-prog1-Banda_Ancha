@@ -44,6 +44,7 @@
             this.Txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_momentoDelDia = new System.Windows.Forms.Label();
             this.lbl_Nombre = new System.Windows.Forms.Label();
+            this.btnver_Recetas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillla_IngredientesRecetas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -125,7 +126,6 @@
             this.groupBox1.Size = new System.Drawing.Size(94, 113);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // cena
             // 
@@ -210,11 +210,24 @@
             this.lbl_Nombre.TabIndex = 12;
             this.lbl_Nombre.Text = "Nombre";
             // 
+            // btnver_Recetas
+            // 
+            this.btnver_Recetas.AutoSize = true;
+            this.btnver_Recetas.Location = new System.Drawing.Point(646, 383);
+            this.btnver_Recetas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnver_Recetas.Name = "btnver_Recetas";
+            this.btnver_Recetas.Size = new System.Drawing.Size(102, 41);
+            this.btnver_Recetas.TabIndex = 17;
+            this.btnver_Recetas.Text = "Mis recetas";
+            this.btnver_Recetas.UseVisualStyleBackColor = true;
+            this.btnver_Recetas.Click += new System.EventHandler(this.btnver_Recetas_Click);
+            // 
             // Form_Recetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnver_Recetas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkBox_EsSaludable);
             this.Controls.Add(this.Txt_nombre);
@@ -252,5 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.Button btnver_Recetas;
     }
 }

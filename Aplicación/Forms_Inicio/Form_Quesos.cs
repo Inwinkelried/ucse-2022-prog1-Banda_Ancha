@@ -29,10 +29,23 @@ namespace Forms_Inicio
             grilla_Quesos.DataSource = null;
             grilla_Quesos.DataSource = logicaIngrediente.LeerQuesos();
         }
-
         private void grilla_Quesos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Quesos, "Eliminar");
+            int indiceEditar = UtilidadesGrilla.getIndexColumna(grilla_Quesos, "Editar");
+            LogicaIngrediente logicaIng = new LogicaIngrediente();
+            if (indiceEditar == e.ColumnIndex)
+            {
+                foreach (DataGridViewRow columna in grilla_Quesos.Rows)
+                {
+                    string Codigo = Convert.ToString(columna.Cells[2].Value);
+                    string Nombre = Convert.ToString(columna.Cells[0].Value);
+                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                    ActualizarGrilla();
+                    break;
+                }
+            }
             if (indiceEliminar == e.ColumnIndex)
             {
                 LogicaIngrediente logica = new LogicaIngrediente();

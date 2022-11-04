@@ -71,6 +71,25 @@ namespace Forms_Inicio
         private void grillafrutas_CellClick(object sender, DataGridViewCellEventArgs e)
         {           
                 int indiceEliminar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Eliminar");
+                int indiceEditar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Editar");
+                LogicaIngrediente logicaIng = new LogicaIngrediente();
+
+                if (indiceEditar == e.ColumnIndex)
+                {
+
+                    foreach (DataGridViewRow columna in grillafrutas.Rows)
+                    {
+
+                        string Codigo = Convert.ToString(columna.Cells[2].Value);
+                        string Nombre = Convert.ToString(columna.Cells[0].Value);
+                        decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                        logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                        ActualizarGrilla();
+                        break;
+
+
+                    }
+                }
                 if (indiceEliminar == e.ColumnIndex)
                 {
                     LogicaIngrediente logica = new LogicaIngrediente();

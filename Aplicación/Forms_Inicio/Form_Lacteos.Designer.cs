@@ -81,6 +81,7 @@
             this.grilla_Lacteos.Name = "grilla_Lacteos";
             this.grilla_Lacteos.Size = new System.Drawing.Size(442, 417);
             this.grilla_Lacteos.TabIndex = 2;
+            this.grilla_Lacteos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_Lacteos_CellContentClick);
             // 
             // Nombre
             // 

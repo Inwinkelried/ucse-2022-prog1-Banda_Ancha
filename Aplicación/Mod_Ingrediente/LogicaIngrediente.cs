@@ -49,19 +49,6 @@ namespace Aplicacion
             List<Carnes> carnes = getCarne(StockIngredientes);
             GuardarLista(SerializarLista(carnes), path_Carnes);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
         //Eliminar un ingrediente de la lista
         public void eliminarIngrediente(string Codigo)
         {
@@ -86,12 +73,19 @@ namespace Aplicacion
             GuardarListaIngredientes();
         }
         //Metodo para actualizar algun ingrediente
-        public void ModificarIngrediente(Ingrediente ingrediente)
+        public void ModificarIngrediente(string Codigo, decimal cantidad, string Nombre)
         {
             StockIngredientes = LeerIngredientes();
-            int IndexDelete = StockIngredientes.FindIndex(x => x.Codigo == ingrediente.Codigo);
-            StockIngredientes[IndexDelete] = ingrediente;
-            GuardarListaIngredientes();
+            foreach (Ingrediente ingrediente in StockIngredientes)
+            {
+                if (ingrediente.Codigo.ToString() == Codigo)
+                {
+                    ingrediente.Nombre = Nombre;
+                    ingrediente.Cantidad = cantidad;
+                    GuardarListaIngredientes();
+                    break;
+                }
+            }
         }
         public int buscarIngrediente(string Nombre)
         {

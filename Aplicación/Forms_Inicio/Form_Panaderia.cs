@@ -61,6 +61,25 @@ namespace Forms_Inicio
         private void grilla_Panaderia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Panaderia, "Eliminar");
+            int indiceEditar = UtilidadesGrilla.getIndexColumna(grilla_Panaderia, "Editar");
+            LogicaIngrediente logicaIng = new LogicaIngrediente();
+
+            if (indiceEditar == e.ColumnIndex)
+            {
+
+                foreach (DataGridViewRow columna in grilla_Panaderia.Rows)
+                {
+
+                    string Codigo = Convert.ToString(columna.Cells[2].Value);
+                    string Nombre = Convert.ToString(columna.Cells[0].Value);
+                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                    ActualizarGrilla();
+                    break;
+
+
+                }
+            }
             if (indiceEliminar == e.ColumnIndex)
             {
                 LogicaIngrediente logica = new LogicaIngrediente();

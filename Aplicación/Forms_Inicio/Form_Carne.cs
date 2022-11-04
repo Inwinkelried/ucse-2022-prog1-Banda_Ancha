@@ -80,11 +80,33 @@ namespace Forms_Inicio
         private void grilla_Carnes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Eliminar");
+            int indiceEditar = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Editar");
+            LogicaIngrediente logicaIng = new LogicaIngrediente();
+
+            if (indiceEditar == e.ColumnIndex)
+            {
+                
+                foreach (DataGridViewRow columna in grilla_Carnes.Rows)
+                {
+                    
+                        string Codigo = Convert.ToString(columna.Cells[2].Value);
+                        string Nombre = Convert.ToString(columna.Cells[0].Value);
+                        decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                        logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                        ActualizarGrilla();
+                        break;
+
+                    
+                }
+
+                
+            }
+
             if (indiceEliminar == e.ColumnIndex)
             {
                 LogicaIngrediente logica = new LogicaIngrediente();
-                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Codigo");
-                string codigoProducto = grilla_Carnes.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
+                var indice = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Codigo");
+                string codigoProducto = grilla_Carnes.Rows[e.RowIndex].Cells[indice].Value.ToString();
                 logica.eliminarIngrediente(codigoProducto);
                 ActualizarGrilla();
             }

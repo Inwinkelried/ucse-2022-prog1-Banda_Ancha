@@ -62,6 +62,25 @@ namespace Forms_Inicio
         private void grilla_Pescado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Pescado, "Eliminar");
+            int indiceEditar = UtilidadesGrilla.getIndexColumna(grilla_Pescado, "Editar");
+            LogicaIngrediente logicaIng = new LogicaIngrediente();
+
+            if (indiceEditar == e.ColumnIndex)
+            {
+
+                foreach (DataGridViewRow columna in grilla_Pescado.Rows)
+                {
+
+                    string Codigo = Convert.ToString(columna.Cells[2].Value);
+                    string Nombre = Convert.ToString(columna.Cells[0].Value);
+                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                    ActualizarGrilla();
+                    break;
+
+
+                }
+            }
             if (indiceEliminar == e.ColumnIndex)
             {
                 LogicaIngrediente logica = new LogicaIngrediente();

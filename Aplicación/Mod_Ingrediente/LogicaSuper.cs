@@ -33,9 +33,40 @@ namespace Aplicacion {
             }
             return total;
         }
-        public List<Ingrediente> FiltrarPorTipo(Ingrediente ingrediente)
+        public List<Ingrediente> FiltrarPorTipo(string tipo)
         {
-            ListaFiltrada = ListaSuper.FindAll(x => x.GetType() == ingrediente.GetType()).ToList(); ;
+            if (tipo == "Bebida")
+            {
+                 ListaFiltrada = ListaSuper.FindAll(x => (x is Bebida)).ToList();
+            }
+            else if (tipo == "Carne")
+            {
+                 ListaFiltrada = ListaSuper.FindAll(x => (x is Carnes)).ToList();
+            }
+            else if (tipo == "Pescado")
+            {
+                 ListaFiltrada = ListaSuper.FindAll(x => (x is Pescados)).ToList();
+            }
+            else if (tipo == "Verdura")
+            {
+                 ListaFiltrada = ListaSuper.FindAll(x => (x is HortalizaYVerdura)).ToList();
+            }
+            else if (tipo == "Fruta")
+            {
+                ListaFiltrada = ListaSuper.FindAll(x => (x is Fruta)).ToList();
+            }
+            else if (tipo == "Panaderia")
+            {
+                 ListaFiltrada = ListaSuper.FindAll(x => (x is Panaderia)).ToList();
+            }
+            else if (tipo == "Lacteo")
+            {
+                 ListaFiltrada = ListaSuper.FindAll(x => (x is Lacteo)).ToList();
+            }
+            else if (tipo == "Queso")
+            {
+                 ListaFiltrada = ListaSuper.FindAll(x => (x is Queso)).ToList();
+            }
             return ListaFiltrada;
         }
         //Filtro por precio

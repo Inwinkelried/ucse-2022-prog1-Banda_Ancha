@@ -14,6 +14,5 @@ namespace Aplicacion {
         public decimal Cantidad { get; set; }
 
         
-
     }
 }

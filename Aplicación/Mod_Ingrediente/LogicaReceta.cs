@@ -19,34 +19,29 @@ namespace Aplicacion {
         public LogicaReceta()
         {
             this.Recetas = LeerRecetas();
-        }
-        
-        
+        }     
         //Escritura de recetas (SERIALIZACION)
         protected string SerializarListaRecetas(List<Receta> receta)
         {
             string ingredientesJson = JsonConvert.SerializeObject(receta);
             return ingredientesJson;
         }
-
-        //Lectura de recetas (DESERIALIZACION) bien
+        //Lectura de recetas (DESERIALIZACION) 
         public List<Receta> LeerRecetas()
-        {          
-            string pathRecetas = GetPathDominio() + path_Recetas;
-            List<Receta> ListaRecetas = new List<Receta>();
-            if (VerificarArchivo(path_Recetas))
+        {
+            string pathReceta = GetPathDominio() + path_Recetas;
+            List<Receta> ListaReceta = new List<Receta>();
+            if (VerificarArchivo(pathReceta))
             {
-                using (StreamReader lectorarchivos = new StreamReader(pathRecetas))
+                using (StreamReader lectorarchivos = new StreamReader(pathReceta))
                 {
                     string json = lectorarchivos.ReadToEnd();
-                    ListaRecetas = JsonConvert.DeserializeObject<List<Receta>>(json);
-
-                    return ListaRecetas;
+                    ListaReceta = JsonConvert.DeserializeObject<List<Receta>>(json);                
                 }
             }
-            else return null;
+            return ListaReceta;
+            
         }
-
         //Metodo para guardar la lista
         public void GuardarListaRecetas(string listaRecetas)
         {
@@ -64,11 +59,16 @@ namespace Aplicacion {
             GuardarListaRecetas(SerializarListaRecetas(Recetas));
         }
         //Eliminar una receta
-        public void EliminarUnaReceta(Receta receta)
+        public void EliminarUnaReceta(string Codigo)
         {
             Recetas = LeerRecetas();
-            int index = Recetas.FindIndex(x => x.IDRECETA == receta.IDRECETA);
-            Recetas.RemoveAt(index);
+            foreach (Receta receta in Recetas)
+            {
+                if (receta.IDRECETA.ToString() == Codigo)
+                {
+
+                }
+            }
         }
 
         
@@ -86,7 +86,7 @@ namespace Aplicacion {
         }
         private string GetPathDominio()
         {
-            return AppDomain.CurrentDomain.BaseDirectory;
+            return AppDomain.CurrentDomain.BaseDirectory ;
         }
         public void ActualizarRecetas(Receta receta)
         {
@@ -98,8 +98,7 @@ namespace Aplicacion {
                 recetas.Add(receta);
             }
             else
-            {
-                
+            {               
                 foreach (var r in recetas)
                 {
                     if (r.IDRECETA == receta.IDRECETA) 
@@ -127,5 +126,9 @@ namespace Aplicacion {
                 return false;
             }
         }
+        //----------------------------------------------------------------------------------------------------------------------------------
+        
+        
+        
     }
 }
