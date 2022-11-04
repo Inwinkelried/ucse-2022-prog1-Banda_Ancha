@@ -29,22 +29,23 @@ namespace Aplicacion {
         {
             string pathCarne = GetPathDominio() + path_Carnes;
             List<Carnes> ListaCarne = new List<Carnes>();
-            VerificarArchivo(pathCarne);
-            using (StreamReader lectorarchivos = new StreamReader(pathCarne)) 
+            if (VerificarArchivo(pathCarne))
             {
-                string json = lectorarchivos.ReadToEnd();
-                ListaCarne = JsonConvert.DeserializeObject<List<Carnes>>(json);
-                List<Ingrediente> carnes = ListaCarne.Select(x => x as Ingrediente).ToList();
-                return carnes;
+                using (StreamReader lectorarchivos = new StreamReader(pathCarne))
+                {
+                    string json = lectorarchivos.ReadToEnd();
+                    ListaCarne = JsonConvert.DeserializeObject<List<Carnes>>(json);
+                    List<Ingrediente> carnes = ListaCarne.Select(x => x as Ingrediente).ToList();
+                    return carnes;
+                }
             }
-            
+            else return null;
 
         }
         public List<Ingrediente> LeerBebidas() {
             string pathBebidas = GetPathDominio() + path_Bebidas;
             List<Bebida> ListaBebidas = new List<Bebida>();
             VerificarArchivo(pathBebidas);
-
             using (StreamReader lectorarchivos = new StreamReader(pathBebidas))
             {
                 string json = lectorarchivos.ReadToEnd();
@@ -52,9 +53,6 @@ namespace Aplicacion {
                 List<Ingrediente> bebidas = ListaBebidas.Select(x => x as Ingrediente).ToList();
                 return bebidas;
             }
-
-
-
         }
 
         public List<Ingrediente> LeerPanaderia() {

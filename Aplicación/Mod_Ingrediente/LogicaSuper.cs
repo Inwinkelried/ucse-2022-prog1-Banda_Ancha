@@ -29,7 +29,7 @@ namespace Aplicacion {
             foreach (Ingrediente ingrediente in ListaSuper)
             {
                 LogicaIngrediente IngredTemp = new LogicaIngrediente();
-                total += IngredTemp.CostoDelIngrediente(ingrediente);
+                total += IngredTemp.CostoDelIngrediente(ingrediente.Nombre);
             }
             return total;
         }

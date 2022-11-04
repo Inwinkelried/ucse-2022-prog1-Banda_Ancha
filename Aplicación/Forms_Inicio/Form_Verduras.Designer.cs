@@ -37,15 +37,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtbx_Cantidad_verdura = new System.Windows.Forms.TextBox();
             this.textbx_Nombre_verdura = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.grilla_Verduras = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.grilla_Verduras)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Volver_Verduras
@@ -123,38 +123,20 @@
             this.textbx_Nombre_verdura.Size = new System.Drawing.Size(127, 20);
             this.textbx_Nombre_verdura.TabIndex = 12;
             // 
-            // dataGridView1
+            // grilla_Verduras
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grilla_Verduras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grilla_Verduras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn1,
             this.Codigo,
             this.Editar,
             this.Eliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(236, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 500);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Ingresar una producto:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 127);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Nombre de la verdura:";
+            this.grilla_Verduras.Location = new System.Drawing.Point(236, 47);
+            this.grilla_Verduras.Name = "grilla_Verduras";
+            this.grilla_Verduras.Size = new System.Drawing.Size(542, 500);
+            this.grilla_Verduras.TabIndex = 1;
+            this.grilla_Verduras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -189,6 +171,24 @@
             this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Ingresar una producto:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Nombre de la verdura:";
+            // 
             // Form_Verduras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,12 +204,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtbx_Cantidad_verdura);
             this.Controls.Add(this.textbx_Nombre_verdura);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grilla_Verduras);
             this.Controls.Add(this.btn_Volver_Verduras);
             this.Name = "Form_Verduras";
             this.Text = "Form_Verduras";
             this.Load += new System.EventHandler(this.Form_Verduras_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grilla_Verduras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,7 +226,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtbx_Cantidad_verdura;
         private System.Windows.Forms.TextBox textbx_Nombre_verdura;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grilla_Verduras;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

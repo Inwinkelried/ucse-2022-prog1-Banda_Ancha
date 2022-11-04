@@ -20,8 +20,8 @@ namespace Forms_Inicio
         private void ActualizarGrilla()
         {
             LogicaIngrediente logicaIngrediente = new LogicaIngrediente();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = logicaIngrediente.LeerFrutas();
+            grilla_Verduras.DataSource = null;
+            grilla_Verduras.DataSource = logicaIngrediente.LeerVerduras();
         }
 
         private void btn_Volver_Verduras_Click(object sender, EventArgs e)
@@ -33,12 +33,12 @@ namespace Forms_Inicio
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indiceEliminar = UtilidadesGrilla.getIndexColumna(dataGridView1, "Eliminar");
+            int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Verduras, "Eliminar");
             if (indiceEliminar == e.ColumnIndex)
             {
                 LogicaIngrediente logica = new LogicaIngrediente();
-                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(dataGridView1, "Codigo");
-                string codigoProducto = dataGridView1.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
+                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_Verduras, "Codigo");
+                string codigoProducto = grilla_Verduras.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
                 logica.eliminarIngrediente(codigoProducto);
                 ActualizarGrilla();
             }
@@ -62,7 +62,7 @@ namespace Forms_Inicio
                     HortalizaYVerdura verdura = new HortalizaYVerdura(Codigo, textbx_Nombre_verdura.Text, cantidadminima, PrecioUnitario, cantidad);
                     logica.agregarIngredientes(verdura);
                 }
-                dataGridView1.AutoGenerateColumns = false;
+                grilla_Verduras.AutoGenerateColumns = false;
                 ActualizarGrilla();
             }
             else
@@ -73,7 +73,7 @@ namespace Forms_Inicio
 
         private void Form_Verduras_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoGenerateColumns = false;
+            grilla_Verduras.AutoGenerateColumns = false;
             ActualizarGrilla();
         }
     }

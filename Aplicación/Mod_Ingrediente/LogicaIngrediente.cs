@@ -104,7 +104,13 @@ namespace Aplicacion
         public List<Ingrediente> getListaSuper()
         {
             StockIngredientes = LeerIngredientes();
-            ingredientesMinimo = StockIngredientes.FindAll(x => x.Cantidad >= x.CantMinima);
+            foreach (Ingrediente ingrediente in StockIngredientes)
+            {
+                if (ingrediente.Cantidad < ingrediente.CantMinima)
+                {
+                    ingredientesMinimo.Add(ingrediente);
+                }
+            }
             return ingredientesMinimo;
         }
         // Luego de seleccionar una receta elimina los ingredientes de el stock
@@ -154,10 +160,18 @@ namespace Aplicacion
             return encontrado;
         }
 
-        public decimal CostoDelIngrediente(Ingrediente ingrediente)
+        public decimal CostoDelIngrediente(string Nombre)
         {
-            decimal precio = ingrediente.Precio * (ingrediente.CantMinima - ingrediente.Cantidad);
-            return precio;
+            decimal costo = 0;
+            foreach (Ingrediente ingrediente in StockIngredientes)
+            {
+                if (ingrediente.Nombre == Nombre)
+                {
+                    costo = (ingrediente.CantMinima - ingrediente.Cantidad) * ingrediente.Precio;
+                    break;
+                }
+            }
+            return costo;
         }
         //Getters
         public List<Carnes> getCarne(List<Ingrediente> ingredientes)

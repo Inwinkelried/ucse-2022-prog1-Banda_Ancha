@@ -20,7 +20,8 @@ namespace Forms_Inicio
 
         private void Form_Super_Load(object sender, EventArgs e)
         {
-
+            grilla_Super.AutoGenerateColumns = false;
+            ActualizarGrilla();
         }
 
         private void btn_Volver_Super_Click(object sender, EventArgs e) {
@@ -37,13 +38,29 @@ namespace Forms_Inicio
         }
         private void ActualizarGrilla()
         {
-            LogicaIngrediente logica = new LogicaIngrediente();
-            grilla_Super.DataSource = null;
-            grilla_Super.DataSource = logica.getListaSuper();
+           LogicaIngrediente logica = new LogicaIngrediente();
+           grilla_Super.DataSource = null;
+           grilla_Super.DataSource = logica.getListaSuper();
         }
 
         private void grilla_Super_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void btn_total_Click(object sender, EventArgs e)
+        {
+            decimal CostoCompra = 0;
+            foreach (DataGridViewRow columna in grilla_Super.Rows)
+            {
+                LogicaIngrediente logica = new LogicaIngrediente();
+                
+                if (Convert.ToBoolean(columna.Cells[5].Value) == true && columna.Cells[5].Value != null) 
+                {
+                    CostoCompra = (Convert.ToDecimal(columna.Cells[2].Value.ToString()) - Convert.ToDecimal(columna.Cells[1].Value.ToString())) * Convert.ToDecimal(columna.Cells[3].Value.ToString()) + CostoCompra;
+                }
+            }
+            visor_Total.Text = CostoCompra.ToString();
             
         }
     }

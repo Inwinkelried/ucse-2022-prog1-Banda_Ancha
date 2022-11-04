@@ -57,5 +57,11 @@ namespace Forms_Inicio
                 MessageBox.Show("Debe completar todos los campos", "Error");
             }
         }
+
+        private void Form_Lacteos_Load(object sender, EventArgs e)
+        {
+            grilla_Lacteos.AutoGenerateColumns = false;
+            ActualizarGrilla();
+        }
     }
 }

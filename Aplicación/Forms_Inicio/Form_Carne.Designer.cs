@@ -122,7 +122,7 @@
             this.grilla_Carnes.Name = "grilla_Carnes";
             this.grilla_Carnes.Size = new System.Drawing.Size(542, 465);
             this.grilla_Carnes.TabIndex = 7;
-            
+            this.grilla_Carnes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_Carnes_CellContentClick);
             // 
             // Nombre
             // 
@@ -192,6 +192,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_Carne
             // 

@@ -38,7 +38,7 @@ namespace Forms_Inicio
             if ((Lector_Cantidad.Text != null && Lector_Cantidad.Text != string.Empty) && (Lector_Nombre.Text != null && Lector_Nombre.Text != string.Empty) && (alcoholica.Checked || noalcoholica.Checked || altaenazucares.Checked) && (text_cantminima.Text != null && text_cantminima.Text !=string.Empty) && (text_precioUnitario.Text != null && text_precioUnitario.Text != string.Empty))
             {
                 decimal cantidad = decimal.Parse(Lector_Cantidad.Text);
-                decimal cantidadminima = decimal.Parse(text_cantminima.Text);
+                int cantidadminima = int.Parse(text_cantminima.Text);
                 decimal PrecioUnitario = decimal.Parse(text_precioUnitario.Text);
                 if (logica.RevisarExistencia(Lector_Nombre.Text))
                 {
@@ -60,7 +60,7 @@ namespace Forms_Inicio
                         tipo_Bebida = Tipo_Bebida.NoAlcoholica;
                     }
                     int Codigo = logica.StockIngredientes.Count()+1;
-                    Bebida bebida = new Bebida(Codigo, Lector_Nombre.Text, 1, 100, cantidad, tipo_Bebida);
+                    Bebida bebida = new Bebida(Codigo, Lector_Nombre.Text, cantidadminima ,PrecioUnitario , cantidad, tipo_Bebida);
                     logica.agregarIngredientes(bebida);
                     Lector_Cantidad.Text = String.Empty;
                     Lector_Nombre.Text = String.Empty;

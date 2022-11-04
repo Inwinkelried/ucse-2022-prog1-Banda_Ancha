@@ -31,6 +31,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.grilla_Lacteos = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,11 +45,6 @@
             this.txt_CantMin = new System.Windows.Forms.TextBox();
             this.txt_PrecioxLT = new System.Windows.Forms.TextBox();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_Lacteos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,35 @@
             this.grilla_Lacteos.Name = "grilla_Lacteos";
             this.grilla_Lacteos.Size = new System.Drawing.Size(442, 417);
             this.grilla_Lacteos.TabIndex = 2;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Visible = false;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
             // 
             // label1
             // 
@@ -155,35 +184,6 @@
             this.txt_Cantidad.Size = new System.Drawing.Size(100, 20);
             this.txt_Cantidad.TabIndex = 11;
             // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Visible = false;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            // 
             // Form_Lacteos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +203,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form_Lacteos";
             this.Text = "Form_Lacteos";
+            this.Load += new System.EventHandler(this.Form_Lacteos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grilla_Lacteos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

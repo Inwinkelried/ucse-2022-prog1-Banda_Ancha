@@ -35,8 +35,11 @@
             this.btn_total = new System.Windows.Forms.Button();
             this.visor_Total = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitarioKG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadComprar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comprar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_Super)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +55,7 @@
             // 
             // btn_GeneraCarrito
             // 
-            this.btn_GeneraCarrito.Location = new System.Drawing.Point(12, 143);
+            this.btn_GeneraCarrito.Location = new System.Drawing.Point(198, 385);
             this.btn_GeneraCarrito.Name = "btn_GeneraCarrito";
             this.btn_GeneraCarrito.Size = new System.Drawing.Size(180, 69);
             this.btn_GeneraCarrito.TabIndex = 1;
@@ -65,17 +68,20 @@
             this.grilla_Super.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_Super.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
+            this.CantidadActual,
+            this.CantidadMinima,
             this.PrecioUnitarioKG,
-            this.CantidadComprar});
-            this.grilla_Super.Location = new System.Drawing.Point(198, 143);
+            this.CantidadComprar,
+            this.Comprar});
+            this.grilla_Super.Location = new System.Drawing.Point(12, 87);
             this.grilla_Super.Name = "grilla_Super";
-            this.grilla_Super.Size = new System.Drawing.Size(343, 263);
+            this.grilla_Super.Size = new System.Drawing.Size(636, 263);
             this.grilla_Super.TabIndex = 2;
             this.grilla_Super.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_Super_CellContentClick);
             // 
             // addToCarrito
             // 
-            this.addToCarrito.Location = new System.Drawing.Point(12, 68);
+            this.addToCarrito.Location = new System.Drawing.Point(384, 385);
             this.addToCarrito.Name = "addToCarrito";
             this.addToCarrito.Size = new System.Drawing.Size(180, 69);
             this.addToCarrito.TabIndex = 3;
@@ -84,16 +90,17 @@
             // 
             // btn_total
             // 
-            this.btn_total.Location = new System.Drawing.Point(12, 218);
+            this.btn_total.Location = new System.Drawing.Point(12, 385);
             this.btn_total.Name = "btn_total";
             this.btn_total.Size = new System.Drawing.Size(180, 69);
             this.btn_total.TabIndex = 4;
             this.btn_total.Text = "Calcular total";
             this.btn_total.UseVisualStyleBackColor = true;
+            this.btn_total.Click += new System.EventHandler(this.btn_total_Click);
             // 
             // visor_Total
             // 
-            this.visor_Total.Location = new System.Drawing.Point(12, 305);
+            this.visor_Total.Location = new System.Drawing.Point(12, 461);
             this.visor_Total.Name = "visor_Total";
             this.visor_Total.ReadOnly = true;
             this.visor_Total.Size = new System.Drawing.Size(180, 20);
@@ -105,22 +112,42 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             // 
+            // CantidadActual
+            // 
+            this.CantidadActual.DataPropertyName = "Cantidad";
+            this.CantidadActual.HeaderText = "Cantidad Actual";
+            this.CantidadActual.Name = "CantidadActual";
+            this.CantidadActual.ReadOnly = true;
+            // 
+            // CantidadMinima
+            // 
+            this.CantidadMinima.DataPropertyName = "CantMinima";
+            this.CantidadMinima.HeaderText = "Cantidad Minima";
+            this.CantidadMinima.Name = "CantidadMinima";
+            this.CantidadMinima.ReadOnly = true;
+            // 
             // PrecioUnitarioKG
             // 
+            this.PrecioUnitarioKG.DataPropertyName = "Precio";
             this.PrecioUnitarioKG.HeaderText = "Precio";
             this.PrecioUnitarioKG.Name = "PrecioUnitarioKG";
             // 
             // CantidadComprar
             // 
-            this.CantidadComprar.DataPropertyName = "(Codigo";
+            this.CantidadComprar.DataPropertyName = "Codigo";
             this.CantidadComprar.HeaderText = "Codigo";
             this.CantidadComprar.Name = "CantidadComprar";
+            // 
+            // Comprar
+            // 
+            this.Comprar.HeaderText = "Comprar";
+            this.Comprar.Name = "Comprar";
             // 
             // Form_Super
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 493);
+            this.ClientSize = new System.Drawing.Size(660, 493);
             this.Controls.Add(this.visor_Total);
             this.Controls.Add(this.btn_total);
             this.Controls.Add(this.addToCarrito);
@@ -145,7 +172,10 @@
         private System.Windows.Forms.Button btn_total;
         private System.Windows.Forms.TextBox visor_Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadActual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadMinima;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitarioKG;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadComprar;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Comprar;
     }
 }

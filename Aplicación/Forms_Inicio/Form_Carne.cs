@@ -33,6 +33,23 @@ namespace Forms_Inicio
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
 
+            
+        }
+
+        private void Form_Carne_Load(object sender, EventArgs e)
+        {
+            grilla_Carnes.AutoGenerateColumns = false;
+            ActualizarGrilla();
+        }
+
+        private void grilla_Carnes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {           
+             
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             LogicaIngrediente logica = new LogicaIngrediente();
             if ((txt_Cantidad_minima_Carne.Text != null && txt_Cantidad_minima_Carne.Text != string.Empty) && (txt_PrecioxKg.Text != null && txt_PrecioxKg.Text != string.Empty) && (txt_Cantidad.Text != null && (txt_Cantidad.Text != string.Empty) && (txt_Nombre.Text != null && txt_Nombre.Text != string.Empty)))
             {
@@ -60,24 +77,17 @@ namespace Forms_Inicio
             }
         }
 
-        private void Form_Carne_Load(object sender, EventArgs e)
+        private void grilla_Carnes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            grilla_Carnes.AutoGenerateColumns = false;
-            ActualizarGrilla();
-        }
-
-        private void grilla_Carnes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {           
-             int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Eliminar");
-             if (indiceEliminar == e.ColumnIndex)
-             {
-                 LogicaIngrediente logica = new LogicaIngrediente();
-                 var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Codigo");
-                 string codigoProducto = grilla_Carnes.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
-                 logica.eliminarIngrediente(codigoProducto);
-                 ActualizarGrilla();
-             }
-            
+            int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Eliminar");
+            if (indiceEliminar == e.ColumnIndex)
+            {
+                LogicaIngrediente logica = new LogicaIngrediente();
+                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Codigo");
+                string codigoProducto = grilla_Carnes.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
+                logica.eliminarIngrediente(codigoProducto);
+                ActualizarGrilla();
+            }
         }
     }
 }

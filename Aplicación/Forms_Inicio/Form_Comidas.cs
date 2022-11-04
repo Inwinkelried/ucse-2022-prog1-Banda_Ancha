@@ -29,7 +29,7 @@ namespace Forms_Inicio
         {
            LogicaReceta logica = new LogicaReceta();
            grilla_RecetasComidas.DataSource = null;
-           grilla_RecetasComidas.DataSource = logica.LeerRecetas();
+            grilla_RecetasComidas.DataSource = logica;
         }
         private void grilla_Comidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
