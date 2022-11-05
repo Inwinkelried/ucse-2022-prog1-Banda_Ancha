@@ -9,29 +9,24 @@ using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Xml.Schema;
 
-namespace Aplicacion
-{
-    public class LogicaIngrediente : ArchivosIngredientes
-    {
+namespace Aplicacion {
+    public class LogicaIngrediente : ArchivosIngredientes {
 
         public List<Ingrediente> ingredientesMinimo = new List<Ingrediente>();
         public List<Ingrediente> StockIngredientes = new List<Ingrediente>();
 
         //Metodo para agregar un ingrediente a una lista (Hay que revisar, no se si es factible)
 
-        public LogicaIngrediente()
-        {
+        public LogicaIngrediente() {
             this.StockIngredientes = LeerIngredientes();
         }
-        public List<Ingrediente> LeerIngredientes()
-        {
+        public List<Ingrediente> LeerIngredientes() {
             return getAllIngredientes(LeerCarnes(), LeerVerduras(), LeerFrutas(), LeerBebidas(), LeerPanaderia(), LeerPescado(), LeerLacteos(), LeerQuesos());
         }
 
 
 
-        private void GuardarListaIngredientes()
-        {
+        private void GuardarListaIngredientes() {
             List<Lacteo> lacteo = getLacteos(StockIngredientes);
             GuardarLista(SerializarLista(lacteo), path_Lacteos);
             List<Bebida> bebidas = getBebidas(StockIngredientes);
@@ -50,14 +45,11 @@ namespace Aplicacion
             GuardarLista(SerializarLista(carnes), path_Carnes);
         }
         //Eliminar un ingrediente de la lista
-        public void eliminarIngrediente(string Codigo)
-        {
+        public void eliminarIngrediente(string Codigo) {
 
             StockIngredientes = LeerIngredientes();
-            foreach (Ingrediente prod in StockIngredientes)
-            {
-                if (prod.Codigo.ToString() == Codigo)
-                {
+            foreach (Ingrediente prod in StockIngredientes) {
+                if (prod.Codigo.ToString() == Codigo) {
                     StockIngredientes.Remove(prod);
                     GuardarListaIngredientes();
                     break;
@@ -66,20 +58,16 @@ namespace Aplicacion
 
         }
         //Agregar un ingrediente nuevo a la lista
-        public void agregarIngredientes(Ingrediente ingrediente)
-        {
+        public void agregarIngredientes(Ingrediente ingrediente) {
             StockIngredientes = LeerIngredientes();
             StockIngredientes.Add(ingrediente);
             GuardarListaIngredientes();
         }
         //Metodo para actualizar algun ingrediente
-        public void ModificarIngrediente(string Codigo, decimal cantidad, string Nombre)
-        {
+        public void ModificarIngrediente(string Codigo, decimal cantidad, string Nombre) {
             StockIngredientes = LeerIngredientes();
-            foreach (Ingrediente ingrediente in StockIngredientes)
-            {
-                if (ingrediente.Codigo.ToString() == Codigo)
-                {
+            foreach (Ingrediente ingrediente in StockIngredientes) {
+                if (ingrediente.Codigo.ToString() == Codigo) {
                     ingrediente.Nombre = Nombre;
                     ingrediente.Cantidad = cantidad;
                     GuardarListaIngredientes();
@@ -87,21 +75,17 @@ namespace Aplicacion
                 }
             }
         }
-        public int buscarIngrediente(string Nombre)
-        {
+        public int buscarIngrediente(string Nombre) {
             int Index = 0;
             StockIngredientes = LeerIngredientes();
             return Index = StockIngredientes.FindIndex(x => x.Nombre == Nombre);
 
         }
         //Preguntar al profe si esta lista va acá o en modsuper
-        public List<Ingrediente> getListaSuper()
-        {
+        public List<Ingrediente> getListaSuper() {
             StockIngredientes = LeerIngredientes();
-            foreach (Ingrediente ingrediente in StockIngredientes)
-            {
-                if (ingrediente.Cantidad < ingrediente.CantMinima)
-                {
+            foreach (Ingrediente ingrediente in StockIngredientes) {
+                if (ingrediente.Cantidad < ingrediente.CantMinima) {
                     ingredientesMinimo.Add(ingrediente);
                 }
             }
@@ -111,20 +95,16 @@ namespace Aplicacion
         //Hacer si queda tiempo
 
         //Paso codigo de ingrediete como parametro, devuelve la lista de ingredientes
-        public List<Ingrediente> FiltrarIngredientesCodigo(List<int> CodigosIngredientes)
-        {
+        public List<Ingrediente> FiltrarIngredientesCodigo(List<int> CodigosIngredientes) {
             StockIngredientes = LeerIngredientes();
             return StockIngredientes.FindAll(x => CodigosIngredientes.Contains(x.Codigo));
         }
 
-        public bool RevisarExistencia(string Nombre)
-        {
+        public bool RevisarExistencia(string Nombre) {
             StockIngredientes = LeerIngredientes();
             bool band = false;
-            foreach (Ingrediente ingrediente in StockIngredientes)
-            {
-                if (ingrediente.Nombre == Nombre)
-                {
+            foreach (Ingrediente ingrediente in StockIngredientes) {
+                if (ingrediente.Nombre == Nombre) {
                     band = true;
                     break;
                 }
@@ -134,19 +114,14 @@ namespace Aplicacion
 
 
         //Antes de hablititar una comida, reviso que esten los ingredientes necesarios en la despensa
-        public bool CheckIngredientesReceta(Receta receta)
-        {
+        public bool CheckIngredientesReceta(Receta receta) {
             bool band = true;
-            
-            foreach (Ingrediente ingrediente in StockIngredientes)
-            {
-                foreach (string Cod in receta.CodigosIngredientes)
-                {
-                    if (Cod == ingrediente.Codigo.ToString())
-                    {
+
+            foreach (Ingrediente ingrediente in StockIngredientes) {
+                foreach (string Cod in receta.CodigosIngredientes) {
+                    if (Cod == ingrediente.Codigo.ToString()) {
                         int index = receta.CodigosIngredientes.FindIndex(x => x == Cod);
-                        if (ingrediente.Cantidad <= receta.CantidadesIngredientes[index])
-                        {
+                        if (ingrediente.Cantidad <= receta.CantidadesIngredientes[index]) {
                             band = false; break;
                         }
                     }
@@ -155,13 +130,10 @@ namespace Aplicacion
             return band;
         }
 
-        public decimal CostoDelIngrediente(string Nombre)
-        {
+        public decimal CostoDelIngrediente(string Nombre) {
             decimal costo = 0;
-            foreach (Ingrediente ingrediente in StockIngredientes)
-            {
-                if (ingrediente.Nombre == Nombre)
-                {
+            foreach (Ingrediente ingrediente in StockIngredientes) {
+                if (ingrediente.Nombre == Nombre) {
                     costo = (ingrediente.CantMinima - ingrediente.Cantidad) * ingrediente.Precio;
                     break;
                 }
@@ -169,40 +141,31 @@ namespace Aplicacion
             return costo;
         }
         //Getters
-        public List<Carnes> getCarne(List<Ingrediente> ingredientes)
-        {
+        public List<Carnes> getCarne(List<Ingrediente> ingredientes) {
             return ingredientes.Where(x => x is Carnes).Select(x => x as Carnes).ToList();
         }
-        public List<Pescados> getPescado(List<Ingrediente> ingredientes)
-        {
+        public List<Pescados> getPescado(List<Ingrediente> ingredientes) {
             return ingredientes.Where(x => x is Pescados).Select(x => x as Pescados).ToList();
         }
-        public List<Panaderia> getPanaderia(List<Ingrediente> ingredientes)
-        {
+        public List<Panaderia> getPanaderia(List<Ingrediente> ingredientes) {
             return ingredientes.Where(x => x is Panaderia).Select(x => x as Panaderia).ToList();
         }
-        public List<Bebida> getBebidas(List<Ingrediente> ingredientes)
-        {
+        public List<Bebida> getBebidas(List<Ingrediente> ingredientes) {
             return ingredientes.Where(x => x is Bebida).Select(x => x as Bebida).ToList();
         }
-        public List<Fruta> getFrutas(List<Ingrediente> ingredientes)
-        {
+        public List<Fruta> getFrutas(List<Ingrediente> ingredientes) {
             return ingredientes.Where(x => x is Fruta).Select(x => x as Fruta).ToList();
         }
-        public List<HortalizaYVerdura> getVerduras(List<Ingrediente> ingredientes)
-        {
+        public List<HortalizaYVerdura> getVerduras(List<Ingrediente> ingredientes) {
             return ingredientes.Where(x => x is HortalizaYVerdura).Select(x => x as HortalizaYVerdura).ToList();
         }
-        public List<Lacteo> getLacteos(List<Ingrediente> ingredientes)
-        {
+        public List<Lacteo> getLacteos(List<Ingrediente> ingredientes) {
             return ingredientes.Where(x => x is Lacteo).Select(x => x as Lacteo).ToList();
         }
-        public List<Queso> getQuesos(List<Ingrediente> ingredientes)
-        {
+        public List<Queso> getQuesos(List<Ingrediente> ingredientes) {
             return ingredientes.Where(x => x is Queso).Select(x => x as Queso).ToList();
         }
-        private List<Ingrediente> getAllIngredientes(List<Ingrediente> Verduras, List<Ingrediente> Frutas, List<Ingrediente> Bebida, List<Ingrediente> Panaderia, List<Ingrediente> Pescados, List<Ingrediente> Lacteos, List<Ingrediente> Queso, List<Ingrediente> Carnes)
-        {
+        private List<Ingrediente> getAllIngredientes(List<Ingrediente> Verduras, List<Ingrediente> Frutas, List<Ingrediente> Bebida, List<Ingrediente> Panaderia, List<Ingrediente> Pescados, List<Ingrediente> Lacteos, List<Ingrediente> Queso, List<Ingrediente> Carnes) {
             Carnes.AddRange(Verduras);
             Carnes.AddRange(Frutas);
             Carnes.AddRange(Bebida);
@@ -212,22 +175,18 @@ namespace Aplicacion
             Carnes.AddRange(Queso);
             return Carnes;
         }
-        public Ingrediente ObtenerProducto(string codigoProducto)
-        {
+        public Ingrediente ObtenerProducto(string codigoProducto) {
             List<Ingrediente> productos = LeerIngredientes();
             return productos.Find(match: x => x.Codigo.ToString() == (codigoProducto));
         }
-        public void ModificarBebida(string Codigo, decimal cantidad, string Nombre, Tipo_Bebida tipo)
-        {
-            
-            foreach (Ingrediente bebida in StockIngredientes)
-            {
-                if (bebida is Bebida && bebida.Codigo.ToString() == Codigo)
-                {
-                    
+        public void ModificarBebida(string Codigo, decimal cantidad, string Nombre, Tipo_Bebida tipo) {
+
+            foreach (Ingrediente bebida in StockIngredientes) {
+                if (bebida is Bebida && bebida.Codigo.ToString() == Codigo) {
+
                     bebida.Nombre = Nombre;
                     bebida.Cantidad = cantidad;
-                    
+
                     GuardarListaIngredientes();
                     break;
                 }

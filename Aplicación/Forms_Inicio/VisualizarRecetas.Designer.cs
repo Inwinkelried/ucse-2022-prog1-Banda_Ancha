@@ -33,6 +33,7 @@
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_Volver_VisualizarRecetas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_Recetas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +73,21 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             // 
+            // btn_Volver_VisualizarRecetas
+            // 
+            this.btn_Volver_VisualizarRecetas.Location = new System.Drawing.Point(12, 12);
+            this.btn_Volver_VisualizarRecetas.Name = "btn_Volver_VisualizarRecetas";
+            this.btn_Volver_VisualizarRecetas.Size = new System.Drawing.Size(75, 23);
+            this.btn_Volver_VisualizarRecetas.TabIndex = 1;
+            this.btn_Volver_VisualizarRecetas.Text = "Volver";
+            this.btn_Volver_VisualizarRecetas.UseVisualStyleBackColor = true;
+            // 
             // VisualizarRecetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Volver_VisualizarRecetas);
             this.Controls.Add(this.grilla_Recetas);
             this.Name = "VisualizarRecetas";
             this.Text = "VisualizarRecetas";
@@ -93,5 +104,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.Button btn_Volver_VisualizarRecetas;
     }
 }

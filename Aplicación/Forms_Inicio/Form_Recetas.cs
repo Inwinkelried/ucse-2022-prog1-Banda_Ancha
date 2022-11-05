@@ -9,24 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aplicacion;
 
-namespace Forms_Inicio
-{
-    public partial class Form_Recetas : Form
-    {
+namespace Forms_Inicio {
+    public partial class Form_Recetas : Form {
         string CodigoReceta = "";
-        public Form_Recetas()
-        {
+        public Form_Recetas() {
             InitializeComponent();
 
         }
-        public Form_Recetas(string codreceta)
-        {
+        public Form_Recetas(string codreceta) {
             InitializeComponent();
             CodigoReceta = codreceta;
         }
 
-        private void ActualizarGrilla()
-        {
+        private void ActualizarGrilla() {
             LogicaIngrediente logicaIngrediente = new LogicaIngrediente();
             grillla_IngredientesRecetas.DataSource = null;
             grillla_IngredientesRecetas.DataSource = logicaIngrediente.LeerIngredientes();
@@ -60,14 +55,11 @@ namespace Forms_Inicio
                     Tipo_Receta tipo_receta = new Tipo_Receta();
                     if (desayuno.Checked) {
                         tipo_receta = Tipo_Receta.Desayuno;
-                    }
-                    else if (almuerzo.Checked) {
+                    } else if (almuerzo.Checked) {
                         tipo_receta = Tipo_Receta.Almuerzo;
-                    }
-                    else if (merienda.Checked) {
+                    } else if (merienda.Checked) {
                         tipo_receta = Tipo_Receta.Merienda;
-                    }
-                    else if (cena.Checked) {
+                    } else if (cena.Checked) {
                         tipo_receta = Tipo_Receta.Cena;
                     }
                     bool saludable = false;
@@ -100,19 +92,16 @@ namespace Forms_Inicio
                 MessageBox.Show("Carga correcta");
                 Txt_nombre.Text = String.Empty;
 
-            }
-            else {
+            } else {
                 MessageBox.Show("Error, debe llenar todos los campos");
             }
         }
-        private void Form_Recetas_Load(object sender, EventArgs e)
-        {
+        private void Form_Recetas_Load(object sender, EventArgs e) {
             grillla_IngredientesRecetas.AutoGenerateColumns = false;
             ActualizarGrilla();
         }
 
-        private void btnver_Recetas_Click(object sender, EventArgs e)
-        {
+        private void btnver_Recetas_Click(object sender, EventArgs e) {
             VisualizarRecetas aa = new VisualizarRecetas();
             aa.Show();
             this.Hide();

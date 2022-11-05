@@ -50,10 +50,9 @@
             // 
             // btn_volver_frutas
             // 
-            this.btn_volver_frutas.Location = new System.Drawing.Point(16, 15);
-            this.btn_volver_frutas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_volver_frutas.Location = new System.Drawing.Point(12, 12);
             this.btn_volver_frutas.Name = "btn_volver_frutas";
-            this.btn_volver_frutas.Size = new System.Drawing.Size(172, 55);
+            this.btn_volver_frutas.Size = new System.Drawing.Size(129, 45);
             this.btn_volver_frutas.TabIndex = 0;
             this.btn_volver_frutas.Text = "Volver";
             this.btn_volver_frutas.UseVisualStyleBackColor = true;
@@ -61,27 +60,24 @@
             // 
             // textbx_Nombre_fruta
             // 
-            this.textbx_Nombre_fruta.Location = new System.Drawing.Point(35, 210);
-            this.textbx_Nombre_fruta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textbx_Nombre_fruta.Location = new System.Drawing.Point(26, 171);
             this.textbx_Nombre_fruta.Name = "textbx_Nombre_fruta";
-            this.textbx_Nombre_fruta.Size = new System.Drawing.Size(168, 22);
+            this.textbx_Nombre_fruta.Size = new System.Drawing.Size(127, 20);
             this.textbx_Nombre_fruta.TabIndex = 1;
             // 
             // txtbx_Cantidad_fruta
             // 
-            this.txtbx_Cantidad_fruta.Location = new System.Drawing.Point(35, 308);
-            this.txtbx_Cantidad_fruta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_Cantidad_fruta.Location = new System.Drawing.Point(26, 250);
             this.txtbx_Cantidad_fruta.Name = "txtbx_Cantidad_fruta";
-            this.txtbx_Cantidad_fruta.Size = new System.Drawing.Size(168, 22);
+            this.txtbx_Cantidad_fruta.Size = new System.Drawing.Size(127, 20);
             this.txtbx_Cantidad_fruta.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 268);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(23, 218);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 16);
+            this.label3.Size = new System.Drawing.Size(107, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = " Cantidad: (unidades)";
             // 
@@ -94,14 +90,12 @@
             this.Codigo,
             this.Editar,
             this.Eliminar});
-            this.grillafrutas.Location = new System.Drawing.Point(248, 38);
-            this.grillafrutas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grillafrutas.Location = new System.Drawing.Point(186, 31);
             this.grillafrutas.Name = "grillafrutas";
             this.grillafrutas.RowHeadersWidth = 51;
-            this.grillafrutas.Size = new System.Drawing.Size(723, 644);
+            this.grillafrutas.Size = new System.Drawing.Size(542, 523);
             this.grillafrutas.TabIndex = 6;
             this.grillafrutas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillafrutas_CellClick);
-            this.grillafrutas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillafrutas_CellContentClick);
             // 
             // Nombre
             // 
@@ -143,10 +137,9 @@
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(35, 629);
-            this.btn_aceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_aceptar.Location = new System.Drawing.Point(26, 511);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(141, 53);
+            this.btn_aceptar.Size = new System.Drawing.Size(106, 43);
             this.btn_aceptar.TabIndex = 7;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
@@ -155,36 +148,32 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 478);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(23, 388);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 16);
+            this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Precio Unitario";
             // 
             // txtbx_Precio_unitario_fruta
             // 
-            this.txtbx_Precio_unitario_fruta.Location = new System.Drawing.Point(35, 528);
-            this.txtbx_Precio_unitario_fruta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_Precio_unitario_fruta.Location = new System.Drawing.Point(26, 429);
             this.txtbx_Precio_unitario_fruta.Name = "txtbx_Precio_unitario_fruta";
-            this.txtbx_Precio_unitario_fruta.Size = new System.Drawing.Size(168, 22);
+            this.txtbx_Precio_unitario_fruta.Size = new System.Drawing.Size(127, 20);
             this.txtbx_Precio_unitario_fruta.TabIndex = 10;
             // 
             // txtbx_cantminima_fruta
             // 
-            this.txtbx_cantminima_fruta.Location = new System.Drawing.Point(35, 414);
-            this.txtbx_cantminima_fruta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbx_cantminima_fruta.Location = new System.Drawing.Point(26, 336);
             this.txtbx_cantminima_fruta.Name = "txtbx_cantminima_fruta";
-            this.txtbx_cantminima_fruta.Size = new System.Drawing.Size(168, 22);
+            this.txtbx_cantminima_fruta.Size = new System.Drawing.Size(127, 20);
             this.txtbx_cantminima_fruta.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 107);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(23, 87);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 16);
+            this.label6.Size = new System.Drawing.Size(93, 13);
             this.label6.TabIndex = 3;
             this.label6.Text = "Ingresar una fruta:";
             this.label6.Click += new System.EventHandler(this.label1_Click);
@@ -192,28 +181,26 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 165);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(23, 134);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 16);
+            this.label7.Size = new System.Drawing.Size(97, 13);
             this.label7.TabIndex = 4;
             this.label7.Text = "Nombre de la fruta:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(31, 362);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(23, 294);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 16);
+            this.label9.Size = new System.Drawing.Size(85, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "Cantidad Minima";
             // 
             // Form_Frutas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 726);
+            this.ClientSize = new System.Drawing.Size(740, 590);
             this.Controls.Add(this.txtbx_cantminima_fruta);
             this.Controls.Add(this.txtbx_Precio_unitario_fruta);
             this.Controls.Add(this.label5);
@@ -226,7 +213,6 @@
             this.Controls.Add(this.txtbx_Cantidad_fruta);
             this.Controls.Add(this.textbx_Nombre_fruta);
             this.Controls.Add(this.btn_volver_frutas);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_Frutas";
             this.Text = "Form_Frutas";
             this.Load += new System.EventHandler(this.Form_Frutas_Load);

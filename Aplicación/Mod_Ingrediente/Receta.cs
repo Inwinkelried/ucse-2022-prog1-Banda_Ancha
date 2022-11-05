@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 using System.IO;
 
 namespace Aplicacion {
-    public class Receta  {
-         
+    public class Receta {
+
         public int IDRECETA { get; set; }
         public string Nombre { get; set; }
         public bool Saludable { get; set; }
-        
+
         public List<int> CantidadesIngredientes = new List<int>();
         public Tipo_Receta TipoDeReceta { get; set; }
 

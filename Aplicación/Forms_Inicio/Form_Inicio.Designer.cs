@@ -70,6 +70,8 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.ErrorImage")));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.ImageLocation = "118;63";
             this.pictureBox3.Location = new System.Drawing.Point(555, 108);
             this.pictureBox3.Name = "pictureBox3";

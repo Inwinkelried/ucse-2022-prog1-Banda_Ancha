@@ -16,90 +16,67 @@ namespace Aplicacion {
 
         //Getter de la lista de recetas completa
 
-        public LogicaReceta()
-        {
+        public LogicaReceta() {
             this.Recetas = LeerRecetas();
-        }     
+        }
         //Escritura de recetas (SERIALIZACION)
-        public string SerializarListaRecetas(List<Receta> receta)
-        {
+        public string SerializarListaRecetas(List<Receta> receta) {
             string ingredientesJson = JsonConvert.SerializeObject(receta);
             return ingredientesJson;
         }
         //Lectura de recetas (DESERIALIZACION) 
-        public List<Receta> LeerRecetas()
-        {
+        public List<Receta> LeerRecetas() {
             string pathReceta = GetPathDominio() + path_Recetas;
             List<Receta> ListaReceta = new List<Receta>();
-            if (VerificarArchivo(pathReceta))
-            {
-                using (StreamReader lectorarchivos = new StreamReader(pathReceta))
-                {
+            if (VerificarArchivo(pathReceta)) {
+                using (StreamReader lectorarchivos = new StreamReader(pathReceta)) {
                     string json = lectorarchivos.ReadToEnd();
-                    ListaReceta = JsonConvert.DeserializeObject<List<Receta>>(json);                
+                    ListaReceta = JsonConvert.DeserializeObject<List<Receta>>(json);
                 }
             }
             return ListaReceta;
-            
+
         }
         //Metodo para guardar la lista
-        public void GuardarListaRecetas(string listaRecetas)
-        {
+        public void GuardarListaRecetas(string listaRecetas) {
             string pathRecetas = GetPathDominio() + path_Recetas;
-            using (StreamWriter wrtr = new StreamWriter(pathRecetas, false))
-            {
+            using (StreamWriter wrtr = new StreamWriter(pathRecetas, false)) {
                 wrtr.Write(listaRecetas);
             }
         }
         //Anadir una receta
-        public void AnadirUnaReceta(Receta receta)
-        {
+        public void AnadirUnaReceta(Receta receta) {
             Recetas = LeerRecetas();
             Recetas.Add(receta);
             GuardarListaRecetas(SerializarListaRecetas(Recetas));
         }
         //Eliminar una receta
-        public void EliminarUnaReceta(string Codigo)
-        {
+        public void EliminarUnaReceta(string Codigo) {
             Recetas = LeerRecetas();
             int indice = Recetas.FindIndex(x => x.IDRECETA.ToString() == Codigo);
             Recetas.RemoveAt(indice);
             GuardarListaRecetas(SerializarListaRecetas(Recetas));
         }
 
-        
-        //Filtrar por sin harinas
-        
-        
-        //Filtrar por
-
         //Encontrar una receta por nombre
-        public Receta FiltroNombreReceta (string Nombrereceta)
-        {
+        public Receta FiltroNombreReceta(string Nombrereceta) {
             Receta receta;
             Recetas = LeerRecetas();
             return receta = Recetas.Find(x => x.Nombre == Nombrereceta);
         }
-        private string GetPathDominio()
-        {
-            return AppDomain.CurrentDomain.BaseDirectory ;
+        private string GetPathDominio() {
+            return AppDomain.CurrentDomain.BaseDirectory;
         }
-        public void ActualizarRecetas(Receta receta)
-        {
+        public void ActualizarRecetas(Receta receta) {
             List<Receta> recetas = new List<Receta>();
             recetas = LeerRecetas();
             List<string> codeRecetas = recetas.Select(x => x.IDRECETA.ToString()).ToList();
-            if (!codeRecetas.Contains(receta.IDRECETA.ToString())) 
-            {
+            if (!codeRecetas.Contains(receta.IDRECETA.ToString())) {
                 recetas.Add(receta);
-            }
-            else
-            {               
-                foreach (var r in recetas)
-                {
-                    if (r.IDRECETA == receta.IDRECETA) 
-                    {
-                        
+            } else {
+                foreach (var r in recetas) {
+                    if (r.IDRECETA == receta.IDRECETA) {
+
                         r.Nombre = receta.Nombre;
                         r.Saludable = receta.Saludable;
                         r.Ingredientes = receta.Ingredientes;
@@ -110,21 +87,13 @@ namespace Aplicacion {
             }
             GuardarListaRecetas(SerializarListaRecetas(recetas));
         }
-        private bool VerificarArchivo(string path)
-        {
-            if (File.Exists(path))
-            {
+        private bool VerificarArchivo(string path) {
+            if (File.Exists(path)) {
                 return true;
-            }
-            else
-            {
+            } else {
                 File.WriteAllText(path, "[]");
                 return false;
             }
         }
-        //----------------------------------------------------------------------------------------------------------------------------------
-        
-        
-        
     }
 }

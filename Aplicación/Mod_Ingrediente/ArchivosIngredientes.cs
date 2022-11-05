@@ -25,29 +25,24 @@ namespace Aplicacion {
 
 
         //Lectores de archivos      
-        public List<Ingrediente> LeerCarnes() 
-        {
+        public List<Ingrediente> LeerCarnes() {
             string pathCarne = GetPathDominio() + path_Carnes;
             List<Carnes> ListaCarne = new List<Carnes>();
-            if (VerificarArchivo(pathCarne))
-            {
-                using (StreamReader lectorarchivos = new StreamReader(pathCarne))
-                {
+            if (VerificarArchivo(pathCarne)) {
+                using (StreamReader lectorarchivos = new StreamReader(pathCarne)) {
                     string json = lectorarchivos.ReadToEnd();
                     ListaCarne = JsonConvert.DeserializeObject<List<Carnes>>(json);
                     List<Ingrediente> carnes = ListaCarne.Select(x => x as Ingrediente).ToList();
                     return carnes;
                 }
-            }
-            else return null;
+            } else return null;
 
         }
         public List<Ingrediente> LeerBebidas() {
             string pathBebidas = GetPathDominio() + path_Bebidas;
             List<Bebida> ListaBebidas = new List<Bebida>();
             VerificarArchivo(pathBebidas);
-            using (StreamReader lectorarchivos = new StreamReader(pathBebidas))
-            {
+            using (StreamReader lectorarchivos = new StreamReader(pathBebidas)) {
                 string json = lectorarchivos.ReadToEnd();
                 ListaBebidas = JsonConvert.DeserializeObject<List<Bebida>>(json);
                 List<Ingrediente> bebidas = ListaBebidas.Select(x => x as Ingrediente).ToList();
@@ -175,7 +170,7 @@ namespace Aplicacion {
             }
         }
         private string GetPathDominio() {
-            return AppDomain.CurrentDomain.BaseDirectory ;
+            return AppDomain.CurrentDomain.BaseDirectory;
         }
         //Verificar si el archivo existe o si hay que crearlo
         private bool VerificarArchivo(string path) {

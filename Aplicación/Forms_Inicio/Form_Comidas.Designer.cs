@@ -36,6 +36,7 @@
             this.NombreReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbl_InstruccionCargaComida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_RecetasComidas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,11 +109,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lbl_InstruccionCargaComida
+            // 
+            this.lbl_InstruccionCargaComida.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.lbl_InstruccionCargaComida.AutoSize = true;
+            this.lbl_InstruccionCargaComida.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_InstruccionCargaComida.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_InstruccionCargaComida.Location = new System.Drawing.Point(79, 396);
+            this.lbl_InstruccionCargaComida.Name = "lbl_InstruccionCargaComida";
+            this.lbl_InstruccionCargaComida.Size = new System.Drawing.Size(520, 13);
+            this.lbl_InstruccionCargaComida.TabIndex = 8;
+            this.lbl_InstruccionCargaComida.Text = "Para cargar una comida, primero ingrese el nombre de la receta en el cuadro de te" +
+    "xto, luego tildela en la grilla";
+            // 
             // Form_Comidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 458);
+            this.Controls.Add(this.lbl_InstruccionCargaComida);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grilla_RecetasComidas);
             this.Controls.Add(this.label1);
@@ -138,5 +153,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreReceta;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_InstruccionCargaComida;
     }
 }

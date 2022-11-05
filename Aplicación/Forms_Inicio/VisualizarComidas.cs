@@ -50,7 +50,35 @@ namespace Forms_Inicio
             DateTime fechamayor = dtp_Fechamayor.Value.Date;
             grilla_Comidas.DataSource = null;
             grilla_Comidas.DataSource = logica.FiltroFecha(fechamenor, fechamayor);
-            ActualizarGrilla();
+        }
+
+        private void btn_Volver_VisualizarComidas_Click(object sender, EventArgs e) {
+            Form_Comidas comidas = new Form_Comidas();
+            comidas.Show();
+            this.Close();
+        }
+
+        private void btn_FiltroReceta_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btn_FiltroTipo_Click(object sender, EventArgs e) {
+            //LogicaComida logica = new LogicaComida();
+            //grilla_Comidas.DataSource = null;
+
+            //if (radioButton_Desayuno.Checked) {
+            //    grilla_Comidas.DataSource = null;
+            //    grilla_Comidas.DataSource = logica.FiltroPorTipo(Tipo_Receta.Desayuno);
+            //} else if (radioButton_Almuerzo.Checked) {
+            //    grilla_Comidas.DataSource = null;
+            //    grilla_Comidas.DataSource = logica.FiltroPorTipo(Tipo_Receta.Almuerzo);
+            //} else if (radioButton_Merienda.Checked) {
+            //    grilla_Comidas.DataSource = null;
+            //    grilla_Comidas.DataSource = logica.FiltroPorTipo(Tipo_Receta.Merienda);
+            //} else if (radioButton_Cena.Checked) {
+            //    grilla_Comidas.DataSource = null;
+            //    grilla_Comidas.DataSource = logica.FiltroPorTipo(Tipo_Receta.Cena);
+            //}
         }
     }
 }

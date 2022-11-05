@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace Aplicacion {
     public class PorCantidad : Ingrediente {
-       
-
     }
 }
