@@ -136,22 +136,23 @@ namespace Aplicacion
         //Antes de hablititar una comida, reviso que esten los ingredientes necesarios en la despensa
         public bool CheckIngredientesReceta(Receta receta)
         {
-            bool encontrado = false;
-            StockIngredientes = LeerIngredientes();
-            foreach (Ingrediente ingredienteReceta in receta.Ingredientes)
+            bool band = true;
+            
+            foreach (Ingrediente ingrediente in StockIngredientes)
             {
-                Ingrediente ingrediente = StockIngredientes.Find(x => x.Codigo == ingredienteReceta.Codigo);
-                if (ingrediente.Cantidad >= ingredienteReceta.Cantidad)
+                foreach (string Cod in receta.CodigosIngredientes)
                 {
-                    encontrado = true;
-                }
-                else
-                {
-                    encontrado = false;
-                    break;
+                    if (Cod == ingrediente.Codigo.ToString())
+                    {
+                        int index = receta.CodigosIngredientes.FindIndex(x => x == Cod);
+                        if (ingrediente.Cantidad <= receta.CantidadesIngredientes[index])
+                        {
+                            band = false; break;
+                        }
+                    }
                 }
             }
-            return encontrado;
+            return band;
         }
 
         public decimal CostoDelIngrediente(string Nombre)
@@ -216,7 +217,22 @@ namespace Aplicacion
             List<Ingrediente> productos = LeerIngredientes();
             return productos.Find(match: x => x.Codigo.ToString() == (codigoProducto));
         }
-        
+        public void ModificarBebida(string Codigo, decimal cantidad, string Nombre, Tipo_Bebida tipo)
+        {
+            
+            foreach (Ingrediente bebida in StockIngredientes)
+            {
+                if (bebida is Bebida && bebida.Codigo.ToString() == Codigo)
+                {
+                    
+                    bebida.Nombre = Nombre;
+                    bebida.Cantidad = cantidad;
+                    
+                    GuardarListaIngredientes();
+                    break;
+                }
+            }
+        }
 
     }
 }

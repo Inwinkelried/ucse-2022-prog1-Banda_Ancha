@@ -136,6 +136,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilidadesGrilla.cs" />
+    <Compile Include="VisualizarComidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizarComidas.Designer.cs">
+      <DependentUpon>VisualizarComidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisualizarRecetas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VisualizarComidas.resx">
+      <DependentUpon>VisualizarComidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VisualizarRecetas.resx">
       <DependentUpon>VisualizarRecetas.cs</DependentUpon>
     </EmbeddedResource>

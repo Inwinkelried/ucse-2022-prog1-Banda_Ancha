@@ -39,17 +39,16 @@
             this.noalcoholica = new System.Windows.Forms.RadioButton();
             this.alcoholica = new System.Windows.Forms.RadioButton();
             this.grilla_bebidas = new System.Windows.Forms.DataGridView();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoBebidaColumna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Boton_acpetar_bebidas = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.text_cantminima = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.text_precioUnitario = new System.Windows.Forms.TextBox();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoBebidaColumna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.typebeb_grpbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_bebidas)).BeginInit();
             this.SuspendLayout();
@@ -155,51 +154,17 @@
             // grilla_bebidas
             // 
             this.grilla_bebidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
             this.Cantidad,
-            this.Nombre,
             this.TipoBebidaColumna,
             this.Editar,
-            this.Eliminar,
-            this.Codigo});
+            this.Eliminar});
             this.grilla_bebidas.Location = new System.Drawing.Point(154, 29);
             this.grilla_bebidas.Name = "grilla_bebidas";
-            this.grilla_bebidas.Size = new System.Drawing.Size(543, 439);
+            this.grilla_bebidas.Size = new System.Drawing.Size(542, 439);
             this.grilla_bebidas.TabIndex = 9;
             this.grilla_bebidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_bebidas_CellClick);
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre Articulo";
-            this.Nombre.Name = "Nombre";
-            // 
-            // TipoBebidaColumna
-            // 
-            this.TipoBebidaColumna.DataPropertyName = "Tipo";
-            this.TipoBebidaColumna.HeaderText = "Tipo Bebida";
-            this.TipoBebidaColumna.Name = "TipoBebidaColumna";
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
+            this.grilla_bebidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_bebidas_CellContentClick);
             // 
             // Boton_acpetar_bebidas
             // 
@@ -243,6 +208,34 @@
             this.text_precioUnitario.Size = new System.Drawing.Size(100, 20);
             this.text_precioUnitario.TabIndex = 15;
             // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Nombre";
+            this.Name.HeaderText = "Nombre";
+            this.Name.Name = "Name";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // TipoBebidaColumna
+            // 
+            this.TipoBebidaColumna.DataPropertyName = "Codigo";
+            this.TipoBebidaColumna.HeaderText = "Codigo";
+            this.TipoBebidaColumna.Name = "TipoBebidaColumna";
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // Form_Bebidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,7 +254,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_volver_Bebidas);
-            this.Name = "Form_Bebidas";
+            
             this.Text = "Form_Bebidas";
             this.Load += new System.EventHandler(this.Form_Bebidas_Load);
             this.typebeb_grpbx.ResumeLayout(false);
@@ -286,15 +279,14 @@
         private System.Windows.Forms.RadioButton alcoholica;
         private System.Windows.Forms.DataGridView grilla_bebidas;
         private System.Windows.Forms.Button Boton_acpetar_bebidas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoBebidaColumna;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox text_cantminima;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox text_precioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoBebidaColumna;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

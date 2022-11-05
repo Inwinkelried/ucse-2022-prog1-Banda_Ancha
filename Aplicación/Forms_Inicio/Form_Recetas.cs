@@ -81,7 +81,7 @@ namespace Forms_Inicio
 
                     foreach (DataGridViewRow row in grillla_IngredientesRecetas.Rows) {
                         if (row.Cells[0].Value != null && row.Cells[1].Value != null) {
-                            if (int.Parse(row.Cells[1].Value.ToString()) > 0) {
+                            if (decimal.Parse(row.Cells[1].Value.ToString()) > 0) {
 
                                 LogicaIngrediente logicaing = new LogicaIngrediente();
                                 Ingrediente ingrediente = logicaing.ObtenerProducto(row.Cells[2].Value.ToString());
@@ -94,7 +94,7 @@ namespace Forms_Inicio
                         }
                     }
                     if (receta.CodigosIngredientes.Count > 0 && receta.Ingredientes.Count > 0 && receta.CodigosIngredientes.Count() == receta.Ingredientes.Count() && band == true) {
-                        logica.ActualizarRecetas(receta);
+                        logica.AnadirUnaReceta(receta);
                     }
                 }
                 MessageBox.Show("Carga correcta");

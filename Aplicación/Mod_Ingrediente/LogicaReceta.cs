@@ -21,7 +21,7 @@ namespace Aplicacion {
             this.Recetas = LeerRecetas();
         }     
         //Escritura de recetas (SERIALIZACION)
-        protected string SerializarListaRecetas(List<Receta> receta)
+        public string SerializarListaRecetas(List<Receta> receta)
         {
             string ingredientesJson = JsonConvert.SerializeObject(receta);
             return ingredientesJson;
@@ -62,13 +62,9 @@ namespace Aplicacion {
         public void EliminarUnaReceta(string Codigo)
         {
             Recetas = LeerRecetas();
-            foreach (Receta receta in Recetas)
-            {
-                if (receta.IDRECETA.ToString() == Codigo)
-                {
-
-                }
-            }
+            int indice = Recetas.FindIndex(x => x.IDRECETA.ToString() == Codigo);
+            Recetas.RemoveAt(indice);
+            GuardarListaRecetas(SerializarListaRecetas(Recetas));
         }
 
         

@@ -28,39 +28,31 @@ namespace Forms_Inicio
             grilla_Recetas.AutoGenerateColumns = false;
             ActualizarGrilla();
         }
-
+        private void grilla_Recetas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            UtilidadesGrilla utilidad = new UtilidadesGrilla();
+            utilidad.CargarCamposAcciones(grilla_Recetas);
+        }
         private void grilla_Recetas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Recetas, "Eliminar");
+           
+
             int indiceEditar = UtilidadesGrilla.getIndexColumna(grilla_Recetas, "Editar");
-            LogicaIngrediente logicaIng = new LogicaIngrediente();
+            int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Recetas, "Eliminar");
 
-            if (indiceEditar == e.ColumnIndex)
+            if (e.RowIndex >= 0)
             {
+                Receta receta = grilla_Recetas.Rows[e.RowIndex].DataBoundItem as Receta;
+                string codigo = receta.IDRECETA.ToString();
 
-                foreach (DataGridViewRow columna in grilla_Recetas.Rows)
+                if (indiceEliminar == e.ColumnIndex)
                 {
-
-                    string Codigo = Convert.ToString(columna.Cells[2].Value);
-                    string Nombre = Convert.ToString(columna.Cells[0].Value);
-                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
-                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
-                    ActualizarGrilla();
-                    break;
-
-
+                    LogicaReceta logica = new LogicaReceta();
+                    logica.EliminarUnaReceta(codigo);
+                    ActualizarGrilla();                   
                 }
             }
-            if (indiceEliminar == e.ColumnIndex)
-            {
 
-                LogicaReceta logicaRecetas = new LogicaReceta();
-                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grilla_Recetas, "Codigo");
-                string codigoReceta = grilla_Recetas.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
-                logicaRecetas.EliminarUnaReceta(codigoReceta);
-                ActualizarGrilla();
-
-            }
         }
     }
 }

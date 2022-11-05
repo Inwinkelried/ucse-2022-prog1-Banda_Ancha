@@ -88,15 +88,19 @@ namespace Forms_Inicio
                 
                 foreach (DataGridViewRow columna in grilla_Carnes.Rows)
                 {
-                    
-                        string Codigo = Convert.ToString(columna.Cells[2].Value);
+                    var indice = UtilidadesGrilla.getIndexColumna(grilla_Carnes, "Codigo");
+                    string Codigo = grilla_Carnes.Rows[e.RowIndex].Cells[indice].Value.ToString();
+                    string codigo = Convert.ToString(columna.Cells[2].Value);
+                    if (Codigo == codigo)
+                    {
+
                         string Nombre = Convert.ToString(columna.Cells[0].Value);
                         decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
                         logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
                         ActualizarGrilla();
                         break;
 
-                    
+                    }
                 }
 
                 

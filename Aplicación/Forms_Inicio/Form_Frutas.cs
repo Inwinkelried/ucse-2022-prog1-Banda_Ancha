@@ -69,27 +69,34 @@ namespace Forms_Inicio
         }
 
         private void grillafrutas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {           
-                int indiceEliminar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Eliminar");
-                int indiceEditar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Editar");
-                LogicaIngrediente logicaIng = new LogicaIngrediente();
+        {
 
-                if (indiceEditar == e.ColumnIndex)
+
+            int indiceEliminar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Eliminar");
+            int indiceEditar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Editar");
+            LogicaIngrediente logicaIng = new LogicaIngrediente();
+
+            if (indiceEditar == e.ColumnIndex)
+            {
+
+                foreach (DataGridViewRow columna in grillafrutas.Rows)
                 {
-
-                    foreach (DataGridViewRow columna in grillafrutas.Rows)
+                    var indice = UtilidadesGrilla.getIndexColumna(grillafrutas, "Codigo");
+                    string Codigo = grillafrutas.Rows[e.RowIndex].Cells[indice].Value.ToString();
+                    string codigo = Convert.ToString(columna.Cells[2].Value);
+                    if (Codigo == codigo)
                     {
 
-                        string Codigo = Convert.ToString(columna.Cells[2].Value);
                         string Nombre = Convert.ToString(columna.Cells[0].Value);
                         decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
                         logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
                         ActualizarGrilla();
                         break;
 
-
                     }
                 }
+
+
                 if (indiceEliminar == e.ColumnIndex)
                 {
                     LogicaIngrediente logica = new LogicaIngrediente();
@@ -97,7 +104,8 @@ namespace Forms_Inicio
                     string codigoProducto = grillafrutas.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
                     logica.eliminarIngrediente(codigoProducto);
                     ActualizarGrilla();
-                }           
+                }
+            }
         }
 
         private void grillafrutas_CellContentClick(object sender, DataGridViewCellEventArgs e)

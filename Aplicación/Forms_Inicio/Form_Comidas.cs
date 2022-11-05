@@ -46,6 +46,7 @@ namespace Forms_Inicio
         {
             if (txt_Nombre.Text != null && txt_Nombre.Text!= String.Empty)
             {
+                string Nombre = txt_Nombre.Text;
                 LogicaReceta logicaRec = new LogicaReceta();
                 LogicaIngrediente logica = new LogicaIngrediente();
                 foreach (Receta receta in logicaRec.LeerRecetas())
@@ -55,8 +56,11 @@ namespace Forms_Inicio
                         LogicaComida  logicacom= new LogicaComida();
                         int codigo = logicacom.LeerComidas().Count();
                         DateTime fechahoy = DateTime.Today;
-                        Comida comida = new Comida(codigo.ToString(), receta.IDRECETA.ToString(), receta, receta.Nombre, fechahoy);
-                        MessageBox.Show("Carga Exitosa", "Error");
+                        Comida comida = new Comida(codigo.ToString(), receta.IDRECETA.ToString(), receta, Nombre, fechahoy);
+                        List<Comida> comidas = logicacom.LeerComidas();
+                        comidas.Add(comida);
+                        logicacom.GuardarLista(logicacom.SerializarListaComidas(comidas));
+                        MessageBox.Show("Carga Exitosa" );
                     }
                     else
                     {
@@ -76,6 +80,13 @@ namespace Forms_Inicio
         private void grilla_RecetasComidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VisualizarComidas verComidas = new VisualizarComidas();
+            verComidas.Show();
+            this.Hide();
         }
     }
 }

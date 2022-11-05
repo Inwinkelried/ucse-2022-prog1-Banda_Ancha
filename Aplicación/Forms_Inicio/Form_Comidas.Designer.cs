@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grilla_RecetasComidas = new System.Windows.Forms.DataGridView();
             this.NombreReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_RecetasComidas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,10 +79,11 @@
             // 
             this.grilla_RecetasComidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grilla_RecetasComidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreReceta});
-            this.grilla_RecetasComidas.Location = new System.Drawing.Point(242, 12);
+            this.NombreReceta,
+            this.Seleccionar});
+            this.grilla_RecetasComidas.Location = new System.Drawing.Point(202, 12);
             this.grilla_RecetasComidas.Name = "grilla_RecetasComidas";
-            this.grilla_RecetasComidas.Size = new System.Drawing.Size(144, 360);
+            this.grilla_RecetasComidas.Size = new System.Drawing.Size(243, 360);
             this.grilla_RecetasComidas.TabIndex = 6;
             this.grilla_RecetasComidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grilla_RecetasComidas_CellContentClick);
             // 
@@ -90,11 +93,27 @@
             this.NombreReceta.HeaderText = "Nombre Receta";
             this.NombreReceta.Name = "NombreReceta";
             // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "";
+            this.Seleccionar.Name = "Seleccionar";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(532, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 43);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Historial comidas";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form_Comidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 458);
+            this.ClientSize = new System.Drawing.Size(694, 458);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.grilla_RecetasComidas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Nombre);
@@ -117,5 +136,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView grilla_RecetasComidas;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreReceta;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -91,15 +91,18 @@ namespace Forms_Inicio
 
                 foreach (DataGridViewRow columna in grilla_bebidas.Rows)
                 {
+                    var indice = UtilidadesGrilla.getIndexColumna(grilla_bebidas, "Codigo");
+                    string Codigo = grilla_bebidas.Rows[e.RowIndex].Cells[indice].Value.ToString();
+                    string codigo = Convert.ToString(columna.Cells[2].Value);
+                    if (Codigo == codigo)
+                    {
+                        string Nombre = Convert.ToString(columna.Cells[0].Value);
+                        decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                        logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                        ActualizarGrilla();
+                        break;
 
-                    string Codigo = Convert.ToString(columna.Cells[2].Value);
-                    string Nombre = Convert.ToString(columna.Cells[0].Value);
-                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
-                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
-                    ActualizarGrilla();
-                    break;
-
-
+                    }
                 }
             }
             if (indiceEliminar == e.ColumnIndex)
@@ -119,6 +122,11 @@ namespace Forms_Inicio
         }
 
         private void Lector_Nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grilla_bebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

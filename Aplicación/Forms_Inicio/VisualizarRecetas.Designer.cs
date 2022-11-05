@@ -58,7 +58,7 @@
             // 
             // Codigo
             // 
-            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.DataPropertyName = "IDRECETA";
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             // 

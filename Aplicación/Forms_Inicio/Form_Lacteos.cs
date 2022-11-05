@@ -75,15 +75,19 @@ namespace Forms_Inicio
 
                 foreach (DataGridViewRow columna in grilla_Lacteos.Rows)
                 {
+                    var indice = UtilidadesGrilla.getIndexColumna(grilla_Lacteos, "Codigo");
+                    string Codigo = grilla_Lacteos.Rows[e.RowIndex].Cells[indice].Value.ToString();
+                    string codigo = Convert.ToString(columna.Cells[2].Value);
+                    if (Codigo == codigo)
+                    {
 
-                    string Codigo = Convert.ToString(columna.Cells[2].Value);
-                    string Nombre = Convert.ToString(columna.Cells[0].Value);
-                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
-                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
-                    ActualizarGrilla();
-                    break;
+                        string Nombre = Convert.ToString(columna.Cells[0].Value);
+                        decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                        logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                        ActualizarGrilla();
+                        break;
 
-
+                    }
                 }
             }
             if (indiceEliminar == e.ColumnIndex)

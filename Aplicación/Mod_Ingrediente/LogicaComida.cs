@@ -20,7 +20,7 @@ namespace Aplicacion {
         {
             this.Comidas = LeerComidas();
         }
-        protected string SerializarListaComidas(List<Comida> comida)
+        public string SerializarListaComidas(List<Comida> comida)
         {
             string ingredientesJson = JsonConvert.SerializeObject(comida);
             return ingredientesJson;
@@ -32,13 +32,17 @@ namespace Aplicacion {
         //De Json a comida
         public List<Comida> LeerComidas()
         {
-            string pathComidas = GetPathDominio() + path_Comidas;
-            using (StreamReader reader = new StreamReader(pathComidas))
+            if (VerificarArchivo(path_Comidas))
             {
-                string json = reader.ReadToEnd();
-                List<Comida> HistorialComidasDesdeArchivo = JsonConvert.DeserializeObject<List<Comida>>(json);
-                return HistorialComidasDesdeArchivo;
+                string pathComidas = GetPathDominio() + path_Comidas;
+                using (StreamReader reader = new StreamReader(pathComidas))
+                {
+                    string json = reader.ReadToEnd();
+                    List<Comida> HistorialComidasDesdeArchivo = JsonConvert.DeserializeObject<List<Comida>>(json);
+                    return HistorialComidasDesdeArchivo;
+                }
             }
+            else return null;
         }
         //De Comida a Json
         public void GuardarLista(string listaSerializada)
@@ -69,26 +73,37 @@ namespace Aplicacion {
         public List<Comida> FiltroSinHarina()
         {
             Comidas = LeerComidas();
-            
+            LogicaIngrediente logicaIng = new LogicaIngrediente();
+            LogicaReceta logica = new LogicaReceta();
+            List<Comida> ListaSinHarina = new List<Comida>();
             foreach (Comida comida in Comidas)
             {
-                bool band = true;
-                Receta receta = comida.Receta;
-                foreach (Ingrediente ingrediente in receta.Ingredientes)
+                foreach (Receta receta in logica.LeerRecetas())
                 {
-                    if (ingrediente is Panaderia)
+                    if (receta.IDRECETA.ToString() == comida.CodigoReceta)
                     {
-                        band = false;
-                        break;
+                        bool bandera = true;
+                        foreach (string codigo in receta.CodigosIngredientes)
+                        {
+                            foreach (Ingrediente ingrediente in logicaIng.LeerIngredientes())
+                            {
+                                if (ingrediente.Codigo.ToString() == codigo && ingrediente is Panaderia)
+                                {
+                                    bandera = false;
+                                }
+                            }
+                        }
+                        if (bandera)
+                        {
+                            ListaSinHarina.Add(comida);
+                        }
                     }
                 }
-                if (band == true)
-                {
-                    Comidasfiltradas.Add(comida);
-                }
             }
-            return Comidasfiltradas;
-
+            return ListaSinHarina;
+            
+            
+            
         }
         //Filtrar por saludable
         public List<Comida> FiltroSPoraludable()
@@ -108,6 +123,17 @@ namespace Aplicacion {
             Comidas = LeerComidas();
             return Comidas.FindAll(x => x.FechaCreacion > fechamenor && x.FechaCreacion < fechamayor);
         }
-        
+        private bool VerificarArchivo(string path)
+        {
+            if (File.Exists(path))
+            {
+                return true;
+            }
+            else
+            {
+                File.WriteAllText(path, "[]");
+                return false;
+            }
+        }
     }
 }

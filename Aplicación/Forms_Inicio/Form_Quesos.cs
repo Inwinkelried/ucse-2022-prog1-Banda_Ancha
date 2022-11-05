@@ -34,16 +34,25 @@ namespace Forms_Inicio
             int indiceEliminar = UtilidadesGrilla.getIndexColumna(grilla_Quesos, "Eliminar");
             int indiceEditar = UtilidadesGrilla.getIndexColumna(grilla_Quesos, "Editar");
             LogicaIngrediente logicaIng = new LogicaIngrediente();
+
             if (indiceEditar == e.ColumnIndex)
             {
+
                 foreach (DataGridViewRow columna in grilla_Quesos.Rows)
                 {
-                    string Codigo = Convert.ToString(columna.Cells[2].Value);
-                    string Nombre = Convert.ToString(columna.Cells[0].Value);
-                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
-                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
-                    ActualizarGrilla();
-                    break;
+                    var indice = UtilidadesGrilla.getIndexColumna(grilla_Quesos, "Codigo");
+                    string Codigo = grilla_Quesos.Rows[e.RowIndex].Cells[indice].Value.ToString();
+                    string codigo = Convert.ToString(columna.Cells[2].Value);
+                    if (Codigo == codigo)
+                    {
+
+                        string Nombre = Convert.ToString(columna.Cells[0].Value);
+                        decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                        logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                        ActualizarGrilla();
+                        break;
+
+                    }
                 }
             }
             if (indiceEliminar == e.ColumnIndex)

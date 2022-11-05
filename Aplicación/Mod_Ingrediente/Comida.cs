@@ -9,18 +9,19 @@ namespace Aplicacion {
     public class Comida  {
         public string Codigo { get; set; }
         public string CodigoReceta { get; set; }
+        public string NombreRec { get; set; }
+        public DateTime FechaCreacion { get; set; }
         [JsonIgnore]
         public Receta Receta { get; set; }
-        [JsonIgnore]
-        public string NombreReceta { get; set; }
-        public DateTime FechaCreacion { get; set; }
+        
+        
 
         public Comida (string codigo, string codigoreceta, Receta receta, string nombreReceta, DateTime fecha)
         {
             Codigo = codigo;
             CodigoReceta = codigoreceta;
             Receta = receta;
-            NombreReceta = nombreReceta;
+            NombreRec = nombreReceta;
             FechaCreacion = fecha;
         }
         

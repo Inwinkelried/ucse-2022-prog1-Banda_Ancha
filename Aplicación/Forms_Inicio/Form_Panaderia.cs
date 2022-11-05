@@ -31,7 +31,7 @@ namespace Forms_Inicio
             if ((txt_CantMinima.Text != null && txt_CantMinima.Text != string.Empty) && (txt_Cantidad.Text != null && txt_Cantidad.Text != string.Empty) && (txt_PrecioxKG.Text != null && (txt_PrecioxKG.Text != string.Empty) && (txt_Nombre.Text != null && txt_Nombre.Text != string.Empty)))
             {
                 decimal cantidad = decimal.Parse(txt_Cantidad.Text);
-                int cantidadminima = int.Parse(txt_CantMinima.Text);
+                decimal cantidadminima = decimal.Parse(txt_CantMinima.Text);
                 decimal PrecioXKg = decimal.Parse(txt_PrecioxKG.Text);
                 if (logica.RevisarExistencia(txt_Nombre.Text))
                 {
@@ -69,15 +69,19 @@ namespace Forms_Inicio
 
                 foreach (DataGridViewRow columna in grilla_Panaderia.Rows)
                 {
+                    var indice = UtilidadesGrilla.getIndexColumna(grilla_Panaderia, "Codigo");
+                    string Codigo = grilla_Panaderia.Rows[e.RowIndex].Cells[indice].Value.ToString();
+                    string codigo = Convert.ToString(columna.Cells[2].Value);
+                    if (Codigo == codigo)
+                    {
 
-                    string Codigo = Convert.ToString(columna.Cells[2].Value);
-                    string Nombre = Convert.ToString(columna.Cells[0].Value);
-                    decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
-                    logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
-                    ActualizarGrilla();
-                    break;
+                        string Nombre = Convert.ToString(columna.Cells[0].Value);
+                        decimal Cantidad = Convert.ToDecimal(columna.Cells[1].Value);
+                        logicaIng.ModificarIngrediente(Codigo, Cantidad, Nombre);
+                        ActualizarGrilla();
+                        break;
 
-
+                    }
                 }
             }
             if (indiceEliminar == e.ColumnIndex)
