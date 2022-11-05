@@ -62,17 +62,10 @@ namespace Forms_Inicio
                         logicacom.GuardarLista(logicacom.SerializarListaComidas(comidas));
                         MessageBox.Show("Carga Exitosa" );
                     }
-                    else
-                    {
-                        if (!logica.CheckIngredientesReceta(receta))
-                        {
-                            MessageBox.Show("Ingredientes insuficientes", "Error");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Receta no encontrada", "Error");
-                        }
-                    }       
+                    
+                    
+                        
+                        
                 }
             }
         }

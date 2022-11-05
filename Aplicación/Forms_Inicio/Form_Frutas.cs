@@ -70,8 +70,6 @@ namespace Forms_Inicio
 
         private void grillafrutas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
             int indiceEliminar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Eliminar");
             int indiceEditar = UtilidadesGrilla.getIndexColumna(grillafrutas, "Editar");
             LogicaIngrediente logicaIng = new LogicaIngrediente();
@@ -95,17 +93,18 @@ namespace Forms_Inicio
 
                     }
                 }
-
-
-                if (indiceEliminar == e.ColumnIndex)
-                {
-                    LogicaIngrediente logica = new LogicaIngrediente();
-                    var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grillafrutas, "Codigo");
-                    string codigoProducto = grillafrutas.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
-                    logica.eliminarIngrediente(codigoProducto);
-                    ActualizarGrilla();
-                }
             }
+            if (indiceEliminar == e.ColumnIndex)
+            {
+                LogicaIngrediente logica = new LogicaIngrediente();
+                var indiceIdentificador = UtilidadesGrilla.getIndexColumna(grillafrutas, "Codigo");
+                string codigoProducto = grillafrutas.Rows[e.RowIndex].Cells[indiceIdentificador].Value.ToString();
+                logica.eliminarIngrediente(codigoProducto);
+                ActualizarGrilla();
+            }
+
+
+
         }
 
         private void grillafrutas_CellContentClick(object sender, DataGridViewCellEventArgs e)

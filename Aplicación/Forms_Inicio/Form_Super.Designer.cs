@@ -45,14 +45,14 @@
             this.txt_FiltroPrecio = new System.Windows.Forms.TextBox();
             this.btn_FiltroVerduleria = new System.Windows.Forms.Button();
             this.groupbox = new System.Windows.Forms.GroupBox();
-            this.radioButton_Verduras = new System.Windows.Forms.RadioButton();
-            this.radioButton_Frutas = new System.Windows.Forms.RadioButton();
-            this.radioButton_Carnes = new System.Windows.Forms.RadioButton();
-            this.radioButton_pescados = new System.Windows.Forms.RadioButton();
-            this.radioButton_Quesos = new System.Windows.Forms.RadioButton();
-            this.radioButton_Lacteos = new System.Windows.Forms.RadioButton();
-            this.radioButton_Bebidas = new System.Windows.Forms.RadioButton();
             this.radioButton_Panaderia = new System.Windows.Forms.RadioButton();
+            this.radioButton_Bebidas = new System.Windows.Forms.RadioButton();
+            this.radioButton_Lacteos = new System.Windows.Forms.RadioButton();
+            this.radioButton_Quesos = new System.Windows.Forms.RadioButton();
+            this.radioButton_pescados = new System.Windows.Forms.RadioButton();
+            this.radioButton_Carnes = new System.Windows.Forms.RadioButton();
+            this.radioButton_Frutas = new System.Windows.Forms.RadioButton();
+            this.radioButton_Verduras = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_Super)).BeginInit();
             this.groupbox.SuspendLayout();
@@ -152,10 +152,10 @@
             // 
             // visor_Total
             // 
-            this.visor_Total.Location = new System.Drawing.Point(319, 434);
+            this.visor_Total.Location = new System.Drawing.Point(133, 84);
             this.visor_Total.Name = "visor_Total";
             this.visor_Total.ReadOnly = true;
-            this.visor_Total.Size = new System.Drawing.Size(166, 20);
+            this.visor_Total.Size = new System.Drawing.Size(139, 20);
             this.visor_Total.TabIndex = 5;
             // 
             // btn_filtrocarniceria
@@ -180,9 +180,9 @@
             // 
             // txt_FiltroPrecio
             // 
-            this.txt_FiltroPrecio.Location = new System.Drawing.Point(133, 68);
+            this.txt_FiltroPrecio.Location = new System.Drawing.Point(319, 438);
             this.txt_FiltroPrecio.Name = "txt_FiltroPrecio";
-            this.txt_FiltroPrecio.Size = new System.Drawing.Size(139, 20);
+            this.txt_FiltroPrecio.Size = new System.Drawing.Size(166, 20);
             this.txt_FiltroPrecio.TabIndex = 9;
             // 
             // btn_FiltroVerduleria
@@ -211,71 +211,16 @@
             this.groupbox.TabIndex = 11;
             this.groupbox.TabStop = false;
             // 
-            // radioButton_Verduras
+            // radioButton_Panaderia
             // 
-            this.radioButton_Verduras.AutoSize = true;
-            this.radioButton_Verduras.Location = new System.Drawing.Point(6, 9);
-            this.radioButton_Verduras.Name = "radioButton_Verduras";
-            this.radioButton_Verduras.Size = new System.Drawing.Size(67, 17);
-            this.radioButton_Verduras.TabIndex = 0;
-            this.radioButton_Verduras.TabStop = true;
-            this.radioButton_Verduras.Text = "Verduras";
-            this.radioButton_Verduras.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Frutas
-            // 
-            this.radioButton_Frutas.AutoSize = true;
-            this.radioButton_Frutas.Location = new System.Drawing.Point(6, 32);
-            this.radioButton_Frutas.Name = "radioButton_Frutas";
-            this.radioButton_Frutas.Size = new System.Drawing.Size(54, 17);
-            this.radioButton_Frutas.TabIndex = 1;
-            this.radioButton_Frutas.TabStop = true;
-            this.radioButton_Frutas.Text = "Frutas";
-            this.radioButton_Frutas.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Carnes
-            // 
-            this.radioButton_Carnes.AutoSize = true;
-            this.radioButton_Carnes.Location = new System.Drawing.Point(6, 54);
-            this.radioButton_Carnes.Name = "radioButton_Carnes";
-            this.radioButton_Carnes.Size = new System.Drawing.Size(58, 17);
-            this.radioButton_Carnes.TabIndex = 2;
-            this.radioButton_Carnes.TabStop = true;
-            this.radioButton_Carnes.Text = "Carnes";
-            this.radioButton_Carnes.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_pescados
-            // 
-            this.radioButton_pescados.AutoSize = true;
-            this.radioButton_pescados.Location = new System.Drawing.Point(6, 77);
-            this.radioButton_pescados.Name = "radioButton_pescados";
-            this.radioButton_pescados.Size = new System.Drawing.Size(72, 17);
-            this.radioButton_pescados.TabIndex = 3;
-            this.radioButton_pescados.TabStop = true;
-            this.radioButton_pescados.Text = "Pescados";
-            this.radioButton_pescados.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Quesos
-            // 
-            this.radioButton_Quesos.AutoSize = true;
-            this.radioButton_Quesos.Location = new System.Drawing.Point(97, 9);
-            this.radioButton_Quesos.Name = "radioButton_Quesos";
-            this.radioButton_Quesos.Size = new System.Drawing.Size(61, 17);
-            this.radioButton_Quesos.TabIndex = 4;
-            this.radioButton_Quesos.TabStop = true;
-            this.radioButton_Quesos.Text = "Quesos";
-            this.radioButton_Quesos.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Lacteos
-            // 
-            this.radioButton_Lacteos.AutoSize = true;
-            this.radioButton_Lacteos.Location = new System.Drawing.Point(97, 32);
-            this.radioButton_Lacteos.Name = "radioButton_Lacteos";
-            this.radioButton_Lacteos.Size = new System.Drawing.Size(63, 17);
-            this.radioButton_Lacteos.TabIndex = 5;
-            this.radioButton_Lacteos.TabStop = true;
-            this.radioButton_Lacteos.Text = "Lacteos";
-            this.radioButton_Lacteos.UseVisualStyleBackColor = true;
+            this.radioButton_Panaderia.AutoSize = true;
+            this.radioButton_Panaderia.Location = new System.Drawing.Point(97, 77);
+            this.radioButton_Panaderia.Name = "radioButton_Panaderia";
+            this.radioButton_Panaderia.Size = new System.Drawing.Size(73, 17);
+            this.radioButton_Panaderia.TabIndex = 7;
+            this.radioButton_Panaderia.TabStop = true;
+            this.radioButton_Panaderia.Text = "Panaderia";
+            this.radioButton_Panaderia.UseVisualStyleBackColor = true;
             // 
             // radioButton_Bebidas
             // 
@@ -288,16 +233,71 @@
             this.radioButton_Bebidas.Text = "Bebidas";
             this.radioButton_Bebidas.UseVisualStyleBackColor = true;
             // 
-            // radioButton_Panaderia
+            // radioButton_Lacteos
             // 
-            this.radioButton_Panaderia.AutoSize = true;
-            this.radioButton_Panaderia.Location = new System.Drawing.Point(97, 77);
-            this.radioButton_Panaderia.Name = "radioButton_Panaderia";
-            this.radioButton_Panaderia.Size = new System.Drawing.Size(73, 17);
-            this.radioButton_Panaderia.TabIndex = 7;
-            this.radioButton_Panaderia.TabStop = true;
-            this.radioButton_Panaderia.Text = "Panaderia";
-            this.radioButton_Panaderia.UseVisualStyleBackColor = true;
+            this.radioButton_Lacteos.AutoSize = true;
+            this.radioButton_Lacteos.Location = new System.Drawing.Point(97, 32);
+            this.radioButton_Lacteos.Name = "radioButton_Lacteos";
+            this.radioButton_Lacteos.Size = new System.Drawing.Size(63, 17);
+            this.radioButton_Lacteos.TabIndex = 5;
+            this.radioButton_Lacteos.TabStop = true;
+            this.radioButton_Lacteos.Text = "Lacteos";
+            this.radioButton_Lacteos.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_Quesos
+            // 
+            this.radioButton_Quesos.AutoSize = true;
+            this.radioButton_Quesos.Location = new System.Drawing.Point(97, 9);
+            this.radioButton_Quesos.Name = "radioButton_Quesos";
+            this.radioButton_Quesos.Size = new System.Drawing.Size(61, 17);
+            this.radioButton_Quesos.TabIndex = 4;
+            this.radioButton_Quesos.TabStop = true;
+            this.radioButton_Quesos.Text = "Quesos";
+            this.radioButton_Quesos.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_pescados
+            // 
+            this.radioButton_pescados.AutoSize = true;
+            this.radioButton_pescados.Location = new System.Drawing.Point(6, 77);
+            this.radioButton_pescados.Name = "radioButton_pescados";
+            this.radioButton_pescados.Size = new System.Drawing.Size(72, 17);
+            this.radioButton_pescados.TabIndex = 3;
+            this.radioButton_pescados.TabStop = true;
+            this.radioButton_pescados.Text = "Pescados";
+            this.radioButton_pescados.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_Carnes
+            // 
+            this.radioButton_Carnes.AutoSize = true;
+            this.radioButton_Carnes.Location = new System.Drawing.Point(6, 54);
+            this.radioButton_Carnes.Name = "radioButton_Carnes";
+            this.radioButton_Carnes.Size = new System.Drawing.Size(58, 17);
+            this.radioButton_Carnes.TabIndex = 2;
+            this.radioButton_Carnes.TabStop = true;
+            this.radioButton_Carnes.Text = "Carnes";
+            this.radioButton_Carnes.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_Frutas
+            // 
+            this.radioButton_Frutas.AutoSize = true;
+            this.radioButton_Frutas.Location = new System.Drawing.Point(6, 32);
+            this.radioButton_Frutas.Name = "radioButton_Frutas";
+            this.radioButton_Frutas.Size = new System.Drawing.Size(54, 17);
+            this.radioButton_Frutas.TabIndex = 1;
+            this.radioButton_Frutas.TabStop = true;
+            this.radioButton_Frutas.Text = "Frutas";
+            this.radioButton_Frutas.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_Verduras
+            // 
+            this.radioButton_Verduras.AutoSize = true;
+            this.radioButton_Verduras.Location = new System.Drawing.Point(6, 9);
+            this.radioButton_Verduras.Name = "radioButton_Verduras";
+            this.radioButton_Verduras.Size = new System.Drawing.Size(67, 17);
+            this.radioButton_Verduras.TabIndex = 0;
+            this.radioButton_Verduras.TabStop = true;
+            this.radioButton_Verduras.Text = "Verduras";
+            this.radioButton_Verduras.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
